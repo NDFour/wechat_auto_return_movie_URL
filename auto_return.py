@@ -6,6 +6,11 @@ import werobot
 import string
 
 robot=werobot.WeRoBot(token='wx123')
+
+@robot.subscribe
+def subscribe(message):
+    return "注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字\n3  <a href="http://18.18.2499dy.com/plays/23544-0-0.html">点我观看《前任3》</a>\n<a href="http://18.18.2499dy.com/plays/23555-0-0.html">点我观看《妖铃铃》</a>\n<a href="http://18.18.2499dy.com/plays/23500-0-0.html">点我观看《芳华》</a> "
+
 @robot.text
 def hello(message):
     return getUrl(message.content)
