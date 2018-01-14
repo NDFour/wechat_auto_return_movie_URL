@@ -17,7 +17,7 @@ def hello(message):
     wwxd="无问西东"
     wwxd2="无问东西"
     qr3="前任三"
-    yll="妖玲铃"
+    yll="妖玲玲"
     if(wwxd in message.content):
         return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
     if(wwxd2 in message.content):
