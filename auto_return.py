@@ -9,12 +9,20 @@ robot=werobot.WeRoBot(token='wx123')
 
 @robot.subscribe
 def subscribe(message):
-    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字\n\n  <a href='http://18.18.2499dy.com/plays/23544-0-0.html'>《前任3》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23555-0-0.html'>《妖铃铃》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23500-0-0.html'>《芳华》点我观看</a> "
+    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字\n\n<a href='http://18.18.2499dy.com/plays/23544-0-0.html'>《前任3》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23555-0-0.html'>《妖铃铃》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23500-0-0.html'>《芳华》点我观看</a> \n<a href="链接: https://pan.baidu.com/s/1c3giAty">《无问西东》点击观看</a> 密码: i9uj"
     return msg
 
 @robot.text
 def hello(message):
+    wwxd='无问西东'
+    wwxd2='无问东西'
+    if(wwxd in message.content):
+        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
+    if(wwxd2 in message.content):
+        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
+
     return getUrl(message.content)
+
 
 def main():
     print(getUrl('hello'))
