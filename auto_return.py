@@ -59,7 +59,7 @@ def getUrl(keyword):
     msg=msg.replace('videos','plays')
     if cnt==0:
         msg='未查找到相关结果，请联系我私人微信 ndfour001'
-    msg+='\n▴▴▴▴▴▴▴▴\n\n未搜索到结果？\n<a href="http://mp.weixin.qq.com/s/JhC9UV_1v1ocqGQUCv2bzg">点我看查看更多搜索结果</a>\n\n>> 私人微信号:ndfour001\n>> 有问题加我'
+    msg+='\n▴▴▴▴▴▴▴▴\n\n未搜索到结果？\n<a href="http://mp.weixin.qq.com/s/X0EqQJ803aSL-9WLTwatTg">视频无法播放？点我</a>\n\n>> 私人微信号:ndfour001\n>> 有问题加我'
     return (msg)
 
 #main()
