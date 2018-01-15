@@ -20,6 +20,7 @@ def hello(message):
     qr3="前任三"
     yll="妖玲玲"
     cfzzx="超凡蜘蛛侠"
+    ttnkh="泰坦尼克号"
     if(wwxd in message.content):
         return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
     if(wwxd2 in message.content):
@@ -30,6 +31,8 @@ def hello(message):
         message.content="妖铃铃"
     if(cfzzx in message.content):
         return('《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9')
+    if(ttnkh in message.content):
+        return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
 
     return getUrl(message.content)
 
