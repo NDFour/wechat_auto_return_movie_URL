@@ -6,6 +6,7 @@ import werobot
 import string
 
 robot=werobot.WeRoBot(token='wx123')
+robot.config['SESSION_STORAGE'] = False
 
 @robot.subscribe
 def subscribe(message):
