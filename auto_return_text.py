@@ -15,6 +15,7 @@ def subscribe(message):
 
 @robot.text
 def hello(message):
+    print('《%s》'%message.content)
     wwxd="无问西东"
     wwxd2="无问东西"
     qr3="前任三"
