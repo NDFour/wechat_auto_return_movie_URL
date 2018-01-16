@@ -111,7 +111,7 @@ def getUrl(keyword):
 #robot.config['PORT']=4444
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
-robot.config['APP_ID']='wxc1e9e37171ea0b25'
-robot.config['APP_SECRET']='5c2387a91823cdbdb9cd9cbb663bc5a2'
+robot.config['APP_ID']='wxcee4cdc87bae1253'
+robot.config['APP_SECRET']='wxcee4cdc87bae1253'
 robot.run()
 
