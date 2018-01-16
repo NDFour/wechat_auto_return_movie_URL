@@ -2,10 +2,10 @@
 
 import requests
 import re
-import werobot
+from werobot import WeRoBot
 import string
 
-robot=werobot.WeRoBot(token='wx123')
+robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
 @robot.subscribe
@@ -15,16 +15,14 @@ def subscribe(message):
 
 @robot.text
 def hello(message):
-    wwxd="无问西东"
     wwxd2="无问东西"
     qr3="前任三"
     yll="妖玲玲"
     cfzzx="超凡蜘蛛侠"
     ttnkh="泰坦尼克号"
-    if(wwxd in message.content):
-        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
-    elif(wwxd2 in message.content):
-        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
+    qgw="七个我"
+    if(wwxd2 in message.content):
+        message.content="无问西东"
     elif(qr3 in message.content):
         message.content="前任3"
     elif(yll in message.content):
@@ -33,9 +31,14 @@ def hello(message):
         return('《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9')
     elif(ttnkh in message.content):
         return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
-    else:
-        return getUrl(message.content)
-
+    elif(qgw in message.content):
+       message.content='柒个我'
+#   构建图文消息
+    articles=getUrl(message.content)
+#    print(articles)
+    robot.client.send_article_message(message.source,articles)
+#    return getUrl(message.content)
+    return ''
 
 def main():
     print(getUrl('hello'))
@@ -63,25 +66,42 @@ def getUrl(keyword):
     # 得到title="芳华"
     re_url_title=re.compile(r'title=".*?"')
     pre_url='http://18.18.2499dy.com'
+    # 得到/../.*.jpg
+    re_url_picurl=re.compile(r'/uploads/.*?"')
+    pic_url_list=re_url_picurl.findall(r.text)
+    # 返回一个list，list内是dic
+    video_list=[]
 
     after_re_url=re_url.findall(r.text)
     cnt=0
-    msg='【以下是搜索到的相关影片】\n▾▾▾▾▾▾▾▾\n\n\n'
+
     for i in after_re_url:
+        dic={}
         cnt+=1
-        #msg+='【'+str(cnt)+'】 '+re_url_title.search(i).group()+'\n'+'<a href="'+pre_url+re_url_href.search(i).group()+'">点我观看</a>'+'\n\n'
-        msg+='【'+str(cnt)+'】 '+re_url_title.search(i).group()+'\n'+'<a href="'+pre_url+re_url_href.search(i).group()+'">点我观看</a>'+'\n\n'
-        # 数据过多造成溢出
-        if cnt==10:
+        if cnt>0:
+           pic_cnt=cnt-1
+        full_pic_url='http://img.xzpifu.com'+pic_url_list[pic_cnt]
+        full_pic_url=full_pic_url.replace('"','')
+        full_video_title=re_url_title.search(i).group()
+        full_video_title=full_video_title.replace('title=','')
+        full_video_title=full_video_title.replace('"','')
+        full_video_url=pre_url+re_url_href.search(i).group()
+        full_video_url=full_video_url.replace('.html','-0-0.html')
+        full_video_url=full_video_url.replace('videos','plays')
+        dic["title"]=full_video_title
+        dic["url"]=full_video_url
+        dic["description"]=''
+        dic["picurl"]=full_pic_url
+
+        video_list.append(dic)
+
+        # 图文消息最多有8条
+        if cnt==8:
             break
-    #print('cnt=',cnt)
-    msg=msg.replace('.html','-0-0.html')
-    msg=msg.replace('title=','')
-    msg=msg.replace('videos','plays')
+# 返回图文消息
+    return video_list
     if cnt==0:
-        msg='未查找到相关结果，请联系我私人微信 ndfour001'
-    msg+='\n▴▴▴▴▴▴▴▴\n\n未搜索到结果？\n<a href="http://mp.weixin.qq.com/s/X0EqQJ803aSL-9WLTwatTg">视频无法播放？点我</a>\n\n>> 私人微信号:ndfour001\n>> 有问题加我'
-    return (msg)
+       return '<a href="http://mp.weixin.qq.com/s/kRVDjDB7LANy-dwRqZ6P5g">没有搜索到影片？点我</a>' 
 
 #main()
 
@@ -90,5 +110,7 @@ def getUrl(keyword):
 #robot.config['PORT']=4444
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
+robot.config['APP_ID']='wxc1e9e37171ea0b25'
+robot.config['APP_SECRET']='5c2387a91823cdbdb9cd9cbb663bc5a2'
 robot.run()
 
