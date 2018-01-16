@@ -23,18 +23,18 @@ def hello(message):
     ttnkh="泰坦尼克号"
     if(wwxd in message.content):
         return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
-    if(wwxd2 in message.content):
+    elif(wwxd2 in message.content):
         return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
-    if(qr3 in message.content):
+    elif(qr3 in message.content):
         message.content="前任3"
-    if(yll in message.content):
+    elif(yll in message.content):
         message.content="妖铃铃"
-    if(cfzzx in message.content):
+    elif(cfzzx in message.content):
         return('《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9')
-    if(ttnkh in message.content):
+    elif(ttnkh in message.content):
         return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
-
-    return getUrl(message.content)
+    else:
+        return getUrl(message.content)
 
 
 def main():
