@@ -22,7 +22,7 @@ def hello(message):
     cfzzx="超凡蜘蛛侠"
     ttnkh="泰坦尼克号"
     lry="龙日一"
-    elif(wwxd2 in message.content):
+    if(wwxd2 in message.content):
         message.content="无问西东"
     elif(qr3 in message.content):
         message.content="前任3"
