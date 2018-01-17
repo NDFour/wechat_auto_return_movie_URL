@@ -16,17 +16,14 @@ def subscribe(message):
 @robot.text
 def hello(message):
     print('《%s》'%message.content)
-    wwxd="无问西东"
     wwxd2="无问东西"
     qr3="前任三"
     yll="妖玲玲"
     cfzzx="超凡蜘蛛侠"
     ttnkh="泰坦尼克号"
     lry="龙日一"
-    if(wwxd in message.content):
-        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
     elif(wwxd2 in message.content):
-        return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
+        message.content="无问西东"
     elif(qr3 in message.content):
         message.content="前任3"
     elif(yll in message.content):
