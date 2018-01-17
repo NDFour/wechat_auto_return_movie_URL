@@ -22,6 +22,7 @@ def hello(message):
     cfzzx="超凡蜘蛛侠"
     ttnkh="泰坦尼克号"
     qgw="七个我"
+    lry='龙日一'
     if(wwxd2 in message.content):
         message.content="无问西东"
     elif(qr3 in message.content):
@@ -34,6 +35,8 @@ def hello(message):
         return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
     elif(qgw in message.content):
        message.content='柒个我'
+    elif(lry in message.content):
+       message.content='龙日一，你死定了'
 #   构建图文消息
     articles=getUrl(message.content)
 #    print(articles)
@@ -112,6 +115,6 @@ def getUrl(keyword):
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
 robot.config['APP_ID']='wxcee4cdc87bae1253'
-robot.config['APP_SECRET']='wxcee4cdc87bae1253'
+robot.config['APP_SECRET']='63d8cea3a4721ad0b30751bcca5454c4'
 robot.run()
 

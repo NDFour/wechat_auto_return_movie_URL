@@ -22,6 +22,7 @@ def hello(message):
     yll="妖玲玲"
     cfzzx="超凡蜘蛛侠"
     ttnkh="泰坦尼克号"
+    lry="龙日一"
     if(wwxd in message.content):
         return('《无问西东》\n百度网盘链接： https://pan.baidu.com/s/1c3giAty 密码: i9uj')
     elif(wwxd2 in message.content):
@@ -34,8 +35,10 @@ def hello(message):
         return('《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9')
     elif(ttnkh in message.content):
         return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
-    else:
-        return getUrl(message.content)
+    elif(lry in message.content):
+        message.content="龙日一，你死定了"
+ 
+    return getUrl(message.content)
 
 
 def main():
