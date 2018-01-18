@@ -80,8 +80,8 @@ def getUrl(keyword):
     msg=msg.replace('title=','')
     msg=msg.replace('videos','plays')
     if cnt==0:
-        msg='未查找到相关结果，请联系我私人微信 ndfour001'
-    msg+='\n▴▴▴▴▴▴▴▴\n\n<a href="http://mp.weixin.qq.com/s/X0EqQJ803aSL-9WLTwatTg">视频无法播放？点我</a>\n\n>> 私人微信号:ndfour001\n>> 有问题加我'
+        msg='未查找到相关结果，请加入下方QQ群反馈'
+    msg+='\n▴▴▴▴▴▴▴▴\n\n<a href="http://mp.weixin.qq.com/s/X0EqQJ803aSL-9WLTwatTg">视频无法播放？点我</a>\n\n>> 有问题请加\n>> QQ群: 282223892\n>> 我的微信: ndfour001'
     return (msg)
 
 #main()
