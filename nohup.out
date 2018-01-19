@@ -1282,3 +1282,57 @@ ConnectionResetError: [Errno 104] Connection reset by peer
 182.254.86.139 - - [17/Jan/2018 11:17:32] "POST /?signature=dfda0998381650611be9d6e66c0ecf3959923473&timestamp=1516159052&nonce=974837566&openid=o2NddxKYZZN8YLyDylh4SCQt-FeE HTTP/1.1" 200 765
 182.254.86.144 - - [17/Jan/2018 11:17:46] "POST /?signature=66b490abd4e00122fb427dd9111cbabffcd6fde1&timestamp=1516159066&nonce=1536437192&openid=o2NddxKYZZN8YLyDylh4SCQt-FeE HTTP/1.1" 200 621
 [W 180117 11:18:33 robot:419] No handler responded message <werobot.messages.events.UnSubscribeEvent object at 0xb6a7420c>
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.155 - - [19/Jan/2018 23:09:45] "POST /?signature=df0a4175fbace2ea2570b60f080334fea72f4949&timestamp=1516374584&nonce=1286938969&openid=o2NddxGBLIwQXci-VHYf6R-i_4CE HTTP/1.1" 200 620
+182.254.86.149 - - [19/Jan/2018 23:09:54] "POST /?signature=bbdc34fe2d3456a78cf640681c188d0ea15e12e2&timestamp=1516374594&nonce=1450240825&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 1522
+182.254.86.154 - - [19/Jan/2018 23:10:00] "POST /?signature=00d4580632ca53cca27122347daa239b770b44b2&timestamp=1516374600&nonce=288708921&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 912
+182.254.86.139 - - [19/Jan/2018 23:10:02] "POST /?signature=5e6ab1be9f4def763416b245feb3362c5d9e2772&timestamp=1516374602&nonce=1831673124&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 633
+182.254.86.149 - - [19/Jan/2018 23:10:05] "POST /?signature=40864cbbcd42d5f037e38c814d0e689fa4a6fc63&timestamp=1516374605&nonce=227193692&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 1197
+182.254.86.144 - - [19/Jan/2018 23:12:40] "POST /?signature=c2230f11896891ff58c332896e3636f9f12031b8&timestamp=1516374760&nonce=99893611&openid=o2NddxFHVKGf8XwxmqcIG1qnskmk HTTP/1.1" 200 674
+182.254.86.146 - - [19/Jan/2018 23:13:04] "POST /?signature=05316582052a9d691aa2f2dcc8f0e38ec414feb0&timestamp=1516374783&nonce=307652031&openid=o2NddxFHVKGf8XwxmqcIG1qnskmk HTTP/1.1" 200 613
+182.254.86.139 - - [19/Jan/2018 23:13:51] "POST /?signature=804c58f53942d5a8ec37f361e01d6d3914f6c696&timestamp=1516374831&nonce=1857871417&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 633
+《无问西东》
+《静》
+《钢铁侠》
+《金刚狼》
+《战狼》
+《潜伏》
+《金刚狼》
+python3: can't open file 'auto_return_text': [Errno 2] No such file or directory
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.154 - - [19/Jan/2018 23:15:21] "POST /?signature=1c69d31a6fdfcc682e41762b18f9f67368b2da45&timestamp=1516374921&nonce=442916439&openid=o2NddxOd6sX_94nOrI1HE8iz4KxA HTTP/1.1" 200 1522
+182.254.86.149 - - [19/Jan/2018 23:16:12] "POST /?signature=f8974b93accb7727e23de072d3365202df6f692e&timestamp=1516374971&nonce=431621735&openid=o2NddxFHVKGf8XwxmqcIG1qnskmk HTTP/1.1" 200 510
+182.254.86.150 - - [19/Jan/2018 23:16:13] "POST /?signature=0907255b42385dc7abfacf74f65001c578a42f2b&timestamp=1516374973&nonce=1906108319&openid=o2NddxLoaIwXH1vCQo24C-ZySKvI HTTP/1.1" 200 617
+182.254.86.154 - - [19/Jan/2018 23:18:12] "POST /?signature=25ef4d8d8a6738c0fce2e9898b0f4a8f23126b14&timestamp=1516375092&nonce=405786233&openid=o2NddxKjgRBTzDHVqf_MS13rwzho HTTP/1.1" 200 510
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/socketserver.py", line 305, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python3.4/socketserver.py", line 331, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.4/socketserver.py", line 344, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.4/socketserver.py", line 673, in __init__
+    self.handle()
+  File "/usr/lib/python3.4/wsgiref/simple_server.py", line 118, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.4/socket.py", line 374, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+182.254.86.154 - - [19/Jan/2018 23:18:42] "POST /?signature=5f6bd038d51157944e37d750ac8fa84ac428d617&timestamp=1516375121&nonce=205676208&openid=o2NddxEJ9UocRPUrl9UG4UaymCHM HTTP/1.1" 200 741
+182.254.86.154 - - [19/Jan/2018 23:20:30] "POST /?signature=e7c9c50e740c8a76209c3b191b8dc70445a5f153&timestamp=1516375230&nonce=1471469343&openid=o2NddxIxYLrkRHBM7ISM96S0KXjI HTTP/1.1" 200 674
+182.254.86.139 - - [19/Jan/2018 23:20:43] "POST /?signature=5c97943c26f3d842dfc69b1babf59cc5ed72ce74&timestamp=1516375243&nonce=1167031543&openid=o2NddxIxYLrkRHBM7ISM96S0KXjI HTTP/1.1" 200 620
+《静》
+《潜伏4》
+《妖猫传》
+《[Facepalm][Facepalm]算了，我感觉我有点不要脸了 你刚不骂我了 我就得寸进尺  我等考完试再买吧 看运气了》
+----------------------------------------
+Exception happened during processing of request from ('66.249.65.223', 62288)
+----------------------------------------
+《蜜桃成熟时3》
+《无问西东》
