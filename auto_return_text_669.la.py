@@ -67,7 +67,7 @@ def getUrl(keyword):
     # alt="捷德奥特曼"
     re_url_title=re.compile(r'alt=.*"')
     # http://m.baqicun.info/p/27367-0-0.html
-    pre_url='http://mm.baqicun.info/p'
+    pre_url='/mm.baqicun.info/p'
 
     after_re_url=re_url.findall(r.text)
     cnt=0

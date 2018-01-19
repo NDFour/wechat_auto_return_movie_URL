@@ -1,4 +1,0 @@
-  File "auto_return_text.py", line 25
-    elif(wwxd2 in message.content):
-       ^
-SyntaxError: invalid syntax
