@@ -41,7 +41,6 @@ def modefy_name(v_name):
     qr3="前任三"
     wwxd2="无问东西"
     yll="妖玲玲"
-    ywar="欲望爱人"
     yyzx='有言在先'
     zndsjasn='在你的世界爱上你'
 
@@ -59,8 +58,6 @@ def modefy_name(v_name):
         return '有言在仙'
     elif(zndsjasn in v_name):
         return '在你的世界爱你'
-    elif(ywar in v_name):
-        return '爱人的欲望'
 
     return v_name
 
@@ -81,6 +78,7 @@ def pre_process(v_name):
     sxwy="水形物语"
     ttnkh="泰坦尼克号"
     xxgrj="吸血鬼日记"
+    ywar="欲望爱人"
     yyzx="有言在仙"
     zndsjan="在你的世界爱你"
 
@@ -106,6 +104,8 @@ def pre_process(v_name):
         url='《有言在仙》\n百度网盘链接: https://pan.baidu.com/s/1snfZebj \n密码: 35k1'
     elif(zndsjan in v_name):
         url='《在你的世界爱你》\n百度网盘链接: https://pan.baidu.com/s/1d1SfJg \n密码: msav'
+    elif(ywar in v_name):
+        url='《欲望爱人》\n在线观看链接：http://video.tudou.com/v/XMTc4NTg3MTUwOA==.html'
 
 
     if url:
