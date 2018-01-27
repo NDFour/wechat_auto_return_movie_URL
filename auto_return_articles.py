@@ -39,14 +39,14 @@ def pre_process(v_name):
     ttnkh="泰坦尼克号"
     dhxy="大话西游"
 
-    if(cfzzx in message.content):
+    if(cfzzx in v_name):
         url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9'
-    elif(ttnkh in message.content):
+    elif(ttnkh in v_name):
         url='《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce'
-    elif(dhxy in message.content):
+    elif(dhxy in v_name):
         url='《大话西游》\n百度网盘链接:https://pan.baidu.com/s/1hsXnGOG 密码:jr4k'
     
-	url+=author_info
+        url+=author_info
     return url
    
 
@@ -63,15 +63,15 @@ def modefy_name(v_name):
     qgw="七个我"
     lry='龙日一'
 
-    if(wwxd2 in vname):
+    if(wwxd2 in v_name):
         return "无问西东"
-    elif(qr3 in vname):
+    elif(qr3 in v_name):
         return "前任3"
-    elif(yll in vname):
+    elif(yll in v_name):
         return "妖铃铃"
-    elif(qgw in vname):
+    elif(qgw in v_name):
         return '柒个我'
-    elif(lry in vname):
+    elif(lry in v_name):
         return '龙日一，你死定了'
 
     return v_name
