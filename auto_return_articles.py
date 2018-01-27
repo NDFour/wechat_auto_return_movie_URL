@@ -21,7 +21,7 @@ def hello(message):
     v_name=modefy_name(message.content)
 #   对于搜索不到的影视资源用百度网盘链接代替
     bdpan=pre_process(v_name)
-    if len(bdpan) > 84:
+    if len(bdpan):
         return bdpan
 
 #   构建图文消息,返回的是一个内嵌列表的列表
@@ -91,9 +91,11 @@ def pre_process(v_name):
         url='《爱乐之城》\n百度网盘链接: https://pan.baidu.com/s/1o9azpUi \n提取码：vzs8'
     elif(pmkdbwfw in v_name):
         url='《贫民窟的百万富翁》\n百度网盘链接：https://pan.baidu.com/s/1bRpQlK\n提取码：ejvs'
-    
-        url+=author_info
-    return url
+
+    if url:
+        url=url+author_info
+        return url
+    return ''
    
 
 
