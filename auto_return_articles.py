@@ -24,6 +24,15 @@ def hello(message):
     if len(bdpan):
         return bdpan
 
+#   最近网站抽风，手动回复“战狼2”，“前任3”，“无问西东”
+    if v_name == '战狼2'
+        return [['战狼2','http://img.xzpifu.com/uploads/allimg/170729/f8887e27c5a30271.jpg','http://18.18.kele17173.com/play/38095-1-1.html','http://18.18.kele17173.com/play/38095-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
+
+    elif v_name == '无问西东'
+        return [['无问西东','','http://img.xzpifu.com/uploads/allimg/180114/9da89b3136e756c1.jpg','http://18.18.kele17173.com/play/40415-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
+
+    elif v_name == '前任3'
+        return [['前任3','','http://img.xzpifu.com/uploads/allimg/171230/6416d0a490222158.jpg','http://18.18.kele17173.com/play/40256-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
 #   构建图文消息,返回的是一个内嵌列表的列表
     articles=getUrl(v_name)
     return articles
@@ -43,6 +52,7 @@ def modefy_name(v_name):
     wwxd2="无问东西"
     yll="妖玲玲"
     yyzx='有言在先'
+    zl2='战狼二'
     zndsjasn='在你的世界爱上你'
 
     if(wwxd2 in v_name):
@@ -61,6 +71,8 @@ def modefy_name(v_name):
         return '在你的世界爱你'
     elif(myz in v_name):
         return '妖猫传'
+    elif(zl2 in v_name):
+        return '战狼2'
 
     return v_name
 
@@ -69,7 +81,7 @@ def modefy_name(v_name):
 #   对于搜索不到的影视资源用百度网盘链接代替
 def pre_process(v_name):
     url=''
-    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈或者加我微信\n\n>> QQ群： 282223892\n>> 微信: ndfour001'
+    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈\n\n>> QQ群： 282223892'
 
 #   电影名字
     ayzc="爱乐之城"
@@ -135,7 +147,8 @@ def getUrl(keyword):
     try:
         r=requests.get(url,headers=headers,timeout=30)
     except:
-        return '查找失败，请联系我私人微信 ndfour001'
+        return '查找失败，请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+
 
     # 得到是class="list-link" href="/videos/23500.html" title="芳华" target="_blank">
     re_url=re.compile(r'class="list-link" href=".*"?')
@@ -178,7 +191,7 @@ def getUrl(keyword):
             break
 # 返回图文消息
     if cnt==0:
-       return '没有搜索到影片？请加入下方QQ群进行反馈或添加我微信：\nQQ群: 282223892\n我的微信：ndfour001' 
+       return '没有搜索到影片？请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 # 加入帮助信息
     video_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
     return video_list
