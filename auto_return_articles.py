@@ -101,7 +101,7 @@ def getUrl(keyword):
             break
 # 返回图文消息
     if cnt==0:
-       return '<a href="http://mp.weixin.qq.com/s/kRVDjDB7LANy-dwRqZ6P5g">没有搜索到影片？点我</a>\n\n>>>>>>>>>>>>\n或者加入下方QQ群进行反馈：\nQQ群: 282223892\n我的微信：ndfour001' 
+       return '没有搜索到影片？请加入下方QQ群进行反馈或添加我微信：\nQQ群: 282223892\n我的微信：ndfour001' 
 # 加入帮助信息
     video_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
     return video_list
