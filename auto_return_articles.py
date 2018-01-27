@@ -37,6 +37,7 @@ def modefy_name(v_name):
     v_name=v_name.replace('》','')
 
     lry='龙日一'
+    myz='猫妖传'
     qgw="七个我"
     qr3="前任三"
     wwxd2="无问东西"
@@ -58,6 +59,8 @@ def modefy_name(v_name):
         return '有言在仙'
     elif(zndsjasn in v_name):
         return '在你的世界爱你'
+    elif(myz in v_name):
+        return '妖猫传'
 
     return v_name
 
