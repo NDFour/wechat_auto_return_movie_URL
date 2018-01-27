@@ -39,10 +39,10 @@ def hello(message):
        message.content='龙日一，你死定了'
 #   构建图文消息
     articles=getUrl(message.content)
-#    print(articles)
-    robot.client.send_article_message(message.source,articles)
+#    robot.client.send_article_message(message.source,articles)
 #    return getUrl(message.content)
-    return ''
+    return articles
+    return 'SENDED'
 
 def main():
     print(getUrl('hello'))
@@ -80,7 +80,7 @@ def getUrl(keyword):
     cnt=0
 
     for i in after_re_url:
-        dic={}
+        in_list=[]
         cnt+=1
         if cnt>0:
            pic_cnt=cnt-1
@@ -92,12 +92,12 @@ def getUrl(keyword):
         full_video_url=pre_url+re_url_href.search(i).group()
         full_video_url=full_video_url.replace('.html','-0-0.html')
         full_video_url=full_video_url.replace('videos','plays')
-        dic["title"]=full_video_title
-        dic["url"]=full_video_url
-        dic["description"]=''
-        dic["picurl"]=full_pic_url
+        in_list.append(full_video_title)
+        in_list.append(full_video_title)
+        in_list.append(full_pic_url)
+        in_list.append(full_video_url)
 
-        video_list.append(dic)
+        video_list.append(in_list)
 
         # 图文消息最多有8条
         if cnt==8:
@@ -114,7 +114,5 @@ def getUrl(keyword):
 #robot.config['PORT']=4444
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
-robot.config['APP_ID']='wxcee4cdc87bae1253'
-robot.config['APP_SECRET']='63d8cea3a4721ad0b30751bcca5454c4'
 robot.run()
 
