@@ -16,30 +16,66 @@ def subscribe(message):
 @robot.text
 def hello(message):
     print('《%s》'%message.content)
+
+#   纠正用户发的电影名字中的错别字
+    v_name=modefy_name(message.content)
+#   对于搜索不到的影视资源用百度网盘链接代替
+    bdpan=pre_process(v_name)
+    if len(bdpan) > 84:
+        return bdpan
+
+#   构建图文消息,返回的是一个内嵌列表的列表
+    articles=getUrl(v_name)
+    return articles
+
+
+#   对于搜索不到的影视资源用百度网盘链接代替
+def pre_process(v_name):
+    url=''
+    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈或者加我微信\n>> QQ群： 282223892\n>> 微信: ndfour001'
+
+#   电影名字
+    cfzzx="超凡蜘蛛侠"
+    ttnkh="泰坦尼克号"
+    dhxy="大话西游"
+
+    if(cfzzx in message.content):
+        url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9'
+    elif(ttnkh in message.content):
+        url='《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce'
+    elif(dhxy in message.content):
+        url='《大话西游》\n百度网盘链接:https://pan.baidu.com/s/1hsXnGOG 密码:jr4k'
+    
+	url+=author_info
+    return url
+   
+
+# 替换用户发来的电影名字中的错别字
+def modefy_name(v_name):
+
+# 先把电影名字中的特殊符号去除
+    v_name=v_name.replace('《','')
+    v_name=v_name.replace('》','')
+
     wwxd2="无问东西"
     qr3="前任三"
     yll="妖玲玲"
-    cfzzx="超凡蜘蛛侠"
-    ttnkh="泰坦尼克号"
     qgw="七个我"
     lry='龙日一'
-    if(wwxd2 in message.content):
-        message.content="无问西东"
-    elif(qr3 in message.content):
-        message.content="前任3"
-    elif(yll in message.content):
-        message.content="妖铃铃"
-    elif(cfzzx in message.content):
-        return('《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq 密码: 2ru9')
-    elif(ttnkh in message.content):
-        return('《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD 密码: t7ce')
-    elif(qgw in message.content):
-       message.content='柒个我'
-    elif(lry in message.content):
-       message.content='龙日一，你死定了'
-#   构建图文消息,返回的是一个内嵌列表的列表
-    articles=getUrl(message.content)
-    return articles
+
+    if(wwxd2 in vname):
+        return "无问西东"
+    elif(qr3 in vname):
+        return "前任3"
+    elif(yll in vname):
+        return "妖铃铃"
+    elif(qgw in vname):
+        return '柒个我'
+    elif(lry in vname):
+        return '龙日一，你死定了'
+
+    return v_name
+
 
 def main():
     print(getUrl('hello'))
