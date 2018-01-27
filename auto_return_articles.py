@@ -36,11 +36,12 @@ def modefy_name(v_name):
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
 
-    wwxd2="无问东西"
-    qr3="前任三"
-    yll="妖玲玲"
-    qgw="七个我"
     lry='龙日一'
+    qgw="七个我"
+    qr3="前任三"
+    wwxd2="无问东西"
+    yll="妖玲玲"
+    ywar="欲望爱人"
     yyzx='有言在先'
     zndsjasn='在你的世界爱上你'
 
@@ -58,6 +59,8 @@ def modefy_name(v_name):
         return '有言在仙'
     elif(zndsjasn in v_name):
         return '在你的世界爱你'
+    elif(ywar in v_name):
+        return '爱人的欲望'
 
     return v_name
 
@@ -69,15 +72,15 @@ def pre_process(v_name):
     author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈或者加我微信\n\n>> QQ群： 282223892\n>> 微信: ndfour001'
 
 #   电影名字
-    cfzzx="超凡蜘蛛侠"
-    ttnkh="泰坦尼克号"
-    dhxy="大话西游"
-    xxgrj="吸血鬼日记"
-    lyj="老友记"
-    sxwy="水形物语"
-    hsdyb="华盛顿邮报"
     ayzc="爱乐之城"
+    cfzzx="超凡蜘蛛侠"
+    dhxy="大话西游"
+    hsdyb="华盛顿邮报"
+    lyj="老友记"
     pmkdbwfw="贫民窟的百万富翁"
+    sxwy="水形物语"
+    ttnkh="泰坦尼克号"
+    xxgrj="吸血鬼日记"
     yyzx="有言在仙"
     zndsjan="在你的世界爱你"
 
