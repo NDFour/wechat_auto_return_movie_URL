@@ -97,7 +97,7 @@ def getUrl(keyword):
         video_list.append(in_list)
 
         # 图文消息最多有8条
-        if cnt==8:
+        if cnt==7:
             break
 # 返回图文消息
     if cnt==0:
