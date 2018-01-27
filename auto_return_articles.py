@@ -29,27 +29,6 @@ def hello(message):
     return articles
 
 
-#   对于搜索不到的影视资源用百度网盘链接代替
-def pre_process(v_name):
-    url=''
-    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈或者加我微信\n\n>> QQ群： 282223892\n>> 微信: ndfour001'
-
-#   电影名字
-    cfzzx="超凡蜘蛛侠"
-    ttnkh="泰坦尼克号"
-    dhxy="大话西游"
-
-    if(cfzzx in v_name):
-        url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq \n密码: 2ru9'
-    elif(ttnkh in v_name):
-        url='《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD \n密码: t7ce'
-    elif(dhxy in v_name):
-        url='《大话西游》\n百度网盘链接:https://pan.baidu.com/s/1hsXnGOG \n密码:jr4k'
-    
-        url+=author_info
-    return url
-   
-
 # 替换用户发来的电影名字中的错别字
 def modefy_name(v_name):
 
@@ -75,6 +54,47 @@ def modefy_name(v_name):
         return '龙日一，你死定了'
 
     return v_name
+
+
+
+#   对于搜索不到的影视资源用百度网盘链接代替
+def pre_process(v_name):
+    url=''
+    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈或者加我微信\n\n>> QQ群： 282223892\n>> 微信: ndfour001'
+
+#   电影名字
+    cfzzx="超凡蜘蛛侠"
+    ttnkh="泰坦尼克号"
+    dhxy="大话西游"
+    xxgrj="吸血鬼日记"
+    lyj="老友记"
+    sxwy="水形物语"
+    hsdyb="华盛顿邮报"
+    ayzc="爱乐之城"
+    pmkdbwfw="贫民窟的百万富翁"
+
+    if(cfzzx in v_name):
+        url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq \n密码: 2ru9'
+    elif(ttnkh in v_name):
+        url='《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD \n密码: t7ce'
+    elif(dhxy in v_name):
+        url='《大话西游》\n百度网盘链接:https://pan.baidu.com/s/1hsXnGOG \n密码:jr4k'
+    elif(xxgrj in v_name):
+        url='《吸血鬼日记》\n百度网盘链接：https://pan.baidu.com/s/1gfTRMCF'
+    elif(lyj in v_name):
+        url='《老友记》\n磁力链接：magnet:?xt=urn:btih:D563EF792A247A5547D8D1191B41F2CBE0B2382E  \n<a href="http://mp.weixin.qq.com/s/PSOi3kK_aRzCHLba2u9qjQ">点我查看如何使用磁力链接</a>'
+    elif(sxwy in v_name):
+        url='《水形物语》\n百度网盘链接：https://pan.baidu.com/s/1dHnjfVj \n提取码：4r93'
+    elif(hsdyb in v_name):
+        url='《华盛顿邮报》\n百度网盘链接：https://pan.baidu.com/s/1bqMiAqN\n提取码：hgf2'
+    elif(ayzc in v_name):
+        url='《爱乐之城》\n百度网盘链接: https://pan.baidu.com/s/1o9azpUi \n提取码：vzs8'
+    elif(pmkdbwfw in v_name):
+        url='《贫民窟的百万富翁》\n百度网盘链接：https://pan.baidu.com/s/1bRpQlK\n提取码：ejvs'
+    
+        url+=author_info
+    return url
+   
 
 
 def main():
