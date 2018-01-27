@@ -42,6 +42,7 @@ def modefy_name(v_name):
     qgw="七个我"
     lry='龙日一'
     yyzx='有言在先'
+    zndsjasn='在你的世界爱上你'
 
     if(wwxd2 in v_name):
         return "无问西东"
@@ -55,6 +56,8 @@ def modefy_name(v_name):
         return '龙日一，你死定了'
     elif(yyzx in v_name):
         return '有言在仙'
+    elif(zndsjasn in v_name):
+        return '在你的世界爱你'
 
     return v_name
 
@@ -76,6 +79,7 @@ def pre_process(v_name):
     ayzc="爱乐之城"
     pmkdbwfw="贫民窟的百万富翁"
     yyzx="有言在仙"
+    zndsjan="在你的世界爱你"
 
     if(cfzzx in v_name):
         url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq \n密码: 2ru9'
@@ -97,6 +101,9 @@ def pre_process(v_name):
         url='《贫民窟的百万富翁》\n百度网盘链接：https://pan.baidu.com/s/1bRpQlK\n提取码：ejvs'
     elif(yyzx in v_name):
         url='《有言在仙》\n百度网盘链接: https://pan.baidu.com/s/1snfZebj \n密码: 35k1'
+    elif(zndsjan in v_name):
+        url='《在你的世界爱你》\n百度网盘链接: https://pan.baidu.com/s/1d1SfJg \n密码: msav'
+
 
     if url:
         url=url+author_info
