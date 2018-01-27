@@ -37,12 +37,9 @@ def hello(message):
        message.content='柒个我'
     elif(lry in message.content):
        message.content='龙日一，你死定了'
-#   构建图文消息
+#   构建图文消息,返回的是一个内嵌列表的列表
     articles=getUrl(message.content)
-#    robot.client.send_article_message(message.source,articles)
-#    return getUrl(message.content)
     return articles
-    return 'SENDED'
 
 def main():
     print(getUrl('hello'))
@@ -103,9 +100,11 @@ def getUrl(keyword):
         if cnt==8:
             break
 # 返回图文消息
-    return video_list
     if cnt==0:
-       return '<a href="http://mp.weixin.qq.com/s/kRVDjDB7LANy-dwRqZ6P5g">没有搜索到影片？点我</a>' 
+       return '<a href="http://mp.weixin.qq.com/s/kRVDjDB7LANy-dwRqZ6P5g">没有搜索到影片？点我</a>\n\n>>>>>>>>>>>>\n或者加入下方QQ群进行反馈：\nQQ群: 282223892\n我的微信：ndfour001' 
+# 加入帮助信息
+    video_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+    return video_list
 
 #main()
 
