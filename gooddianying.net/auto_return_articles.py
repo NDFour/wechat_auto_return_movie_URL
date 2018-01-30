@@ -24,15 +24,6 @@ def hello(message):
     if len(bdpan):
         return bdpan
 
-#   最近网站抽风，手动回复“战狼2”，“前任3”，“无问西东”
-    if v_name == '战狼2':
-        return [['战狼2','http://img.xzpifu.com/uploads/allimg/170729/f8887e27c5a30271.jpg','http://18.18.kele17173.com/play/38095-1-1.html','http://18.18.kele17173.com/play/38095-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
-
-    elif v_name == '无问西东':
-        return [['无问西东','','http://img.xzpifu.com/uploads/allimg/180114/9da89b3136e756c1.jpg','http://18.18.kele17173.com/play/40415-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
-
-    elif v_name == '前任3':
-        return [['前任3','','http://img.xzpifu.com/uploads/allimg/171230/6416d0a490222158.jpg','http://18.18.kele17173.com/play/40256-1-1.html'],['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7']]
 #   构建图文消息,返回的是一个内嵌列表的列表
     articles=getUrl(v_name)
     return articles
