@@ -166,7 +166,7 @@ def getUrl(keyword):
         in_list.append(i.replace('alt="','').replace('"',''))
         in_list.append(i.replace('alt="','').replace('"',''))
         in_list.append(after_re_url_picurl[cnt-1])
-        in_list.append(('http://m.gooddianying.net'+after_re_url[cnt-1]).replace('.html','-1-1.html'))
+        in_list.append((('http://m.gooddianying.net'+after_re_url[cnt-1]).replace('.html','-1-1.html')).replace('movie','play'))
         video_list.append(in_list)
         # 图文消息最多有8条
         if cnt==7:
