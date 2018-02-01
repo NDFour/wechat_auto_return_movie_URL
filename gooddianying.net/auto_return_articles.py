@@ -139,9 +139,9 @@ def getUrl(keyword):
 		}
 
     try:
-        r=requests.post(request_url,data=data,headers=headers,timeout=10)
+        r=requests.post(request_url,data=data,headers=headers,timeout=4)
     except:
-        return '查找失败，请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '时间超时 错误代码A1\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 
     # 得到的是 /movie/33333.html
     re_url=re.compile(r'/movie/[0-9]*.html')
@@ -173,7 +173,7 @@ def getUrl(keyword):
             break
 # 返回图文消息
     if cnt==0:
-       return '没有搜索到影片？请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+       return '查找失败 错误代码A2\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 # 加入帮助信息
     video_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
     return video_list
