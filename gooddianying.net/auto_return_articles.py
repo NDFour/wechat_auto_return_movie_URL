@@ -36,6 +36,7 @@ def modefy_name(v_name):
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
 
+    lhbdhq='灵魂摆渡'
     lry='龙日一'
     myz='猫妖传'
     qgw="七个我"
@@ -50,6 +51,8 @@ def modefy_name(v_name):
         return "无问西东"
     elif(qr3 in v_name):
         return "前任3"
+    elif(lhbdhq in v_name):
+        return "灵魂摆渡"
     elif(yll in v_name):
         return "妖铃铃"
     elif(qgw in v_name):
