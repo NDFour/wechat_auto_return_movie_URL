@@ -85,14 +85,17 @@ def parse_web_save2mysql(html_text):
     for i in after_re_url_title:
         in_list=[]
         cnt+=1
+        try:
 		# 插入电影名
-        in_list.append(i.replace('alt="','').replace('"',''))
+            in_list.append(i.replace('alt="','').replace('"',''))
 		# 插入图片url
-        in_list.append(after_re_url_picurl[cnt-1])
+            in_list.append(after_re_url_picurl[cnt-1])
 		# 插入视频播放url
-        in_list.append((('http://m.gooddianying.net'+after_re_url[cnt-1]).replace('.html','-1-1.html')).replace('movie','play'))
+            in_list.append((('http://m.gooddianying.net'+after_re_url[cnt-1]).replace('.html','-1-1.html')).replace('movie','play'))
+            video_list.append(in_list)
+        except:
+            print('-> Parsing info of %s failed !!'%i)
 
-        video_list.append(in_list)
     #print(video_list)
     print('-> PARSING INFO SECCESS !!')
     print()
