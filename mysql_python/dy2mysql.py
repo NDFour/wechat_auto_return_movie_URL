@@ -99,8 +99,10 @@ def parse_web_save2mysql(html_text):
     # SAVE INFO TO MYSQL
     print('======')
     print('-> SAVA info to mysql...')
-    for i1 in video_list:
-        print(i1)
+    for i in video_list:
+        print(i[0])
+        print(i[1])
+        print(i[2])
     print('======')
 
 
