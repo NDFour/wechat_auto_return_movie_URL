@@ -15,6 +15,7 @@ def subscribe(message):
 
 @robot.text
 def hello(message):
+    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
     print('《%s》'%message.content)
 
 #   纠正用户发的电影名字中的错别字
