@@ -137,6 +137,7 @@ def reply_info(v_name):
         cursor.execute(sql_select)
 
         out_list=[]
+        cnt=0
 
         for i in cursor.fetchmany(7):
             in_list=[]
@@ -146,12 +147,15 @@ def reply_info(v_name):
             in_list.append(i[2])
 
             out_list.append(in_list)
+            cnt+=1
 #        conn.commit()
     except:
 #        conn.rollback()   
         cursor.close()
         conn.close()
         return '查询数据失败，错误代码 0x_reply_info_down_12\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+    if cnt == 0:
+        return '数据库中暂无该影片，请联系管理员更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 
     cursor.close()
     conn.close()
