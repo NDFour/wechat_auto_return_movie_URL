@@ -3,6 +3,7 @@
 from werobot import WeRoBot
 import MySQLdb
 
+
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
