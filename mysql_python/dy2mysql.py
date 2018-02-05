@@ -2,6 +2,7 @@
 
 import requests
 import re
+import MySQLdb
 
 
 # 生成待爬取的电影列表url,传入pages参数，代表共有多少页，以便生成url
@@ -93,6 +94,14 @@ def parse_web_save2mysql(html_text):
         video_list.append(in_list)
     #print(video_list)
     print('-> PARSING INFO SECCESS !!')
+    print()
+
+    # SAVE INFO TO MYSQL
+    print('======')
+    print('-> SAVA info to mysql...')
+    for i1 in video_list:
+        print(i1)
+    print('======')
 
 
 def main():
