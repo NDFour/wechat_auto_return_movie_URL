@@ -5,6 +5,7 @@ import re
 import MySQLdb
 
 
+
 # 生成待爬取的电影列表url,传入pages参数，代表共有多少页，以便生成url
 def gen_dy_url(base_url,pages):
     urls=[]
@@ -97,13 +98,24 @@ def parse_web_save2mysql(html_text):
     print()
 
     # SAVE INFO TO MYSQL
-    print('======')
     print('-> SAVA info to mysql...')
+
+    conn=MySQLdb.Connection(host='127.0.0.1',port=3306,user='root',passwd='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+
     for i in video_list:
-        print(i[0])
-        print(i[1])
-        print(i[2])
-    print('======')
+        try:
+            sql_insert="insert into videoinfo (name,videourl,picurl) values('%s','%s','%s')"%(i[0],i[1],i[2])
+            print(sql_insert)
+            cursor.execute(sql_insert)
+            conn.commit()
+            print('-> SAVE info of %s to MySQL success !!'%i[0])
+        except:
+            conn.rollback()
+            print('-> SAVE info of %s to MySQL failed !!'%i[0])
+
+    cursor.close()
+    conn.close()
 
 
 def main():
