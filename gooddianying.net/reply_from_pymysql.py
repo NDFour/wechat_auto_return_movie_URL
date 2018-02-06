@@ -128,7 +128,7 @@ def pre_process(v_name):
 
 # 通过查询数据库将结果返回给用户
 def reply_info(v_name):
-    conn=pymysql.connection(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
     try:
