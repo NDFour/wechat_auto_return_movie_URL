@@ -95,3 +95,7 @@ Hit Ctrl-C to quit.
 10.0.2.15 - - [05/Feb/2018 19:56:22] "POST /?signature=f9633029ec5afe2fb0284fa6349200f6c82aa7f2&timestamp=1517831782&nonce=362758895&openid=o2NddxNIJreD7u4-okdRl_YC5eXM HTTP/1.1" 200 675
 10.0.2.15 - - [05/Feb/2018 19:56:41] "POST /?signature=ca72e94a19ec1d7aa2786a14bb9750c7cdd11767&timestamp=1517831800&nonce=576607514&openid=o2NddxNIJreD7u4-okdRl_YC5eXM HTTP/1.1" 200 398
 [W 180205 19:57:50 robot:419] No handler responded message <werobot.messages.events.UnSubscribeEvent object at 0xb68cf22c>
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
