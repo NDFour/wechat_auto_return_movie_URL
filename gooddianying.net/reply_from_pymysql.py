@@ -156,7 +156,7 @@ def reply_info(v_name):
         conn.close()
         return '查询数据失败，错误代码 0x_reply_info_down_12\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
     if cnt == 0:
-        return '暂无该影片相关信息，请联系管理员更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '暂无该影片相关信息，请等待更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 
     conn.close()
 
