@@ -19,6 +19,7 @@ def main():
 @robot.text
 def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
+
     print('《%s》'%message.content)
 
 #   纠正用户发的电影名字中的错别字
@@ -155,7 +156,7 @@ def reply_info(v_name):
         conn.close()
         return '查询数据失败，错误代码 0x_reply_info_down_12\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
     if cnt == 0:
-        return '数据库中暂无该影片，请联系管理员更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '暂无该影片相关信息，请联系管理员更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
 
     conn.close()
 
