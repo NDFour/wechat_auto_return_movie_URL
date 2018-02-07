@@ -41,6 +41,7 @@ def modefy_name(v_name):
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
 
+    bbdw='卑鄙的我'
     lhbdhq='灵魂摆渡'
     lry='龙日一'
     myz='猫妖传'
@@ -51,9 +52,12 @@ def modefy_name(v_name):
     yyzx='有言在先'
     zl2='战狼二'
     zndsjasn='在你的世界爱上你'
+    zsxd='自杀小队'
 
     if(wwxd2 in v_name):
         return "无问西东"
+    elif(bbdw in v_name):
+        return "神偷奶爸"
     elif(qr3 in v_name):
         return "前任3"
     elif(lhbdhq in v_name):
@@ -72,13 +76,15 @@ def modefy_name(v_name):
         return '妖猫传'
     elif(zl2 in v_name):
         return '战狼2'
+    elif(zsxd in v_name):
+        return 'x特遣队'
 
     return v_name
 
 #   对于搜索不到的影视资源用百度网盘链接代替
 def pre_process(v_name):
     url=''
-    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加QQ群进行反馈\n\n>> QQ群： 282223892'
+    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加我微信 ndfour001 进行反馈'
 
 #   电影名字
     ayzc="爱乐之城"
@@ -154,9 +160,9 @@ def reply_info(v_name):
 #        conn.rollback()   
         cursor.close()
         conn.close()
-        return '查询数据失败，错误代码 0x_reply_info_down_12\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
     if cnt == 0:
-        return '暂无该影片相关信息，请等待更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
     conn.close()
 
