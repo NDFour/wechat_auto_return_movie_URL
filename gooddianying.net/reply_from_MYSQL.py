@@ -9,7 +9,7 @@ robot.config['SESSION_STORAGE'] = False
 
 @robot.subscribe
 def subscribe(message):
-    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字\n\n<a href='http://18.18.2499dy.com/plays/23544-0-0.html'>《前任3》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23555-0-0.html'>《妖铃铃》点我观看</a>\n<a href='http://18.18.2499dy.com/plays/23500-0-0.html'>《芳华》点我观看</a> \n"
+    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
     return msg
 
 def main():
@@ -40,6 +40,7 @@ def modefy_name(v_name):
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
 
+    bbdw='卑鄙的我'
     lhbdhq='灵魂摆渡'
     lry='龙日一'
     myz='猫妖传'
@@ -50,9 +51,12 @@ def modefy_name(v_name):
     yyzx='有言在先'
     zl2='战狼二'
     zndsjasn='在你的世界爱上你'
+    zsxd='自杀小队'
 
     if(wwxd2 in v_name):
         return "无问西东"
+    elif(bbdw in v_name):
+        return "神偷奶爸"
     elif(qr3 in v_name):
         return "前任3"
     elif(lhbdhq in v_name):
@@ -71,6 +75,8 @@ def modefy_name(v_name):
         return '妖猫传'
     elif(zl2 in v_name):
         return '战狼2'
+    elif(zsxd in v_name):
+        return 'x特遣队'
 
     return v_name
 
@@ -153,9 +159,9 @@ def reply_info(v_name):
 #        conn.rollback()   
         cursor.close()
         conn.close()
-        return '查询数据失败，错误代码 0x_reply_info_down_12\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
     if cnt == 0:
-        return '数据库中暂无该影片，请联系管理员更新。\n\n-请加入下方QQ群进行反馈：\nQQ群: 282223892' 
+        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
     cursor.close()
     conn.close()
