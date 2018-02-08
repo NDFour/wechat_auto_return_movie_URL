@@ -21,12 +21,14 @@ def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
     print('《%s》'%message.content)
+
+    v_name=message.content
     
     if(len(v_name) > 30):
         return '电影名长度过长，请精简关键字后重新发送。'
 
 #   纠正用户发的电影名字中的错别字
-    v_name=modefy_name(message.content)
+    v_name=modefy_name(v_name)
 #   对于搜索不到的影视资源用百度网盘链接代替
     bdpan=pre_process(v_name)
     if len(bdpan):
