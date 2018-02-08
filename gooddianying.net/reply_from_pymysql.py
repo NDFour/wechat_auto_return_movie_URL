@@ -21,6 +21,9 @@ def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
     print('《%s》'%message.content)
+    
+    if(len(v_name) > 30):
+        return '电影名长度过长，请精简关键字后重新发送。'
 
 #   纠正用户发的电影名字中的错别字
     v_name=modefy_name(message.content)
@@ -135,6 +138,10 @@ def pre_process(v_name):
 
 # 通过查询数据库将结果返回给用户
 def reply_info(v_name):
+#   递归调用时，如电影名为空，直接返回
+    if v_name == '':
+        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
+
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
@@ -161,8 +168,16 @@ def reply_info(v_name):
         cursor.close()
         conn.close()
         return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
-    if cnt == 0:
-        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
+
+    len_v_name=len(v_name)
+#   如果搜索不到数据，则将电影关键词长度一再缩小
+    while ((cnt == 0) and len_v_name):
+        len_v_name-=1
+        return reply_info(v_name[0:len_v_name])
+
+#    有了上面那个递归以及函数开头检查v_name是否为空 , 所以不需要下面两行
+#    if cnt == 0:
+#        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
     conn.close()
 
