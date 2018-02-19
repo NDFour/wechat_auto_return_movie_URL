@@ -45,6 +45,7 @@ def modefy_name(v_name):
 # 先把电影名字中的特殊符号去除
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
+    v_name=v_name.replace('。','')
 
     bbdw='卑鄙的我'
     lhbdhq='灵魂摆渡'
@@ -92,41 +93,11 @@ def pre_process(v_name):
     author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加我微信 ndfour001 进行反馈'
 
 #   电影名字
-    ayzc="爱乐之城"
-    cfzzx="超凡蜘蛛侠"
-    dhxy="大话西游"
-    hsdyb="华盛顿邮报"
     lyj="老友记"
-    pmkdbwfw="贫民窟的百万富翁"
-    sxwy="水形物语"
-    ttnkh="泰坦尼克号"
-    xxgrj="吸血鬼日记"
     ywar="欲望爱人"
-    yyzx="有言在仙"
-    zndsjan="在你的世界爱你"
 
-    if(cfzzx in v_name):
-        url='《超凡蜘蛛侠》\n百度网盘链接: https://pan.baidu.com/s/1drcdgq \n密码: 2ru9'
-    elif(ttnkh in v_name):
-        url='《泰坦尼克号》\n百度网盘链接: https://pan.baidu.com/s/1pMbc6nD \n密码: t7ce'
-    elif(dhxy in v_name):
-        url='《大话西游》\n百度网盘链接:https://pan.baidu.com/s/1hsXnGOG \n密码:jr4k'
-    elif(xxgrj in v_name):
-        url='《吸血鬼日记》\n百度网盘链接：https://pan.baidu.com/s/1gfTRMCF'
-    elif(lyj in v_name):
+    if(lyj in v_name):
         url='《老友记》\n磁力链接：magnet:?xt=urn:btih:D563EF792A247A5547D8D1191B41F2CBE0B2382E  \n<a href="http://mp.weixin.qq.com/s/PSOi3kK_aRzCHLba2u9qjQ">点我查看如何使用磁力链接</a>'
-    elif(sxwy in v_name):
-        url='《水形物语》\n百度网盘链接：https://pan.baidu.com/s/1dHnjfVj \n提取码：4r93'
-    elif(hsdyb in v_name):
-        url='《华盛顿邮报》\n百度网盘链接：https://pan.baidu.com/s/1bqMiAqN\n提取码：hgf2'
-    elif(ayzc in v_name):
-        url='《爱乐之城》\n百度网盘链接: https://pan.baidu.com/s/1o9azpUi \n提取码：vzs8'
-    elif(pmkdbwfw in v_name):
-        url='《贫民窟的百万富翁》\n百度网盘链接：https://pan.baidu.com/s/1bRpQlK\n提取码：ejvs'
-    elif(yyzx in v_name):
-        url='《有言在仙》\n百度网盘链接: https://pan.baidu.com/s/1snfZebj \n密码: 35k1'
-    elif(zndsjan in v_name):
-        url='《在你的世界爱你》\n百度网盘链接: https://pan.baidu.com/s/1d1SfJg \n密码: msav'
     elif(ywar in v_name):
         url='《欲望爱人》\n在线观看链接：http://video.tudou.com/v/XMTc4NTg3MTUwOA==.html'
 
@@ -164,9 +135,7 @@ def reply_info(v_name):
 
             out_list.append(in_list)
             cnt+=1
-#        conn.commit()
     except:
-#        conn.rollback()   
         cursor.close()
         conn.close()
         return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
@@ -180,6 +149,18 @@ def reply_info(v_name):
 #    有了上面那个递归以及函数开头检查v_name是否为空 , 所以不需要下面两行
 #    if cnt == 0:
 #        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
+
+    print('共查询到 %s 条记录' % cnt)
+#   添加广告信息
+'''
+    if cnt<=7:
+        sql_select_article="SELECT title,descripetion,picurl,url FROM articles WHERE date..."   # 取出一个时间最新的文章
+        cursor.execute(sql_select_article)
+        ...
+        
+        # 把取出的一篇文章插入查询结果中
+        out_list.append([ title ],[ description ],[ picurl ],[ url ])
+'''
 
     conn.close()
 
