@@ -7,10 +7,10 @@ import pymysql
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
-@robot.subscribe
-def subscribe(message):
-    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
-    return msg
+#@robot.subscribe
+#def subscribe(message):
+#    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
+#    return msg
 
 def main():
     v_name=input('请输入要检索的电影名字')
