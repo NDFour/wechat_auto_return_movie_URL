@@ -151,16 +151,6 @@ def reply_info(v_name):
 #        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
     print('共查询到 %s 条记录' % cnt)
-#   添加广告信息
-'''
-    if cnt<=7:
-        sql_select_article="SELECT title,descripetion,picurl,url FROM articles WHERE date..."   # 取出一个时间最新的文章
-        cursor.execute(sql_select_article)
-        ...
-        
-        # 把取出的一篇文章插入查询结果中
-        out_list.append([ title ],[ description ],[ picurl ],[ url ])
-'''
 
     conn.close()
 
