@@ -28,7 +28,7 @@ def hello(message):
 
 #   客户公众号列表，用于识别消息来自哪个公众号的粉丝
     name_dic={'gh_a987c1f298e2':'测试账号'}
-    print('《%s》来自公众号 [%s] from %s'%(message.content,name_dic[message.target],message.source))
+    print('《%s》来自 [%s]'%(message.content,name_dic[message.target]))
 
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
 #   记录每个公众号的调用程序次数
@@ -43,8 +43,8 @@ def hello(message):
             analyze_info='[公众号调用次数统计]\n\n'
             for pub_account in use_cnt:
                 analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
-            analyze_info+='\n\n开始时间: %s' % start_datetime
-            analyze_info+='\n截止时间: %s' % datetime.now()
+            analyze_info+='\nStart: %s' % start_datetime
+            analyze_info+='\nEnd: %s' % datetime.now()
             # 返回公众号调用程序次数统计
             return analyze_info
 
