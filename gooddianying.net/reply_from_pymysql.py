@@ -28,7 +28,11 @@ def hello(message):
 
 #   客户公众号列表，用于识别消息来自哪个公众号的粉丝
     name_dic={'gh_a987c1f298e2':'测试账号'}
-    print('《%s》来自 [%s]'%(message.content,name_dic[message.target]))
+#   判断转发消息的公众号是否在已授权列表中
+    if message.target in name_dic:
+        print('《%s》来自 [%s]'%(message.content,name_dic[message.target]))
+    else:
+        return '！！\n未经授权的公众号，请联系微信 ndfour001 购买看电影服务使用权\n\n微信公众号搜索【一起来电影】，关注后发送电影名即可免费观看高清电影！'
 
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
 #   记录每个公众号的调用程序次数
@@ -74,8 +78,6 @@ def modefy_name(v_name):
     v_name=v_name.replace('。','')
 
     bbdw='卑鄙的我'
-    lhbdhq='灵魂摆渡'
-    lry='龙日一'
     myz='猫妖传'
     qgw="七个我"
     qr3="前任三"
@@ -92,14 +94,10 @@ def modefy_name(v_name):
         return "神偷奶爸"
     elif(qr3 in v_name):
         return "前任3"
-    elif(lhbdhq in v_name):
-        return "灵魂摆渡"
     elif(yll in v_name):
         return "妖铃铃"
     elif(qgw in v_name):
         return '柒个我'
-    elif(lry in v_name):
-        return '龙日一，你死定了'
     elif(yyzx in v_name):
         return '有言在仙'
     elif(zndsjasn in v_name):
