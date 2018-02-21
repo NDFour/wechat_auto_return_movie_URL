@@ -2,10 +2,14 @@
 
 from werobot import WeRoBot
 import pymysql
-
+from datetime import datetime
 
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
+
+#   程序开始运行时的时间
+global start_datetime
+start_datetime=''
 
 #@robot.subscribe
 #def subscribe(message):
@@ -20,9 +24,27 @@ def main():
 def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
-    name_dic={'gh_a987c1f298e2':'ce shi zhang hao'}
+#   客户公众号列表，用于识别消息来自哪个公众号的粉丝
+    name_dic={'gh_a987c1f298e2':'测试账号'}
+    print('《%s》来自公众号 [%s]'%(message.content,name_dic[message.target]))
 
-    print('《%s》 TO GONGZHONGHAO [%s]'%(message.content,name_dic[message.target]))
+#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+#   记录每个公众号的调用程序次数
+    use_cnt{'gh_a987c1f298e2':0}
+    use_cnt[message.target]+=1
+    # 更新常旭开始运行时间
+    global start_datetime
+    if start_datetime=='':
+        start_datetime=datetime.now()
+    if message.content=='showcntnum':
+        if message.source='':
+            analyze_info='[公众号调用次数统计]\n\n'
+            for pub_account in use_cnt:
+                analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
+            analyze_info+='\n\n开始时间: %s' % start_datetime
+            analyze_info+='\n截止时间: %s' % datetime.now()
+            # 返回公众号调用程序次数统计
+            return analyze_info
 
     v_name=message.content
     
