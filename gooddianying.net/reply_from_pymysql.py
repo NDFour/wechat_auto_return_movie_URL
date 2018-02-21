@@ -10,6 +10,8 @@ robot.config['SESSION_STORAGE'] = False
 #   程序开始运行时的时间
 global start_datetime
 start_datetime=''
+global use_cnt
+use_cnt={'gh_a987c1f298e2':0}
 
 #@robot.subscribe
 #def subscribe(message):
@@ -26,18 +28,18 @@ def hello(message):
 
 #   客户公众号列表，用于识别消息来自哪个公众号的粉丝
     name_dic={'gh_a987c1f298e2':'测试账号'}
-    print('《%s》来自公众号 [%s]'%(message.content,name_dic[message.target]))
+    print('《%s》来自公众号 [%s] from %s'%(message.content,name_dic[message.target],message.source))
 
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
 #   记录每个公众号的调用程序次数
-    use_cnt{'gh_a987c1f298e2':0}
+    global use_cnt
     use_cnt[message.target]+=1
     # 更新常旭开始运行时间
     global start_datetime
     if start_datetime=='':
         start_datetime=datetime.now()
-    if message.content=='showcntnum':
-        if message.source='':
+    if message.content=='showanalyze':
+        if message.source=='ozDqGwZ__sjgDwZ2yRfusI84XeAc':
             analyze_info='[公众号调用次数统计]\n\n'
             for pub_account in use_cnt:
                 analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
