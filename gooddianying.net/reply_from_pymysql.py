@@ -46,9 +46,9 @@ def hello(message):
         if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
             analyze_info='[公众号调用次数统计]\n\n'
             for pub_account in use_cnt:
-                analyze_info+=('----------')
+                analyze_info+=('----------\n')
                 analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
-            analyze_info+=('----------')
+            analyze_info+=('----------\n')
             analyze_info+='\nStart: %s' % start_datetime
             analyze_info+='\nEnd: %s' % datetime.now()
             # 返回公众号调用程序次数统计
