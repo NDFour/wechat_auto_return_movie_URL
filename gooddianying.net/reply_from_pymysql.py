@@ -11,7 +11,7 @@ robot.config['SESSION_STORAGE'] = False
 global start_datetime
 start_datetime=''
 global use_cnt
-use_cnt={'gh_a987c1f298e2':0}
+use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
 
 #@robot.subscribe
 #def subscribe(message):
@@ -27,7 +27,9 @@ def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
 #   客户公众号列表，用于识别消息来自哪个公众号的粉丝
-    name_dic={'gh_a987c1f298e2':'测试账号'}
+    name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
+    print(message.target)
+    print(message.source)
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         print('《%s》来自 [%s] 由 %s 发送'%(message.content,name_dic[message.target],message.source))
@@ -43,7 +45,7 @@ def hello(message):
     if start_datetime=='':
         start_datetime=datetime.now()
     if message.content=='showanalyze':
-        if message.source=='ozDqGwZ__sjgDwZ2yRfusI84XeAc':
+        if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
             analyze_info='[公众号调用次数统计]\n\n'
             for pub_account in use_cnt:
                 analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
