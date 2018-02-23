@@ -185,10 +185,20 @@ def reply_info(v_name):
         try:
             cursor.execute(ad_select)
             adarticles_list=cursor.fetchone()
-            adtuple.append(adarticles_list[0])
-            adtuple.append(adarticles_list[0])
-            adtuple.append(adarticles_list[1])
-            adtuple.append(adarticles_list[2])
+#           控制adarticles的插入位置，不要过于靠后
+            index=cnt//2
+            if index:
+                adtuple.insert(index,adarticles_list[0])
+                adtuple.insert(index,adarticles_list[0])
+                adtuple.insert(index,adarticles_list[1])
+                adtuple.insert(index,adarticles_list[2])
+            else:
+                index+=1
+                adtuple.insert(index,adarticles_list[0])
+                adtuple.insert(index,adarticles_list[0])
+                adtuple.insert(index,adarticles_list[1])
+                adtuple.insert(index,adarticles_list[2])
+
             out_list.append(adtuple)
         except:
             pass
