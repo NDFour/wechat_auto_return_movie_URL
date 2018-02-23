@@ -3,6 +3,8 @@
 from werobot import WeRoBot
 import pymysql
 from datetime import datetime
+import smtplib
+from email.mime.text import MIMEText
 
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
@@ -10,8 +12,14 @@ robot.config['SESSION_STORAGE'] = False
 #   程序开始运行时的时间
 global start_datetime
 start_datetime=''
+
+global last_use_cnt
+
 global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
+
+global name_dic
+name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
 
 #@robot.subscribe
 #def subscribe(message):
@@ -26,8 +34,6 @@ def main():
 def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
-#   客户公众号列表，用于识别消息来自哪个公众号的粉丝
-    name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         print('《%s》'%message.content)
@@ -36,37 +42,35 @@ def hello(message):
 
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
 #   记录每个公众号的调用程序次数
+    global last_use_cnt
     global use_cnt
     use_cnt[message.target]+=1
-    # 更新常旭开始运行时间
+
+#   如果当天调用次数超过 5000, 10000 次发送邮件通知
+    if (use_cnt-last_use_cnt) == 1000:
+        send_mail()
+        last_use_cnt=use_cnt
+
+    # 更新程序开始运行时间
     global start_datetime
+
     if start_datetime=='':
         start_datetime=datetime.now()
+
     if message.content=='showanalyze':
         if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
-            analyze_info='[公众号调用次数统计]\n\n'
-            for pub_account in use_cnt:
-                analyze_info+=('----------\n')
-                analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
-            analyze_info+=('----------\n')
-            analyze_info+='\nStart: %s' % start_datetime
-            analyze_info+='\nEnd: %s' % datetime.now()
-            # 返回公众号调用程序次数统计
-            return analyze_info
+            return showanalyze()
 
     v_name=message.content
     
     if(len(v_name) > 30):
         return '电影名长度过长，请精简关键字后重新发送。'
 
-#   纠正用户发的电影名字中的错别字
     v_name=modefy_name(v_name)
-#   对于搜索不到的影视资源用百度网盘链接代替
     bdpan=pre_process(v_name)
     if len(bdpan):
         return bdpan
 
-#   构建图文消息,返回的是一个内嵌列表的列表 或 错误信息字符串
     articles=reply_info(v_name)
     return articles
 
@@ -127,12 +131,10 @@ def pre_process(v_name):
     elif(ywar in v_name):
         url='《欲望爱人》\n在线观看链接：http://video.tudou.com/v/XMTc4NTg3MTUwOA==.html'
 
-
     if url:
         url=url+author_info
         return url
     return ''
- 
 
 
 # 通过查询数据库将结果返回给用户
@@ -204,6 +206,40 @@ def reply_info(v_name):
 
     out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
     return out_list
+
+#   showanalyze 查询各公众号调用次数
+def showanalyze():
+    global name_dic 
+    global use_cnt
+    analyze_info='[公众号调用次数统计]\n\n[已累计调用 %s 次]\n\n'%use_cnt
+    for pub_account in use_cnt:
+        analyze_info+=('----------\n')
+        analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
+    analyze_info+=('----------\n')
+    analyze_info+='\nStart: %s' % start_datetime
+    analyze_info+='\nEnd: %s' % datetime.now()
+    # 返回公众号调用程序次数统计
+    return analyze_info
+
+
+#   发邮件代码
+def send_mail():
+    _user = "lgang219@qq.com"
+    _pwd  = "eehrjkcueceqcaga"
+    _to   = "ndfour@foxmail.com"
+
+    msg = MIMEText(showanalyze())
+    msg["Subject"] = "[showanalyze] 后台调用次数通知"
+    msg["From"] = _user
+    msg["To"] = _to
+
+    try:
+        s = smtplib.SMTP_SSL("smtp.qq.com", 465)
+        s.login(_user, _pwd)
+        s.sendmail(_user, _to, msg.as_string())
+        s.quit()
+    except:
+        pass
 
 #main()
 
