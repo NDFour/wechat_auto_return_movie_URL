@@ -176,7 +176,17 @@ def reply_info(v_name):
 #    if cnt == 0:
 #        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
-    print('共查询到 %s 条记录' % cnt)
+#    print('共查询到 %s 条记录' % cnt)
+
+#    如果查询到的电影记录条数少于7，则图文消息加上一条之前的广告推文链接
+    if cnt<7:
+        ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1"
+        cursor.execute(ad_select)
+
+        adarticles_list=cursor.fetchone()
+        print(adarticles_list)
+        print(type(adarticles_list)
+#        out_list.append('
 
     conn.close()
 
