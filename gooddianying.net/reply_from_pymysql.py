@@ -179,14 +179,19 @@ def reply_info(v_name):
 #    print('共查询到 %s 条记录' % cnt)
 
 #    如果查询到的电影记录条数少于7，则图文消息加上一条之前的广告推文链接
-    if cnt<7:
-        ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1"
-        cursor.execute(ad_select)
-
-        adarticles_list=cursor.fetchone()
-        print(adarticles_list)
-        print(type(adarticles_list)
-#        out_list.append('
+    if int(cnt)<7:
+        ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
+        adtuple=[]
+        try:
+            cursor.execute(ad_select)
+            adarticles_list=cursor.fetchone()
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[1])
+            adtuple.append(adarticles_list[2])
+            out_list.append(adtuple)
+        except:
+            pass
 
     conn.close()
 
