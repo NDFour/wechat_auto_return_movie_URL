@@ -10,12 +10,14 @@ robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
 #   程序开始运行时的时间
-global start_datetime
+#global start_datetime
 start_datetime=''
 
-global last_use_cnt
-
-global use_cnt
+#global last_use_cnt
+last_use_cnt=0
+#global total_use_cnt
+total_use_cnt=0
+#global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
 
 global name_dic
@@ -44,12 +46,14 @@ def hello(message):
 #   记录每个公众号的调用程序次数
     global last_use_cnt
     global use_cnt
+    global total_use_cnt
     use_cnt[message.target]+=1
+    total_use_cnt+=1
 
-#   如果当天调用次数超过 5000, 10000 次发送邮件通知
-    if (use_cnt-last_use_cnt) == 1000:
+#   如果当天调用次数超过 5000 次发送邮件通知
+    if (total_use_cnt-last_use_cnt) == 5000:
         send_mail()
-        last_use_cnt=use_cnt
+        last_use_cnt=total_use_cnt
 
     # 更新程序开始运行时间
     global start_datetime
@@ -210,8 +214,8 @@ def reply_info(v_name):
 #   showanalyze 查询各公众号调用次数
 def showanalyze():
     global name_dic 
-    global use_cnt
-    analyze_info='[公众号调用次数统计]\n\n[已累计调用 %s 次]\n\n'%use_cnt
+    global total_use_cnt
+    analyze_info='[公众号调用次数统计]\n\n*已累计调用 %s 次*\n'%total_use_cnt
     for pub_account in use_cnt:
         analyze_info+=('----------\n')
         analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
