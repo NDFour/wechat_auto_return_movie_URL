@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from werobot import WeRoBot
-import pymysql
-from datetime import datetime
-import smtplib
 from email.mime.text import MIMEText
+from datetime import datetime
+from werobot import WeRoBot
+import smtplib
+import pymysql
 import re
+import os
 
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
@@ -70,9 +71,12 @@ def hello(message):
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
         if message.content=='showanalyze':
             return showanalyze()
-#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+#   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
         if re.match(r'insertadarticles .*',message.content):
-            return insert_ad_articles(message.content)
+            return insertadarticles(message.content)
+#   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
+        if re.match(r'updatevideoinfo .*.sql',message.content):
+            return updatevideoinfo(message.content)
 
     v_name=message.content
     
@@ -222,6 +226,8 @@ def reply_info(v_name):
 
 #   showanalyze 查询各公众号调用次数
 def showanalyze():
+    # DEMO: showanalyze
+
     global name_dic 
     global total_use_cnt
     analyze_info='[公众号调用次数统计]\n\n*已累计调用 %s 次*\n'%total_use_cnt
@@ -254,7 +260,9 @@ def send_mail():
     except:
         pass
 
-def insert_ad_articles(message_content):
+def insertadarticles(message_content):
+    # DEMO: inertadarticles INERT INTO adarticles(title,picurl,url,canbeuse) VALUES ('**','**','**',1);
+
     sql_insert=message_content.replace('insertadarticles ','')
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
@@ -271,33 +279,26 @@ def insert_ad_articles(message_content):
         conn.close()
 
     return msg
-     
+
+def updatevideoinfo(message_content):
+   # DEMO: updatevideoinfo ***.sql
+
+    source_name=message_content.replace('updatevideoinfo ','')
+    bak_sql_dir=os.path.abspath('.')+'/'
+    sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s%s'%(bak_sql_dir,source_name))
+
+    print(sql_source)
+ 
+    try:
+        os.system(sql_source)
+        return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
+    except:
+        return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
+
+    
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
 robot.run()
-
-
-
-import os
-from datetime import datetime
-import pymysql
-
-def main():
-    timestamp=str(datetime.now())[:19].replace(' ','.')
-    mysqldump='mysqldump -uroot -pcqmygpython2 wechatmovie adarticles > %s.sql;'%timestamp
-   # os.system(mysqldump)
-    source_content='2018.sql'
-    sql_source=('mysql -uroot -pcqmygpython2 test < /home/lynn/%s'%source_content)
-    print(sql_source)
-
-    #cursor=conn.cursor()
-    try:
-        os.system(sql_source)
-    except:
-        print('error')
-
-main()
-

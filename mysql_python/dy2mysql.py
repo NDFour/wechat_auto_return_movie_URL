@@ -168,4 +168,13 @@ def main():
             continue
         parse_web_save2mysql(html_text)
 
+    print('\n\n----------------------------------\n')
+    timestamp=str(datetime.now())[:19].replace(' ','.')
+    mysqldump='mysqldump -uroot -pcqmygpython2 wechatmovie videoinfo > %s.sql;'%timestamp
+    try:
+        os.system(mysqldump)
+        print('备份数据表到 %s.sql 成功'%timestamp)
+    except:
+        print('备份数据表到 %s.sql 失败'%timestamp)
+
 main()
