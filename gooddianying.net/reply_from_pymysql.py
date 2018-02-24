@@ -20,6 +20,8 @@ last_use_cnt=0
 total_use_cnt=0
 #global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
+#global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
+isdebug=0
 
 global name_dic
 name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
@@ -57,16 +59,19 @@ def hello(message):
 
     # 更新程序开始运行时间
     global start_datetime
-
     if start_datetime=='':
         start_datetime=datetime.now()
 
-    if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
+#   the account of 'Lynn'
+    master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
+    if isdebug:
+        master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
+    if message.source==master_root:
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
         if message.content=='showanalyze':
             return showanalyze()
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
-        if re.match(r'insertadarticles .*'),message.content):
+        if re.match(r'insertadarticles .*',message.content):
             return insert_ad_articles(message.content)
 
     v_name=message.content
@@ -250,19 +255,22 @@ def send_mail():
         pass
 
 def insert_ad_articles(message_content):
-    sql_insert=message_content.replace('insert_ad_articles ','')
+    sql_insert=message_content.replace('insertadarticles ','')
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
     try:
         cursor.execute(sql_insert)
-        cursor.close()
-        conn.close()
-        return '成功插入一条【广告图文】到数据库！'
+        conn.commit()
+        msg = '成功插入一条【广告图文】到数据库！'
     except:
+        conn.rollback()
+        msg = '插入一条【广告图文】到数据库失败！'
+    finally:
         cursor.close()
         conn.close()
-        return '插入一条【广告图文】到数据库失败！'
+
+    return msg
      
 #main()
 
