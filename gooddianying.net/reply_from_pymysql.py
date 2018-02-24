@@ -22,7 +22,7 @@ total_use_cnt=0
 #global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
 #global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
-isdebug=0
+isdebug=1
 
 global name_dic
 name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
@@ -284,16 +284,19 @@ def updatevideoinfo(message_content):
    # DEMO: updatevideoinfo ***.sql
 
     source_name=message_content.replace('updatevideoinfo ','')
-    bak_sql_dir=os.path.abspath('.')+'/'
-    sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s%s'%(bak_sql_dir,source_name))
+    source_name=source_name.replace(' ','')
+    bak_sql_dir=os.path.abspath('..')+'/mysql_python/%s'%source_name
+    sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s'%bak_sql_dir)
 
-    print(sql_source)
- 
-    try:
-        os.system(sql_source)
-        return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
-    except:
-        return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
+#   judge if the file is exist
+    if os.path.exists(bak_sql_dir):
+        try:
+            os.system(sql_source)
+            return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
+        except:
+            return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
+    else:
+        return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
     
 #main()
