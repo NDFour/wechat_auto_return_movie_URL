@@ -5,6 +5,7 @@ import pymysql
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
+import re
 
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
@@ -42,7 +43,6 @@ def hello(message):
     else:
         return '！！\n未经授权的公众号，请联系微信 ndfour001 购买看电影服务使用权\n\n微信公众号搜索【一起来电影】，关注后发送电影名即可免费观看高清电影！'
 
-#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
 #   记录每个公众号的调用程序次数
     global last_use_cnt
     global use_cnt
@@ -61,9 +61,13 @@ def hello(message):
     if start_datetime=='':
         start_datetime=datetime.now()
 
-    if message.content=='showanalyze':
-        if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
+    if message.source=='o2NddxHhZloQV55azmx8zVXv9mAQ':
+#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+        if message.content=='showanalyze':
             return showanalyze()
+#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+        if re.match(r'insertadarticles .*'),message.content):
+            return insert_ad_articles(message.content)
 
     v_name=message.content
     
@@ -245,6 +249,21 @@ def send_mail():
     except:
         pass
 
+def insert_ad_articles(message_content):
+    sql_insert=message_content.replace('insert_ad_articles ','')
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+
+    try:
+        cursor.execute(sql_insert)
+        cursor.close()
+        conn.close()
+        return '成功插入一条【广告图文】到数据库！'
+    except:
+        cursor.close()
+        conn.close()
+        return '插入一条【广告图文】到数据库失败！'
+     
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
