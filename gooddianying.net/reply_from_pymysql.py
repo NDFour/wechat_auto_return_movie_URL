@@ -279,3 +279,24 @@ robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
 robot.run()
 
+
+
+import os
+from datetime import datetime
+import pymysql
+
+def main():
+    timestamp=str(datetime.now())[:19].replace(' ','.')
+    mysqldump='mysqldump -uroot -pcqmygpython2 wechatmovie adarticles > %s.sql;'%timestamp
+   # os.system(mysqldump)
+    source_content='2018.sql'
+    sql_source=('mysql -uroot -pcqmygpython2 test < /home/lynn/%s'%source_content)
+    print(sql_source)
+
+    #cursor=conn.cursor()
+    try:
+        os.system(sql_source)
+    except:
+        print('error')
+
+main()
