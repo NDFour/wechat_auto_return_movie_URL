@@ -3,7 +3,8 @@
 import requests
 import re
 import MySQLdb
-
+import os 
+import time 
 
 
 # 生成待爬取的电影列表url,传入pages参数，代表共有多少页，以便生成url
@@ -109,7 +110,7 @@ def parse_web_save2mysql(html_text):
     for i in video_list:
         try:
             sql_insert="insert into videoinfo (name,videourl,picurl) values('%s','%s','%s')"%(i[0],i[1],i[2])
-            print(sql_insert)
+#            print(sql_insert)
             cursor.execute(sql_insert)
             conn.commit()
             print('-> SAVE info of %s to MySQL success !!'%i[0])
@@ -120,12 +121,23 @@ def parse_web_save2mysql(html_text):
     cursor.close()
     conn.close()
 
+def set_videoinfo_empty():
+    bak_sql_dir=os.path.abspath('..')+'/mysql_python/empty_videoinfo_bak.sql'
+    sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s'%bak_sql_dir)
+
+    try:
+        os.system(sql_source)
+        return '清空videoinfo表信息success'
+    except:
+        return '清空videoinfo表信息failed'
+    time.sleep(5)
 
 def main():
     dy_pages=int(input('-> HOW MANY PAGES OF THE TAG [MOVIE] ?\n'))
     dsj_pages=int(input('-> HOW MANY PAGES OF THE TAG [DIAN SHI JU] ?\n'))
     zy_pages=int(input('-> HOW MANY PAGES OF THE TAG [ZONG YI] ?\n'))
     dm_pages=int(input('-> HOW MANY PAGES OF THE TAG [DONG MAN] ?\n'))
+
 
 # base_url 用于构建各标签页url
     dy_base_url='http://m.gooddianying.net/assort/1-'
@@ -138,6 +150,8 @@ def main():
     dsj_url=gen_dsj_url(dsj_base_url,dsj_pages)
     zy_url=gen_zy_url(zy_base_url,zy_pages)
     dm_url=gen_dm_url(dm_base_url,dm_pages)
+
+    set_videoinfo_empty()
 
 # 对每个标签的url列表中的url进行解析，得到相关视频信息
     for i in dy_url:
