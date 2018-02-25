@@ -5,6 +5,7 @@ import re
 import MySQLdb
 import os 
 import time 
+import datetime
 
 
 # 生成待爬取的电影列表url,传入pages参数，代表共有多少页，以便生成url
