@@ -22,7 +22,7 @@ total_use_cnt=0
 #global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
 #global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
-isdebug=1
+isdebug=0
 
 global name_dic
 name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
