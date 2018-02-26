@@ -12,7 +12,7 @@ robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
-isdebug=1
+isdebug=2
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -23,7 +23,7 @@ last_use_cnt=0
 #global total_use_cnt
 total_use_cnt=0
 #global use_cnt
-use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
+use_cnt={}
 #global name_dic  用来验证公众号是否在该列表中以判断是否非法调用
 name_dic={}
 
@@ -39,6 +39,32 @@ def main():
 @robot.text
 def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
+
+#   the account of 'Lynn'
+    master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
+    if isdebug==1:
+        master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
+    elif isdebug==2:
+        master_root='onD430y7UUrFB8sDV6W8PU4Skwy8'
+    if message.source==master_root:
+#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+        if message.content=='showanalyze':
+            return showanalyze()
+#   预留公众号id查看接口，发送showtarget，返回公众号id
+        if message.content=='showtarget':
+            return message.target
+#   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
+        if re.match(r'insertadarticles .*',message.content):
+            return insertadarticles(message.content)
+#   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
+        if re.match(r'updatevideoinfo .*.sql',message.content):
+            return updatevideoinfo(message.content)
+#   预留公众号添加接口，发送'adduser target_name',执行sql语句插入user
+        if re.match(r'adduser .*',message.content):
+            return manageuser(message.content,message.target,1)
+#   预留公众号删除接口，发送'deluser',执行sql语句删除user
+        if re.match(r'deluser',message.content):
+            return manageuser(message.content,message.target,0)
 
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
@@ -62,30 +88,6 @@ def hello(message):
     global start_datetime
     if start_datetime=='':
         start_datetime=datetime.now()
-
-#   the account of 'Lynn'
-    master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
-    if isdebug:
-        master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
-    if message.source==master_root:
-#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
-        if message.content=='showanalyze':
-            return showanalyze()
-#   预留公众号id查看接口，发送showtarget，返回公众号id
-        if message.content=='showtarget':
-            return message.target
-#   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
-        if re.match(r'insertadarticles .*',message.content):
-            return insertadarticles(message.content)
-#   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
-        if re.match(r'updatevideoinfo .*.sql',message.content):
-            return updatevideoinfo(message.content)
-#   预留公众号添加接口，发送'adduser target_name',执行sql语句插入user
-        if re.match(r'adduser .*',message.content):
-            return manageuser(message.content,message.target,1)
-#   预留公众号删除接口，发送'deluser',执行sql语句删除user
-        if re.match(r'deluser .*',message.content):
-            return manageuser(message.content,message.target,1)
 
 
     v_name=message.content
@@ -304,7 +306,7 @@ def updatevideoinfo(message_content):
             return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
         except:
             return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
- :
+ 
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
 def manageuser(message_content,target_id,func):
@@ -312,10 +314,10 @@ def manageuser(message_content,target_id,func):
     # adduser
     if func==1:
         target_name=message_content.replace('adduser ','')
-        sql_content='INSERT INTO users(target_id,target_name) VALUES (%s,%s);' % (target_id,target_name)
+        sql_content="INSERT INTO users(target_id,target_name) VALUES ('%s','%s');" % (target_id,target_name)
     # deluser
     elif func==0:
-        sql_content='DELETE FROM users WHERE target_id=%s;' % target_id
+        sql_content="DELETE FROM users WHERE target_id='%s';" % target_id
 
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
@@ -323,7 +325,7 @@ def manageuser(message_content,target_id,func):
     msg=''
 
     try:
-        cursor.execute(sql_adduser)
+        cursor.execute(sql_content)
         conn.commit()
         if func==1:
             msg = '添加公众号【%s : %s】成功！'%(target_name,target_id)
@@ -339,9 +341,10 @@ def manageuser(message_content,target_id,func):
         cursor.close()
         conn.close()
 
-    if updatename_dic()==1:
+    rel=updatename_dic()
+    if rel==1:
         pass 
-    elif updatename_dic()==0:
+    elif rel==0:
         msg = '添加公众号在 updatename_dic 时出错！'
 
     return msg
@@ -363,7 +366,7 @@ def updatename_dic():
     try:
         cursor.execute(sql_select)
         for i in cursor.fetchall():
-            name_dic[i[0]]=name_dic[i[1]]
+            name_dic[i[0]]=i[1]
             # 更新 use_cnt 
             if i[0] in use_cnt:
                 pass 
