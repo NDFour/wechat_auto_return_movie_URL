@@ -39,7 +39,7 @@ def main():
 
 @robot.text
 def hello(message):
-#    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
+    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
 #   the account of 'Lynn'
     master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
