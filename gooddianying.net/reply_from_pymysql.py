@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=1
+isdebug=0
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -56,7 +56,7 @@ def hello(message):
 #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
             updatename_dic()
-            return '程序启动成功'
+            return 'Program startting success!'
 #   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
@@ -196,7 +196,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[0])
             in_list.append(i[1])
-            # 更改域名
+            # 旧域名被封，更改域名
             in_list.append(i[2].replace('m.gooddianying.net','18.18.kele17173.com'))
 
             out_list.append(in_list)
