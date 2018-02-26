@@ -46,14 +46,16 @@ def hello(message):
         master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
     elif isdebug==2:
         master_root='onD430y7UUrFB8sDV6W8PU4Skwy8'
+
+#   预留 查看公众号 message.target 接口
+    if message.content=='showtarget':
+        return message.target
+
     if message.source==master_root:
 #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
             updatename_dic()
             return '程序启动成功'
-#   预留 查看公众号 message.target 接口
-        elif message.content=='showtarget':
-            return message.target
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
