@@ -323,7 +323,7 @@ def manageuser(message_content,func):
     target_id=message_content[8:23]
     # adduser
     if func==1:
-        target_name=message_content[23:]
+        target_name=message_content[24:]
         sql_content="INSERT INTO users(target_id,target_name) VALUES ('%s','%s');" % (target_id,target_name)
     # deluser
     elif func==0:
