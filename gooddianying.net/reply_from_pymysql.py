@@ -11,6 +11,9 @@ import os
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
+### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
+isdebug=1
+
 #   程序开始运行时的时间
 #global start_datetime
 start_datetime=''
@@ -21,11 +24,8 @@ last_use_cnt=0
 total_use_cnt=0
 #global use_cnt
 use_cnt={'gh_a987c1f298e2':0,'gh_499743c9649e':0,'gh_2a98dd25db1f':0,'gh_a7d8a272069c':0}
-#global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
-isdebug=0
-
-global name_dic
-name_dic={'gh_a987c1f298e2':'测试账号','gh_499743c9649e':'一起来电影','gh_2a98dd25db1f':'文艺的小猪','gh_a7d8a272069c':'电影假期'}
+#global name_dic  用来验证公众号是否在该列表中以判断是否非法调用
+name_dic={}
 
 #@robot.subscribe
 #def subscribe(message):
@@ -71,12 +71,22 @@ def hello(message):
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
         if message.content=='showanalyze':
             return showanalyze()
+#   预留公众号id查看接口，发送showtarget，返回公众号id
+        if message.content=='showtarget':
+            return message.target
 #   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
         if re.match(r'insertadarticles .*',message.content):
             return insertadarticles(message.content)
 #   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
         if re.match(r'updatevideoinfo .*.sql',message.content):
             return updatevideoinfo(message.content)
+#   预留公众号添加接口，发送'adduser target_name',执行sql语句插入user
+        if re.match(r'adduser .*',message.content):
+            return manageuser(message.content,message.target,1)
+#   预留公众号删除接口，发送'deluser',执行sql语句删除user
+        if re.match(r'deluser .*',message.content):
+            return manageuser(message.content,message.target,1)
+
 
     v_name=message.content
     
@@ -240,7 +250,6 @@ def showanalyze():
     # 返回公众号调用程序次数统计
     return analyze_info
 
-
 #   发邮件代码
 def send_mail():
     _user = "lgang219@qq.com"
@@ -295,10 +304,82 @@ def updatevideoinfo(message_content):
             return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
         except:
             return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
-    else:
+ :
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
-    
+def manageuser(message_content,target_id,func):
+    target_name=''
+    # adduser
+    if func==1:
+        target_name=message_content.replace('adduser ','')
+        sql_content='INSERT INTO users(target_id,target_name) VALUES (%s,%s);' % (target_id,target_name)
+    # deluser
+    elif func==0:
+        sql_content='DELETE FROM users WHERE target_id=%s;' % target_id
+
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+
+    msg=''
+
+    try:
+        cursor.execute(sql_adduser)
+        conn.commit()
+        if func==1:
+            msg = '添加公众号【%s : %s】成功！'%(target_name,target_id)
+        elif func==0:
+            msg = '删除公众号【%s : %s】成功！'%(target_name,target_id)
+    except:
+        conn.rollback()
+        if func==1:
+            msg = '添加公众号【%s : %s】失败！'%(target_name,target_id)
+        if func==0:
+            msg = '删除公众号【%s : %s】失败！'%(target_name,target_id)
+    finally:
+        cursor.close()
+        conn.close()
+
+    if updatename_dic()==1:
+        pass 
+    elif updatename_dic()==0:
+        msg = '添加公众号在 updatename_dic 时出错！'
+
+    return msg
+
+
+# 更新 公众号列表 name_dic 
+def updatename_dic():
+# 被 manageuser 调用以更新 name_dic 
+    global name_dic
+    global use_cnt 
+    name_dic={}
+
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+    sql_select="SELECT target_id,target_name FROM users;"
+
+    msg=1
+
+    try:
+        cursor.execute(sql_select)
+        for i in cursor.fetchall():
+            name_dic[i[0]]=name_dic[i[1]]
+            # 更新 use_cnt 
+            if i[0] in use_cnt:
+                pass 
+            else:
+                use_cnt[i[0]]=0
+
+        print(name_dic)
+        print(use_cnt)
+    except:
+        msg = 0
+    finally:
+        cursor.close()
+        conn.close()
+
+    return msg
+   
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
