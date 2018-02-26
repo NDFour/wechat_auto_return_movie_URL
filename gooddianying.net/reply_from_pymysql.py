@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=1
+isdebug=0
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -196,7 +196,8 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[0])
             in_list.append(i[1])
-            in_list.append(i[2])
+            # 更改域名
+            in_list.append(i[2].replace('m.gooddianying.net','18.18.kele17173.com')
 
             out_list.append(in_list)
             cnt+=1
@@ -250,8 +251,6 @@ def showanalyze():
     global name_dic 
     global total_use_cnt
     global use_cnt
-    print('进入 showanalyze')
-    print(use_cnt)
     analyze_info='*已累计调用 %s 次*\n'%total_use_cnt
     for pub_account in use_cnt:
         analyze_info+=('----------\n')
@@ -343,13 +342,13 @@ def manageuser(message_content,func):
         if func==1:
             msg = '添加公众号【%s : %s】成功！'%(target_name,target_id)
         elif func==0:
-            msg = '删除公众号【[%s] 】成功！'%target_id
+            msg = 'Delete success!'
     except:
         conn.rollback()
         if func==1:
             msg = '添加公众号【%s : %s】失败！'%(target_name,target_id)
         if func==0:
-            msg = '删除公众号【[%s] 】失败！'%target_id
+            msg = 'Delete failed!'
     finally:
         cursor.close()
         conn.close()
@@ -369,6 +368,8 @@ def updatename_dic():
     global name_dic
     global use_cnt 
     name_dic={}
+    use_cnt_bak=use_cnt
+    use_cnt={}
 
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
@@ -378,44 +379,25 @@ def updatename_dic():
 
     try:
         cursor.execute(sql_select)
-        print('执行完 cursor')
         users_tuple=cursor.fetchall()
-        print('111')
-        print(users_tuple)
-        print(len(users_tuple))
         # 存放 tuple中的字tuple的下标为0的项
         tuple_list=[]
         for i in users_tuple:
-            print('进入 for 循环')
+            tuple_list.append(i[0])
             name_dic[i[0]]=i[1]
             # 更新 use_cnt 
             if i[0] in use_cnt:
                 pass 
             else:
                 use_cnt[i[0]]=0
-        print('更新完use_cnt之后 %s' %use_cnt)
-        print('更新完name_dic之后 %s'%name_dic)
         # Judge if the use_cnt[*] has been deleted
-        for i2 in use_cnt:
-            if i2 in users_tuple:
-                pass
+        for i2 in use_cnt_bak:
+            print('i2: %s    len(i2): %s'%(i2,len(i2)))
+            if i2 in tuple_list:
+                use_cnt[i2]=use_cnt_bak[i2]
             else:
-                i2='%s'%i2
-                print('line 394')
-                print(i2)
-                print('line 396')
-                use_cnt.pop(i2)
-                print('line 398')
-                name_dic.pop(i2)
-                print('line 400')
-        print('删除完 use_cnt之后 %s' %use_cnt)
-        print('删除完 name_dic之后 %s'%name_dic)
+                pass
 
-        print('------------')
-        print(len(use_cnt))
-        print(use_cnt)
-        print('------------')
-        print('line 404')
     except:
         msg = 0
     finally:
@@ -430,4 +412,5 @@ def updatename_dic():
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
 robot.run()
+
 
