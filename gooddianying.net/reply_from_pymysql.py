@@ -56,12 +56,9 @@ def hello(message):
         if message.content=='run':
             updatename_dic()
             return '程序启动成功'
-#   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
+#   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
-#   预留公众号id查看接口，发送showtarget，返回公众号id
-        elif message.content=='showtarget':
-            return message.target
 #   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
         elif re.match(r'insertadarticles .*',message.content):
             return insertadarticles(message.content)
@@ -320,6 +317,9 @@ def updatevideoinfo(message_content):
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
 def manageuser(message_content,func):
+    if len(message_content)<24:
+        return '语法错误，请检查语法后重新发送指令！'
+
     target_id=message_content[8:23]
     # adduser
     if func==1:
