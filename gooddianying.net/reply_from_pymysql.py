@@ -12,6 +12,7 @@ robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
+# 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
 isdebug=0
 
 #   程序开始运行时的时间
@@ -246,7 +247,6 @@ def reply_info(v_name):
 #   showanalyze 查询各公众号调用次数
 def showanalyze():
     # DEMO: showanalyze
-
     global name_dic 
     global total_use_cnt
     analyze_info='[公众号调用次数统计]\n\n*已累计调用 %s 次*\n'%total_use_cnt
@@ -317,7 +317,7 @@ def updatevideoinfo(message_content):
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
 def manageuser(message_content,func):
-    if len(message_content)<24:
+    if len(message_content)<23:
         return '语法错误，请检查语法后重新发送指令！'
 
     target_id=message_content[8:23]
@@ -383,8 +383,6 @@ def updatename_dic():
             else:
                 use_cnt[i[0]]=0
 
-        print(name_dic)
-        print(use_cnt)
     except:
         msg = 0
     finally:
