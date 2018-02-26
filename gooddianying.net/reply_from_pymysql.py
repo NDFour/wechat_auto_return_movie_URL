@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=0
+isdebug=1
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -197,7 +197,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[1])
             # 更改域名
-            in_list.append(i[2].replace('m.gooddianying.net','18.18.kele17173.com')
+            in_list.append(i[2].replace('m.gooddianying.net','18.18.kele17173.com'))
 
             out_list.append(in_list)
             cnt+=1
@@ -392,7 +392,6 @@ def updatename_dic():
                 use_cnt[i[0]]=0
         # Judge if the use_cnt[*] has been deleted
         for i2 in use_cnt_bak:
-            print('i2: %s    len(i2): %s'%(i2,len(i2)))
             if i2 in tuple_list:
                 use_cnt[i2]=use_cnt_bak[i2]
             else:
