@@ -12,7 +12,7 @@ robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
-isdebug=2
+isdebug=0
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -47,24 +47,29 @@ def hello(message):
     elif isdebug==2:
         master_root='onD430y7UUrFB8sDV6W8PU4Skwy8'
     if message.source==master_root:
+#   预留 接口，发送后 run 后程序开始工作
+        if message.content=='run':
+            updatename_dic()
+            return '程序启动成功'
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
-        if message.content=='showanalyze':
+        elif message.content=='showanalyze':
             return showanalyze()
 #   预留公众号id查看接口，发送showtarget，返回公众号id
-        if message.content=='showtarget':
+        elif message.content=='showtarget':
             return message.target
 #   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
-        if re.match(r'insertadarticles .*',message.content):
+        elif re.match(r'insertadarticles .*',message.content):
             return insertadarticles(message.content)
 #   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
-        if re.match(r'updatevideoinfo .*.sql',message.content):
+        elif re.match(r'updatevideoinfo .*.sql',message.content):
             return updatevideoinfo(message.content)
 #   预留公众号添加接口，发送'adduser target_name',执行sql语句插入user
-        if re.match(r'adduser .*',message.content):
+        elif re.match(r'adduser .*',message.content):
             return manageuser(message.content,message.target,1)
 #   预留公众号删除接口，发送'deluser',执行sql语句删除user
-        if re.match(r'deluser',message.content):
+        elif re.match(r'deluser',message.content):
             return manageuser(message.content,message.target,0)
+
 
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
