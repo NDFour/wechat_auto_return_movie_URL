@@ -51,6 +51,9 @@ def hello(message):
         if message.content=='run':
             updatename_dic()
             return '程序启动成功'
+#   预留 查看公众号 message.target 接口
+        elif message.content=='showtarget':
+            return message.target
 #   预留数据查看接口，发送'showusecnt',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
@@ -63,12 +66,12 @@ def hello(message):
 #   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
         elif re.match(r'updatevideoinfo .*.sql',message.content):
             return updatevideoinfo(message.content)
-#   预留公众号添加接口，发送'adduser target_name',执行sql语句插入user
+#   预留公众号添加接口，发送'adduser target_id target_name',执行sql语句插入user
         elif re.match(r'adduser .*',message.content):
-            return manageuser(message.content,message.target,1)
-#   预留公众号删除接口，发送'deluser',执行sql语句删除user
-        elif re.match(r'deluser',message.content):
-            return manageuser(message.content,message.target,0)
+            return manageuser(message.content,1)
+#   预留公众号删除接口，发送'deluser target_id',执行sql语句删除user
+        elif re.match(r'deluser .*',message.content):
+            return manageuser(message.content,0)
 
 
 #   判断转发消息的公众号是否在已授权列表中
@@ -314,11 +317,11 @@ def updatevideoinfo(message_content):
  
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
-def manageuser(message_content,target_id,func):
-    target_name=''
+def manageuser(message_content,func):
+    target_id=message_content[8:23]
     # adduser
     if func==1:
-        target_name=message_content.replace('adduser ','')
+        target_name=message_content[23:]
         sql_content="INSERT INTO users(target_id,target_name) VALUES ('%s','%s');" % (target_id,target_name)
     # deluser
     elif func==0:
