@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=0
+isdebug=1
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -340,13 +340,13 @@ def manageuser(message_content,func):
         if func==1:
             msg = '添加公众号【%s : %s】成功！'%(target_name,target_id)
         elif func==0:
-            msg = '删除公众号【%s : %s】成功！'%(target_name,target_id)
+            msg = '删除公众号【[%s] 】成功！'%target_id
     except:
         conn.rollback()
         if func==1:
             msg = '添加公众号【%s : %s】失败！'%(target_name,target_id)
         if func==0:
-            msg = '删除公众号【%s : %s】失败！'%(target_name,target_id)
+            msg = '删除公众号【[%s] 】失败！'%target_id
     finally:
         cursor.close()
         conn.close()
@@ -375,14 +375,23 @@ def updatename_dic():
 
     try:
         cursor.execute(sql_select)
-        for i in cursor.fetchall():
+        users_tuple=cursor.fetchall()
+        for i in users_tuple:
             name_dic[i[0]]=i[1]
             # 更新 use_cnt 
             if i[0] in use_cnt:
                 pass 
             else:
                 use_cnt[i[0]]=0
-
+        # Judge if the use_cnt[*] has been deleted
+        for i2 in use_cnt:
+            if i2 in users_tuple:
+                pass
+            else:
+                i2='%s'%i2
+                print(i2)
+                use_cnt.pop(i2)
+        print(use_cnt)
     except:
         msg = 0
     finally:
