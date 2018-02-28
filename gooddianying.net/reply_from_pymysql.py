@@ -197,7 +197,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[1])
             # 旧域名被封，更改域名
-            in_list.append(i[2].replace('m.gooddianying.net','18.18.kele17173.com'))
+            in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
 
             out_list.append(in_list)
             cnt+=1
