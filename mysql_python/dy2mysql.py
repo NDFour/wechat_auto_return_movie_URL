@@ -122,6 +122,12 @@ def parse_web_save2mysql(html_text):
     cursor.close()
     conn.close()
 
+def get_mac_url(html_text):
+    mac_url_re=re.compile(r'mac_url.*;')
+    if len(mac_url=mac_url_re.findall(html_text)):
+        # 得到 m3u8 的 vid_id
+        mac_url=mac_url[-1].replace('
+
 def set_videoinfo_empty():
     bak_sql_dir=os.path.abspath('..')+'/mysql_python/empty_videoinfo_bak.sql'
     sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s'%bak_sql_dir)
@@ -135,22 +141,28 @@ def set_videoinfo_empty():
 
 def main():
     dy_pages=int(input('-> HOW MANY PAGES OF THE TAG [MOVIE] ?\n'))
+    '''
     dsj_pages=int(input('-> HOW MANY PAGES OF THE TAG [DIAN SHI JU] ?\n'))
     zy_pages=int(input('-> HOW MANY PAGES OF THE TAG [ZONG YI] ?\n'))
     dm_pages=int(input('-> HOW MANY PAGES OF THE TAG [DONG MAN] ?\n'))
+    '''
 
 
 # base_url 用于构建各标签页url
     dy_base_url='http://m.gooddianying.net/assort/1-'
+    '''
     dsj_base_url='http://m.gooddianying.net/assort/2-'
     zy_base_url='http://m.gooddianying.net/assort/3-'
     dm_base_url='http://m.gooddianying.net/assort/4-'
+    '''
 
 # **_url gen_url函数返回的各标签下每一页的url列表
     dy_url=gen_dy_url(dy_base_url,dy_pages)
+    '''
     dsj_url=gen_dsj_url(dsj_base_url,dsj_pages)
     zy_url=gen_zy_url(zy_base_url,zy_pages)
     dm_url=gen_dm_url(dm_base_url,dm_pages)
+    '''
 
     set_videoinfo_empty()
 
@@ -162,6 +174,7 @@ def main():
             continue
         parse_web_save2mysql(html_text)
 
+'''
     for i in dsj_url:
         html_text=get_html(i)
         print('-> PARSING [DIAN SHI JU] INFO IN THE %s ...' % i)
@@ -182,6 +195,7 @@ def main():
         if len(html_text) == 0:
             continue
         parse_web_save2mysql(html_text)
+'''
 
     print('\n\n----------------------------------\n')
     timestamp=str(datetime.now())[:19].replace(' ','.')
