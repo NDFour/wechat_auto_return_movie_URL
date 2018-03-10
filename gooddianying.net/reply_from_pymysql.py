@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=0
+isdebug=1
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -195,8 +195,9 @@ def reply_info(v_name):
             in_list=[]
             in_list.append(i[0])
             in_list.append(i[0])
-            in_list.append(i[1])
             in_list.append(i[2])
+            in_list.append(i[1].replace('www.huayuba.com','wx.lantudy123.net'))
+      
             # 旧域名被封，更改域名
             # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
 
