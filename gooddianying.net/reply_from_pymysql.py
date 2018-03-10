@@ -212,37 +212,28 @@ def reply_info(v_name):
         len_v_name-=1
         return reply_info(v_name[0:len_v_name])
 
-#    有了上面那个递归以及函数开头检查v_name是否为空 , 所以不需要下面两行
-#    if cnt == 0:
-#        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
+#   图文消息加上一条之前的广告推文链接
+    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
+    adtuple=[]
+    try:
+        cursor.execute(ad_select)
+        adarticles_list=cursor.fetchone()
 
-#    print('共查询到 %s 条记录' % cnt)
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[1])
+        adtuple.append(adarticles_list[2])
 
-#    如果查询到的电影记录条数少于7，则图文消息加上一条之前的广告推文链接
-    if int(cnt)<7:
-        ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
-        adtuple=[]
-        try:
-            cursor.execute(ad_select)
-            adarticles_list=cursor.fetchone()
-
-            adtuple.append(adarticles_list[0])
-            adtuple.append(adarticles_list[0])
-            adtuple.append(adarticles_list[1])
-            adtuple.append(adarticles_list[2])
-#           控制adarticles的插入位置，不要过于靠后
-            index=cnt//2
-            if index:
-                out_list.insert(index,adtuple)
-            else:
-                index+=1
-                out_list.insert(index,adtuple)
-        except:
-            pass
+        # 在第二条图文消息处添加 adarticles
+        out_list.insert(1,adtuple)
+    except:
+        pass
 
     conn.close()
 
-    out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+    if int(cnt)<7:
+        out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+
     return out_list
 
 #   showanalyze 查询各公众号调用次数
