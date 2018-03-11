@@ -184,7 +184,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM huayuba WHERE name LIKE '%v_name%'" 
+        sql_select="SELECT name,videourl,picurl FROM videoinfo WHERE name LIKE '%v_name%'" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -195,8 +195,8 @@ def reply_info(v_name):
             in_list=[]
             in_list.append(i[0])
             in_list.append(i[0])
-            in_list.append(i[2])
-            in_list.append(i[1].replace('www.huayuba.com','wx.lantudy123.net'))
+            in_list.append(i[1])
+            in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
       
             # 旧域名被封，更改域名
             # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
