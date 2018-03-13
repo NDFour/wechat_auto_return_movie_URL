@@ -9,7 +9,7 @@
 import requests
 import os
 import re 
-import pymysql
+import MySQLdb
 
 def getHtml(url):
     url=url+'.html'
@@ -63,8 +63,9 @@ def parseHtml(html_text):
 
     for i in outList:
         try:
-            sql_insert="INSERT INTO xiaoheju (name,videourl,picurl) VALUES ('%s','%s','%s');"%(i[0],i[1],i[2])
+            sql_insert="INSERT INTO xiaoheju(name,videourl,picurl) VALUES ('%s','%s','%s');"%(i[0],i[2],i[1])
             cursor.execute(sql_insert)
+            conn.commit()
             print('Save to mysql success')
         except:
             conn.rollback()
