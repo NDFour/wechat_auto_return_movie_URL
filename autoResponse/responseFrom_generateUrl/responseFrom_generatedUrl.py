@@ -176,7 +176,7 @@ def pre_process(v_name):
 def reply_info(v_name):
     out_list=[]
 
-    baseUrl='http://mmz1.cn/seacher.php?sousuo='
+    baseUrl='http://idy007.xyz/movie/seacher.php?wd='
     url=baseUrl+v_name
     name=v_name+'免费观看'
     picurl='https://t1.picb.cc/uploads/2018/03/14/22PKHa.png'
