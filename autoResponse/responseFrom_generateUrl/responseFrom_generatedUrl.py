@@ -176,19 +176,24 @@ def pre_process(v_name):
 def reply_info(v_name):
     out_list=[]
 
-    baseUrl='http://idy007.xyz/movie/seacher.php?wd='
+    baseUrl='http://idy007.xyz/seacher.php?wd='
     url=baseUrl+v_name
     name=v_name+'免费观看'
-    picurl='https://t1.picb.cc/uploads/2018/03/14/22PKHa.png'
+    picurl='http://kks.me/a5cc5'
 
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
     in_list.append(name)
     in_list.append(picurl)
-    in_list.append(videourl)
+    in_list.append(url)
+
+    out_list.append(in_list)
     
     # 图文消息加上一条之前的广告推文链接
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+
     ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
     adtuple=[]
     try:
