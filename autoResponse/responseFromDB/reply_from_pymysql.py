@@ -183,33 +183,44 @@ def reply_info(v_name):
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
-    try:
-        sql_select="SELECT name,videourl,picurl FROM videoinfo WHERE name LIKE '%v_name%'" 
-        sql_select=sql_select.replace('v_name',v_name)
-        cursor.execute(sql_select)
+    sqlSelects=[]
+    sql_select="SELECT name,videourl,picurl FROM jndy8 WHERE name LIKE '%v_name%'" 
+    sql_select2="SELECT name,videourl,picurl FROM videoinfo WHERE name LIKE '%v_name%'" 
 
-        out_list=[]
-        cnt=0
+    sql_select=sql_select.replace('v_name',v_name)
+    sql_select2=sql_select2.replace('v_name',v_name)
 
-        for i in cursor.fetchmany(7):
-            in_list=[]
-            in_list.append(i[0])
-            in_list.append(i[0])
-            in_list.append(i[1])
-            in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
-      
-            # 旧域名被封，更改域名
-            # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
+    sqlSelects.append(sql_select)
+    sqlSelects.append(sql_select2)
 
-            out_list.append(in_list)
-            cnt+=1
-    except:
-        cursor.close()
-        conn.close()
-        return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
+    # 在两个表中进行查找数据
+    cnt=0
+    out_list=[]
+    for i in sqlSelects:
+        sql_select=i
+        try:
+            cursor.execute(sql_select)
+
+            for i in cursor.fetchmany(7):
+                in_list=[]
+                in_list.append(i[0])
+                in_list.append(i[0])
+                in_list.append(i[1])
+                in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
+          
+                out_list.append(in_list)
+                cnt+=1
+        except:
+            cursor.close()
+            conn.close()
+            return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
+
+        # 如果查询完第一个表之后得到了大于7条结果，则直接返回
+        if cnt>=7:
+            break
 
     len_v_name=len(v_name)
-#   如果搜索不到数据，则将电影关键词长度一再缩小
+    #   如果搜索不到数据，则将电影关键词长度一再缩小
     while ((cnt == 0) and len_v_name):
         len_v_name-=1
         return reply_info(v_name[0:len_v_name])
