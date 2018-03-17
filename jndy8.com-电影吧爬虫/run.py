@@ -3,7 +3,7 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-03-16 23:45:56
-# Last Modified: 2018-03-17 02:01:27
+# Last Modified: 2018-03-17 14:15:08
 #
 
 import requests
@@ -12,7 +12,6 @@ import re
 import pymysql
 
 def getHtml(url):
-    print('--> getHtml')
     html_text=''
 
     headers={
@@ -29,20 +28,17 @@ def getHtml(url):
     except:
         html_text=''
 
-    print('--> getHtml end')
     return html_text
 
 def generateUrls(baseurl,pages):
     urls=[]
     #for i in range(1,int(pages)+1):
-    for i in range(int(pages)+1):
-        print(i)
+    for i in range(1,int(pages)+1):
         urls.append(baseurl+str(i))
     return urls
 
 def getMovieList(html_text):
 #   根据给定的目录 url 解析出目录中包含的电影信息
-    print('--> getMovieList')
 
     # get show.asp?id=4802
     reId=re.compile(r'show.asp\?id=[0-9]*')
@@ -73,47 +69,72 @@ def getMovieList(html_text):
     # 传参 video id 然后 getInfo() 构造 url 进行访问
     cntRealUrl=0
     outRealUrl=[]
-    # 无效直链的个数
-    cntNull=0
+    # len(outId)=40 获取到的id是电影条目数的2倍
+    cntId=0
+    # 一次性存入一个目录页 page 的电影信息
+    outSqlList=[]
     for id in outId:
+        # 消重 取消 outId 中重复的 id
+        cntId+=1
+        if cntId % 2:
+            continue
+        print('\n%s'%outName[cntRealUrl])
+
+        inSqlList=[]
+
         realUrl=getInfo(id)
         # getInfo() 返回值不为空
         if realUrl:
             outRealUrl.append(realUrl)
-            cntNull+=1
-            print(outName[cntRealUrl-cntNull])
-            print(outPic[cntRealUrl-cntNull])
-            print(realUrl)
+            #print(outName[cntRealUrl])
+            #print(outPic[cntRealUrl])
+            #print(realUrl)
+
+            inSqlList.append(outName[cntRealUrl])
+            inSqlList.append(outPic[cntRealUrl])
+            inSqlList.append(realUrl)
+
+            outSqlList.append(inSqlList)
+
         # 直链无效
         else:
             print('该直链无效')
 
         cntRealUrl+=1
 
-    print('--> getMovieList end')
+    # 将电影信息写入数据库
+    db=pymysql.connect(host='localhost',user='root',password='cqmygpython2',db='wechatmovie',port=3306,charset='utf8')
+    cur=db.cursor()
+
+    for i in outSqlList:
+        sql_insert='INSERT INTO jndy8 (name,videourl,picurl) VALUES ("%s","%s","%s");' % (i[0],i[2],i[1])
+        try:
+            cur.execute(sql_insert)
+            db.commit()
+        except:
+            db.rollback()
+
+    cur.close()
+    db.close()
 
 
 def getInfo(id):
 #   构造播放页 url 进而从网页源码中得到播放链接
-    print('--> getInfo')
 #   http://www.jndy8.com/jxplay.asp?id=3582&j=1
     baseurl='http://www.jndy8.com/jxplay'
     url=baseurl+id.replace('show','')+'&j=1'
 
     html_text=getHtml(url)
     # get http://api.coolnan.net/vip.asp?url=https://tbm.alicdn.com/vUAdB2SRl6Uwi7hn7WB/QyLdbhoz7X1ZMqvon7v@@hd.mp4
-    reUrl=re.compile(r'http://api.cool.*mp4')
+    reUrl=re.compile(r'http://api.cool.*(mp4|html)')
     # 可能有的视频用的其他解析线路
     try:
         realUrl=reUrl.search(html_text).group()
-        print('--> getInfo end')
         return realUrl
     except:
-        print('--> getInfo end')
         return ''
 
 def main():
-    print('run')
     baseUrl='http://www.jndy8.com/dy.asp?ToPage='
     # 手动输入每一栏目的页数
     dyPages=input('Movie pages:')
