@@ -181,22 +181,6 @@ def reply_info(v_name):
     if v_name == '':
         return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
-    # 回复 idy007.xyz 搜索结果
-    out_list=[]
-    baseUrl='http://idy007.xyz/seacher.php?wd='
-    url=baseUrl+v_name
-    name='【无广告版】'+v_name
-    picurl='http://kks.me/a5cc5'
-
-    # 插入搜索词条链接图文消息
-    in_list=[]
-    in_list.append(name)
-    in_list.append(name)
-    in_list.append(picurl)
-    in_list.append(url)
-
-    out_list.append(in_list)
-
     # 插入 videoinfo 表中的记录
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
@@ -208,6 +192,7 @@ def reply_info(v_name):
 
         cnt=0
 
+        out_list=[]
         for i in cursor.fetchmany(6):
             in_list=[]
             in_list.append(i[0])
@@ -220,6 +205,7 @@ def reply_info(v_name):
 
             out_list.append(in_list)
             cnt+=1
+
     except:
         cursor.close()
         conn.close()
@@ -247,6 +233,21 @@ def reply_info(v_name):
         out_list.insert(1,adtuple)
     except:
         pass
+
+    # 回复 idy007.xyz 搜索结果
+    baseUrl='http://idy007.xyz/seacher.php?wd='
+    url=baseUrl+v_name
+    name='【无广告版】'+v_name
+    picurl='http://kks.me/a5cc5'
+
+    # 插入搜索词条链接图文消息
+    in_list=[]
+    in_list.append(name)
+    in_list.append(name)
+    in_list.append(picurl)
+    in_list.append(url)
+
+    out_list.insert(2,in_list)
 
     conn.close()
 
