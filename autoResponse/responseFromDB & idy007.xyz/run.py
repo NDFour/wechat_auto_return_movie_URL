@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 from email.mime.text import MIMEText
@@ -180,29 +181,31 @@ def reply_info(v_name):
     if v_name == '':
         return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
 
+    # 插入 videoinfo 表中的记录
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM xiaoheju WHERE name LIKE '%v_name%'" 
+        sql_select="SELECT name,videourl,picurl FROM videoinfo WHERE name LIKE '%v_name%'" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
-        out_list=[]
         cnt=0
 
-        for i in cursor.fetchmany(7):
+        out_list=[]
+        for i in cursor.fetchmany(6):
             in_list=[]
             in_list.append(i[0])
             in_list.append(i[0])
-            in_list.append(i[2])
-            in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html'))
+            in_list.append(i[1])
+            in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
       
             # 旧域名被封，更改域名
             # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
 
             out_list.append(in_list)
             cnt+=1
+
     except:
         cursor.close()
         conn.close()
@@ -231,9 +234,24 @@ def reply_info(v_name):
     except:
         pass
 
+    # 回复 idy007.xyz 搜索结果
+    baseUrl='http://idy007.xyz/seacher.php?wd='
+    url=baseUrl+v_name
+    name='【无广告版】'+v_name
+    picurl='http://kks.me/a5cc5'
+
+    # 插入搜索词条链接图文消息
+    in_list=[]
+    in_list.append(name)
+    in_list.append(name)
+    in_list.append(picurl)
+    in_list.append(url)
+
+    out_list.insert(2,in_list)
+
     conn.close()
 
-    if int(cnt)<7:
+    if int(cnt)<6:
         out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
 
     return out_list

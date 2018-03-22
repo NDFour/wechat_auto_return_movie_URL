@@ -77,7 +77,7 @@ def parseHtml(html_text):
 def main():
     tabList=['http://18.19.ivdmh.com/lists/5-','http://18.19.ivdmh.com/lists/6-','http://18.19.ivdmh.com/lists/7-','http://18.19.ivdmh.com/lists/8-','http://18.19.ivdmh.com/lists/9-','http://18.19.ivdmh.com/lists/10-','http://18.19.ivdmh.com/lists/19-','http://18.19.ivdmh.com/lists/11-']
 
-    pageList=[113,87,41,28,58,174,24,9]
+    pageList=[113,87,41,28,59,175,25,10]
     # test pageList
 #    pageList=[2,3,4,2,3,4,2,4]
 
