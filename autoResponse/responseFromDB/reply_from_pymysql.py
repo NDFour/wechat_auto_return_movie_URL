@@ -267,7 +267,7 @@ def showanalyze():
         analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
     analyze_info+=('----------\n')
     analyze_info+='\nStart: %s' % start_datetime
-    analyze_info+='\nEnd: %s' % datetime.now()
+    # analyze_info+='\nEnd: %s' % datetime.now()
     # 返回公众号调用程序次数统计
     return analyze_info
 

@@ -3,13 +3,13 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-03-13 17:14:51
-# Last Modified: 2018-03-13 18:20:49
+# Last Modified: 2018-04-04 22:14:32
 #
 
 import requests
 import os
 import re 
-import MySQLdb
+import pymysql
 
 def getHtml(url):
     url=url+'.html'
@@ -58,7 +58,7 @@ def parseHtml(html_text):
         outList.append(inList)
 
     # 将解析到的视频信息添加到数据库
-    conn=MySQLdb.Connection(host='127.0.0.1',port=3306,user='root',passwd='cqmygpython2',db='wechatmovie',charset='utf8')
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
     for i in outList:
@@ -77,7 +77,7 @@ def parseHtml(html_text):
 def main():
     tabList=['http://18.19.ivdmh.com/lists/5-','http://18.19.ivdmh.com/lists/6-','http://18.19.ivdmh.com/lists/7-','http://18.19.ivdmh.com/lists/8-','http://18.19.ivdmh.com/lists/9-','http://18.19.ivdmh.com/lists/10-','http://18.19.ivdmh.com/lists/19-','http://18.19.ivdmh.com/lists/11-']
 
-    pageList=[113,87,41,28,59,175,25,10]
+    pageList=[114,88,41,28,59,177,26,10]
     # test pageList
 #    pageList=[2,3,4,2,3,4,2,4]
 
