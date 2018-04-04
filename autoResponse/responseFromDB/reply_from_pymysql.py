@@ -69,8 +69,8 @@ def hello(message):
 #   预留公众号添加接口，发送'adduser target_id target_name',执行sql语句插入user
         elif re.match(r'adduser .*',message.content):
             return manageuser(message.content,1)
-#   预留公众号删除接口，发送'deluser target_id',执行sql语句删除user
-        elif re.match(r'deluser .*',message.content):
+#   预留公众号删除接口，发送'deluser id',执行sql语句删除user
+        elif re.match(r'deluser [0-9]*',message.content):
             return manageuser(message.content,0)
 
 
@@ -244,8 +244,16 @@ def showanalyze():
     global name_dic 
     global total_use_cnt
     global use_cnt
+
+    # 链接数据库，查询其他公众号对应数据库中的 id
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+    sql_select_id="SELECT id FROM users WHERE target_name=target_account_name"
+
     analyze_info='*已累计调用 %s 次*\n'%total_use_cnt
     for pub_account in use_cnt:
+        #try:
+         #  cursor.execute("w
         analyze_info+=('----------\n')
         analyze_info+='%s : %d\n' % (name_dic[pub_account] , use_cnt[pub_account])
     analyze_info+=('----------\n')
@@ -315,14 +323,15 @@ def manageuser(message_content,func):
     if len(message_content)<23:
         return '语法错误，请检查语法后重新发送指令！'
 
-    target_id=message_content[8:23]
     # adduser
     if func==1:
+        target_id=message_content[8:23]
         target_name=message_content[24:]
         sql_content="INSERT INTO users(target_id,target_name) VALUES ('%s','%s');" % (target_id,target_name)
     # deluser
     elif func==0:
-        sql_content="DELETE FROM users WHERE target_id='%s';" % target_id
+        target_id=message_content[8:]
+        sql_content="DELETE FROM users WHERE id='%s';" % target_id
 
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
