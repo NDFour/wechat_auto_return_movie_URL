@@ -27,11 +27,18 @@ total_use_cnt=0
 use_cnt={}
 #global name_dic  用来验证公众号是否在该列表中以判断是否非法调用
 name_dic={}
+#last_movie 用来记录用户取关前的发送的一条消息记录
+last_movie=''
 
 #@robot.subscribe
 #def subscribe(message):
 #    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
 #    return msg
+
+@robot.unsubscribe
+def unsubscribe(message):
+    global last_movie
+    print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
 
 def main():
     v_name=input('请输入要检索的电影名字')
@@ -109,6 +116,8 @@ def hello(message):
         return bdpan
 
     articles=reply_info(v_name)
+    global last_movie
+    last_movie=v_name
     return articles
 
 
