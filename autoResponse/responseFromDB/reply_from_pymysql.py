@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=1
+isdebug=0
 
 #   程序开始运行时的时间
 #global start_datetime
