@@ -195,7 +195,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM wxhyb222com WHERE name LIKE '%v_name%'" 
+        sql_select="SELECT name,videourl,picurl FROM xiaoheju WHERE name LIKE '%v_name%'" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
