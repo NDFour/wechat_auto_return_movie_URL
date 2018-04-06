@@ -3,7 +3,7 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-03-13 17:14:51
-# Last Modified: 2018-04-04 22:14:32
+# Last Modified: 2018-04-06 13:05:48
 #
 
 import requests
@@ -75,9 +75,47 @@ def parseHtml(html_text):
     conn.close()
 
 def main():
-    tabList=['http://18.19.ivdmh.com/lists/5-','http://18.19.ivdmh.com/lists/6-','http://18.19.ivdmh.com/lists/7-','http://18.19.ivdmh.com/lists/8-','http://18.19.ivdmh.com/lists/9-','http://18.19.ivdmh.com/lists/10-','http://18.19.ivdmh.com/lists/19-','http://18.19.ivdmh.com/lists/11-']
+    tabList=[
+            'http://18.19.ivdmh.com/lists/5-',
+            'http://18.19.ivdmh.com/lists/6-',
+            'http://18.19.ivdmh.com/lists/7-',
+            'http://18.19.ivdmh.com/lists/8-',
+            'http://18.19.ivdmh.com/lists/9-',
+            'http://18.19.ivdmh.com/lists/10-',
+            'http://18.19.ivdmh.com/lists/19-',
+            'http://18.19.ivdmh.com/lists/11-',
 
-    pageList=[114,88,41,28,59,177,26,10]
+            'http://18.19.ivdmh.com/lists/12-',
+            'http://18.19.ivdmh.com/lists/13-',
+            'http://18.19.ivdmh.com/lists/14-',
+            'http://18.19.ivdmh.com/lists/15-',
+            'http://18.19.ivdmh.com/lists/18-',
+
+            'http://18.19.ivdmh.com/lists/3-',
+
+            'http://18.19.ivdmh.com/lists/4-',
+            ]
+
+    pageList=[
+            114,
+            88,
+            41,
+            28,
+            59,
+            177,
+            27,
+            10,
+            
+            106,
+            13,
+            17,
+            23,
+            2,
+            
+            7,
+            
+            59
+            ]
     # test pageList
 #    pageList=[2,3,4,2,3,4,2,4]
 
@@ -92,3 +130,28 @@ def main():
         iCnt+=1
 
 main()
+
+'''
+电影
+5-1 动作片
+6-1 喜剧片
+7-1 爱情片
+8-1 科幻片
+9-1 恐怖片
+10-1剧情片
+19-1伦理片
+11-1战争片
+
+电视剧
+12-1国产剧
+13-1港台剧
+14-1日韩剧
+15-1欧美剧
+18-1海外剧
+
+综艺
+3-1 综艺
+
+动漫
+4-1 动漫
+'''
