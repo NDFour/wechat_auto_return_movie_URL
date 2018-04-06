@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=0
+isdebug=1
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -28,17 +28,19 @@ use_cnt={}
 #global name_dic  用来验证公众号是否在该列表中以判断是否非法调用
 name_dic={}
 #last_movie 用来记录用户取关前的发送的一条消息记录
-last_movie=''
+#last_movie=''
 
 #@robot.subscribe
 #def subscribe(message):
 #    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
 #    return msg
 
+'''
 @robot.unsubscribe
 def unsubscribe(message):
-    global last_movie
+    #global last_movie
     print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
+'''
 
 def main():
     v_name=input('请输入要检索的电影名字')
@@ -116,8 +118,8 @@ def hello(message):
         return bdpan
 
     articles=reply_info(v_name)
-    global last_movie
-    last_movie=v_name
+#    global last_movie
+#    last_movie=v_name
     return articles
 
 
@@ -193,7 +195,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM xiaoheju WHERE name LIKE '%v_name%'" 
+        sql_select="SELECT name,videourl,picurl FROM wxhyb222com WHERE name LIKE '%v_name%'" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -205,7 +207,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[0])
             in_list.append(i[2])
-            in_list.append('http://idy007.xyz/movie.php?vurl='+i[1].replace('fiml','player').replace('.html','-1-1.html'))
+            in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html'))
       
             # 旧域名被封，更改域名
             # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
