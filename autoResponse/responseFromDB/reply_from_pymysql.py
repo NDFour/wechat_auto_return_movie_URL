@@ -13,7 +13,7 @@ robot.config['SESSION_STORAGE'] = False
 
 ### global isdebugi TO JUDGE IF THE PROGRAM IS IN DEBUG (test account)
 # 0 > 一起来电影; 1 > NDFour登录的测试号；2 > 电影资源搜
-isdebug=0
+isdebug=1
 
 #   程序开始运行时的时间
 #global start_datetime
@@ -205,7 +205,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM wxhyb222com WHERE name LIKE '%v_name%'" 
+        sql_select="SELECT name,videourl,picurl FROM wxhyb222com WHERE name LIKE '%v_name%';" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -219,9 +219,6 @@ def reply_info(v_name):
             in_list.append(i[2])
             in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','weixinzy.ikansp'))
       
-            # 旧域名被封，更改域名
-            # in_list.append(i[2].replace('gooddianying.net','nicedianying.com'))
-
             out_list.append(in_list)
             cnt+=1
     except:
