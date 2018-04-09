@@ -312,6 +312,7 @@ def insertadarticles(message_content):
 
     # 更新adarticles全局变量
     global adtuple
+    adtuple=[]
     try:
         cursor.execute(ad_select)
         adarticles_list=cursor.fetchone()
@@ -440,6 +441,7 @@ def updatename_dic():
 
     # 插入小说数据
     global adtuple
+    adtuple=[]
     try:
         cursor.execute(ad_select)
         adarticles_list=cursor.fetchone()
