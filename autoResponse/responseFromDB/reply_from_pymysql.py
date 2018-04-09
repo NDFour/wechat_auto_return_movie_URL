@@ -29,6 +29,8 @@ use_cnt={}
 name_dic={}
 #last_movie 用来记录用户取关前的发送的一条消息记录
 #last_movie=''
+#global adtuple[] 用来存放小说数据，不用每次收到消息都访问数据库
+adtuple=[]
 
 #@robot.subscribe
 #def subscribe(message):
@@ -64,8 +66,16 @@ def hello(message):
     if message.source==master_root:
 #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
-            updatename_dic()
-            return 'Program startting success!'
+            rel=updatename_dic()
+            if(rel==-1):
+                return '更新 name_dic 失败！\n更新 adarticles 失败！'
+            elif(rel==0):
+                return '更新 name_dic 成功！\n更新 adarticles 失败！'
+            elif(rel==1):
+                return '更新 name_dic 失败！\n更新 adarticles 成功！'
+            # rel==2
+            else:
+                return '更新 name_dic 成功！\n更新 adarticles 成功！'
 #   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
@@ -226,22 +236,11 @@ def reply_info(v_name):
         return reply_info(v_name[0:len_v_name])
 
 #   图文消息加上一条之前的广告推文链接
-    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
-    adtuple=[]
-    try:
-        cursor.execute(ad_select)
-        adarticles_list=cursor.fetchone()
+    global adtuple
+    out_list.insert(1,adtuple)
 
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[1])
-        adtuple.append(adarticles_list[2])
-
-        # 在第二条图文消息处添加 adarticles
-        out_list.insert(1,adtuple)
-    except:
-        pass
-
+    # 关闭数据库链接
+    cursor.close()
     conn.close()
 
     if int(cnt)<7:
@@ -295,10 +294,14 @@ def send_mail():
 def insertadarticles(message_content):
     # DEMO: inertadarticles INERT INTO adarticles(title,picurl,url,canbeuse) VALUES ('**','**','**',1);
 
+    # 插入小说数据
     sql_insert=message_content.replace('insertadarticles ','')
+    # 更新小说数据全局变量
+    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
+    # 插入小说数据
     try:
         cursor.execute(sql_insert)
         conn.commit()
@@ -306,6 +309,20 @@ def insertadarticles(message_content):
     except:
         conn.rollback()
         msg = '插入一条【广告图文】到数据库失败！'
+
+    # 更新adarticles全局变量
+    global adtuple
+    try:
+        cursor.execute(ad_select)
+        adarticles_list=cursor.fetchone()
+
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[1])
+        adtuple.append(adarticles_list[2])
+        msg+='\n更新 adarticles 全局变量成功！'
+    except:
+        msg+='\n更新 adarticles 全局变量失败！'
     finally:
         cursor.close()
         conn.close()
@@ -367,10 +384,16 @@ def manageuser(message_content,func):
         conn.close()
 
     rel=updatename_dic()
-    if rel==1:
-        pass 
-    elif rel==0:
-        msg = '添加公众号在 updatename_dic 时出错！'
+
+    if(rel==-1):
+        msg+='\n更新 name_dic 失败！\n更新 adarticles 失败！'
+    elif(rel==0):
+        msg+='\n更新 name_dic 成功！\n更新 adarticles 失败！'
+    elif(rel==1):
+        msg+='\n更新 name_dic 失败！\n更新 adarticles 成功！'
+    # rel==2
+    else:
+        msg+='\n更新 name_dic 成功！\n更新 adarticles 成功！'
 
     return msg
 
@@ -386,7 +409,10 @@ def updatename_dic():
 
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
+    # 更新 name_dic
     sql_select="SELECT target_id,target_name FROM users;"
+    # 更新小说数据全局变量
+    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
 
     msg=1
 
@@ -409,9 +435,24 @@ def updatename_dic():
                 use_cnt[i2]=use_cnt_bak[i2]
             else:
                 pass
-
     except:
         msg = 0
+
+    # 插入小说数据
+    global adtuple
+    try:
+        cursor.execute(ad_select)
+        adarticles_list=cursor.fetchone()
+
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[0])
+        adtuple.append(adarticles_list[1])
+        adtuple.append(adarticles_list[2])
+
+        msg+=1
+    except:
+        conn.rollback()
+        msg-=1
     finally:
         cursor.close()
         conn.close()
