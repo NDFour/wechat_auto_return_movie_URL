@@ -32,10 +32,13 @@ name_dic={}
 #global adtuple[] 用来存放小说数据，不用每次收到消息都访问数据库
 adtuple=[]
 
-#@robot.subscribe
-#def subscribe(message):
-#    msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
-#    return msg
+@robot.subscribe
+def subscribe(message):
+    #msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
+    global adtuple
+    outlist=[]
+    outlist.append(adtuple)
+    return outlist
 
 '''
 @robot.unsubscribe
