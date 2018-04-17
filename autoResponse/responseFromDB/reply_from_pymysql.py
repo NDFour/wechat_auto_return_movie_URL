@@ -208,7 +208,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM xiaoheju WHERE name LIKE '%v_name%';" 
+        sql_select="SELECT name,videourl,picurl FROM wxhyb222com WHERE name LIKE '%v_name%';" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -220,7 +220,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[0])
             in_list.append(i[2])
-            in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','weixinzy.ikansp'))
+            in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','weixinzy.ikansp').replace('222','3333'))
       
             out_list.append(in_list)
             cnt+=1
