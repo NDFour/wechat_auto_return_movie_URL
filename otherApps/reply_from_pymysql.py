@@ -29,7 +29,7 @@ def unsubscribe(message):
 def hello(message):
 #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
     global ifrun
-    masterRoot=''
+    masterRoot='orPeKwuaLwcbS4_rxlGA-Mv5Q3q8'
     v_name=message.content
     if(len(v_name) > 30):
         return '电影名长度过长，请精简关键字后重新发送。'
@@ -39,10 +39,16 @@ def hello(message):
             ifrun=1
         elif(v_name=="stop"):
             ifrun=0
+        elif(v_name=="iterative"):
+            iterative=1
+        elif(v_name=="uniterative"):
+            iterative=0
     if ifrun==0:
         return '非付费用户，无法使用该功能！'
  
     articles=reply_info(v_name)
+    if len(articles)==0:
+        return "No Result"
     return articles
 
 # 通过查询数据库将结果返回给用户
@@ -56,7 +62,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM xiaoheju WHERE name LIKE '%v_name%';" 
+        sql_select="SELECT name,videourl,picurl FROM daidai WHERE name LIKE '%v_name%';" 
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -68,7 +74,7 @@ def reply_info(v_name):
             in_list.append(i[0])
             in_list.append(i[0])
             in_list.append(i[2])
-            in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','wx.wx18.lcdoor'))
+            in_list.append(i[1])
       
             out_list.append(in_list)
             cnt+=1
