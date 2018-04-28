@@ -41,7 +41,7 @@ def hello(message):
             iterative=1
         elif(v_name=="uniterative"):
             iterative=0
-        elif(v_name="shutdown"):
+        elif(v_name=="shutdown"):
             os.system('shutdown -h now')
     if ifrun==0:
         return '非付费用户，无法使用该功能！'
