@@ -13,7 +13,7 @@ ifrun=0
 
 @robot.subscribe
 def subscribe(message):
-    return '嗨你终于来啦遇见你，真美好欢迎关注：夜央影视\n①最强大功能：直接输入电影名字即可观看在线电影，如遇支付宝广告，拉到下面或中间关掉即\n② <a href="http://wx.itv1234.com/wxtv.php">点这里在线观看电视直播</ a>\n③ <a href="https://mp.weixin.qq.com/s/3wRQJgJFt-I0Otp_uuVaHA">最齐全的电影查找攻略，5分钟教你做资源帝！</ a>'
+    return '嗨你终于来啦遇见你，真美好欢迎关注：夜央影视\n①最强大功能：直接输入电影名字即可观看在线电影，如遇支付宝广告，拉到下面或中间关掉即\n② <a href="http://wx.itv1234.com/wxtv.php">点这里在线观看电视直播</a>\n③ <a href="https://mp.weixin.qq.com/s/3wRQJgJFt-I0Otp_uuVaHA">最齐全的电影查找攻略，5分钟教你做资源帝！</a>'
 
 
 '''
