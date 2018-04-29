@@ -107,7 +107,7 @@ def hello(message):
             outtarget=message.content[9:]
             return updateserv_state(outtarget,0)
         elif re.match(r'renewal .*',message.content):
-            renewalTarget=message.content[9:]
+            renewalTarget=message.content[8:]
             return updateserv_state(renewalTarget,1)
 
 
@@ -117,12 +117,13 @@ def hello(message):
         print('《%s》'%message.content)
         # 判断公众号服务是否到期，如果到期回复引流图文
         if(serv_state[message.target]):
-            pass
+            print()
         else:
             # 插入 adtuple
             global adtuple
             outserve=[['点我观看最新电影','点我免费看电影','https://img1.doubanio.com/view/photo/l/public/p2511355619.webp','https://w.url.cn/s/AZxSsY0']]
             outserve.append(adtuple)
+            return outserve
     # 公众号非法调用程序
     else:
         return '！！\n未经授权的公众号，请联系微信 ndfour001 购买看电影服务使用权\n\n微信公众号搜索【一起来电影】，关注后发送电影名即可免费观看高清电影！'
@@ -522,6 +523,9 @@ def updateserv_state(target,state):
     finally:
         cursor.close()
         conn.close()
+    # update serv_dic
+    updatename_dic()
+
     return msg
 
    

@@ -1,0 +1,69 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.154 - - [29/Apr/2018 18:40:15] "POST /?signature=ee571ffcc4bd80f95829352ea8f4720d2df98c47&timestamp=1524998415&nonce=1075718686&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 467
+182.254.86.155 - - [29/Apr/2018 18:40:16] "POST /?signature=9e6abcdc98806bdb89cab00c07e70e9bd8f6cb5b&timestamp=1524998416&nonce=114757280&openid=o2NddxF54uBNF3eNYVL2EgnuCQ18 HTTP/1.1" 200 467
+182.254.86.139 - - [29/Apr/2018 18:40:17] "POST /?signature=c0207ceaba031b12d0201506bd10f6601f642650&timestamp=1524998416&nonce=405680379&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 326
+182.254.86.154 - - [29/Apr/2018 18:40:18] "POST /?signature=8f5305a3e4bcb296bb8025ca97f26a94a3516b64&timestamp=1524998418&nonce=971594916&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 2415
+182.254.86.154 - - [29/Apr/2018 18:40:27] "POST /?signature=03808d0e141b5bd42be31a1bf1d1a590dea3f1d2&timestamp=1524998427&nonce=824505391&openid=oPh3w1HjU45u1M1XifAOEfS7XCu4 HTTP/1.1" 200 2415
+182.254.86.139 - - [29/Apr/2018 18:40:30] "POST /?signature=559fe50175fef7ebfa216dc9aedc2f8557e90dec&timestamp=1524998430&nonce=1733222623&openid=oPh3w1HjU45u1M1XifAOEfS7XCu4 HTTP/1.1" 200 288
+182.254.86.154 - - [29/Apr/2018 18:40:39] "POST /?signature=86837e14b64b6f09f107005e4d59a4da193f2ece&timestamp=1524998439&nonce=241642633&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 662
+182.254.86.139 - - [29/Apr/2018 18:40:50] "POST /?signature=7283725f49cffc7dd0a23c5a61d97376b75eaa0c&timestamp=1524998450&nonce=658252253&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 300
+182.254.86.149 - - [29/Apr/2018 18:40:54] "POST /?signature=55c301f1c0e6385cc11f915eb7e076b40ffc99b3&timestamp=1524998454&nonce=1502848459&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 662
+182.254.86.139 - - [29/Apr/2018 18:41:01] "POST /?signature=217a17af4b2af8077d69f59dc0cf5c20faa67069&timestamp=1524998461&nonce=498086340&openid=oPh3w1HjU45u1M1XifAOEfS7XCu4 HTTP/1.1" 200 2415
+182.254.86.149 - - [29/Apr/2018 18:41:24] "POST /?signature=1af1330a13ea84c4c52b812da19a607b1d421feb&timestamp=1524998484&nonce=167119124&openid=o2NddxKNDnCtGWip9gsqfRXLcATo HTTP/1.1" 200 2423
+[E 180429 18:41:38 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 158, in hello
+        articles=reply_info(v_name)
+      File "reply_from_pymysql.py", line 265, in reply_info
+        out_list.insert(1,adtuple)
+    AttributeError: 'str' object has no attribute 'insert'
+[W 180429 18:41:38 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a67eec>
+182.254.86.139 - - [29/Apr/2018 18:41:38] "POST /?signature=9fd7ffbbabe2fc9c988cca64bcf1ab3beae874a3&timestamp=1524998498&nonce=331119839&openid=oPh3w1HjU45u1M1XifAOEfS7XCu4 HTTP/1.1" 200 0
+[E 180429 18:41:45 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 158, in hello
+        articles=reply_info(v_name)
+      File "reply_from_pymysql.py", line 261, in reply_info
+        out_list=reply_info(v_name[0:len_v_name])
+      File "reply_from_pymysql.py", line 265, in reply_info
+        out_list.insert(1,adtuple)
+    AttributeError: 'str' object has no attribute 'insert'
+[W 180429 18:41:45 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a6a36c>
+182.254.86.139 - - [29/Apr/2018 18:41:45] "POST /?signature=271763b9b07666bfdf33b584a386cf6cc41e08e3&timestamp=1524998505&nonce=1375812724&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+182.254.86.150 - - [29/Apr/2018 18:41:52] "POST /?signature=add191e9c6d1ced61b4d402746b37d0549e1c55c&timestamp=1524998511&nonce=2093507322&openid=o2NddxME18OraiE7SGOioPNzcaGI HTTP/1.1" 200 1489
+[W 180429 18:41:53 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a6ab0c>
+182.254.86.139 - - [29/Apr/2018 18:41:53] "POST /?signature=cb8bc839dbc7a28fb8498622059ee215fff66441&timestamp=1524998513&nonce=1292097767&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+182.254.86.150 - - [29/Apr/2018 18:41:55] "POST /?signature=31a3b456ed7b654838ef2b5ecf4b59165be87ab5&timestamp=1524998515&nonce=1072750481&openid=o2NddxNLQQ2YZmqzo-HyyyTMXntA HTTP/1.1" 200 904
+[W 180429 18:41:59 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a6af6c>
+182.254.86.140 - - [29/Apr/2018 18:41:59] "POST /?signature=ed42e21bce2a75674ff5f39600e813270d7b0a9e&timestamp=1524998518&nonce=1042443701&openid=o2NddxNLQQ2YZmqzo-HyyyTMXntA HTTP/1.1" 200 0
+[E 180429 18:42:06 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 158, in hello
+        articles=reply_info(v_name)
+      File "reply_from_pymysql.py", line 265, in reply_info
+        out_list.insert(1,adtuple)
+    AttributeError: 'str' object has no attribute 'insert'
+[W 180429 18:42:06 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a843cc>
+182.254.86.139 - - [29/Apr/2018 18:42:06] "POST /?signature=6a189bffbefe771f2ec7f088c2e134a1597297cc&timestamp=1524998526&nonce=963521465&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[E 180429 18:42:08 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 158, in hello
+        articles=reply_info(v_name)
+      File "reply_from_pymysql.py", line 265, in reply_info
+        out_list.insert(1,adtuple)
+    AttributeError: 'str' object has no attribute 'insert'
+[W 180429 18:42:08 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a8490c>
+182.254.86.154 - - [29/Apr/2018 18:42:08] "POST /?signature=3c0dae9f2aae7132b2a45633e5deddc765a6a5f5&timestamp=1524998528&nonce=560943246&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+182.254.86.140 - - [29/Apr/2018 18:42:14] "POST /?signature=b9cfaf2b9b53d99937eb9c0891b002592947bfa4&timestamp=1524998534&nonce=799767573&openid=o2NddxD4u22v52hogjmwcx4uVbzM HTTP/1.1" 200 1479
+[W 180429 18:42:14 robot:419] No handler responded message <werobot.messages.events.UnSubscribeEvent object at 0xb6a6ac6c>
