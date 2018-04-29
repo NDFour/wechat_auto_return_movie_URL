@@ -1,5 +1,9 @@
 ### UpdateLog
 
+####  V 4.9.3 (2018年4.29日)
+- 添加新功能 `outserve target_id` ,公众号到期后将会回复引流文章和 `adArticles`
+- 添加新功能 `renewal target_id` ,公众号**续费**成功
+
 ####  V 4.9.2 (2018年4.27日)
 
 - 更改 `reply_info()`函数的 **236**行`return reply_info(v_name[0:len_v_name])`为`out_list=reply_info(v_name[0:len_v_name])`

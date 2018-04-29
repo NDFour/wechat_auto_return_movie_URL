@@ -21,14 +21,22 @@ start_datetime=''
 
 #global last_use_cnt
 last_use_cnt=0
+
 #global total_use_cnt
 total_use_cnt=0
+
 #global use_cnt
 use_cnt={}
+
 #global name_dic  用来验证公众号是否在该列表中以判断是否非法调用
 name_dic={}
+
+#global serv_state 用来记录公众号服务是否到期
+serv_state={}
+
 #last_movie 用来记录用户取关前的发送的一条消息记录
 #last_movie=''
+
 #global adtuple[] 用来存放小说数据，不用每次收到消息都访问数据库
 adtuple=[]
 
@@ -79,26 +87,43 @@ def hello(message):
             # rel==2
             else:
                 return '更新 name_dic 成功！\n更新 adarticles 成功！'
-#   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
+        #   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
-#   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
+        #   预留adarticles添加接口，发送'insertadarticles .*',执行sql语句插入adarticles
         elif re.match(r'insertadarticles .*',message.content):
             return insertadarticles(message.content)
-#   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
+        #   预留更新电影数据表videoinfo接口，发送'updatevideoinfo **.sql',更新videoinfo数据表，返回执行结果（成功或失败）
         elif re.match(r'updatevideoinfo .*.sql',message.content):
             return updatevideoinfo(message.content)
-#   预留公众号添加接口，发送'adduser target_id target_name',执行sql语句插入user
+        #   预留公众号添加接口，发送'adduser target_id target_name',执行sql语句插入user
         elif re.match(r'adduser .*',message.content):
             return manageuser(message.content,1)
-#   预留公众号删除接口，发送'deluser id',执行sql语句删除user
+        #   预留公众号删除接口，发送'deluser id',执行sql语句删除user
         elif re.match(r'deluser [0-9]*',message.content):
             return manageuser(message.content,0)
+        #   预留公众号服务到期接口，到期后回复引流图文到自己公众号
+        elif re.match(r'outserve .*',message.content):
+            outtarget=message.content[9:]
+            return updateserv_state(outtarget,0)
+        elif re.match(r'renewal .*',message.content):
+            renewalTarget=message.content[9:]
+            return updateserv_state(renewalTarget,1)
+
 
 
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         print('《%s》'%message.content)
+        # 判断公众号服务是否到期，如果到期回复引流图文
+        if(serv_state[message.target]):
+            pass
+        else:
+            # 插入 adtuple
+            global adtuple
+            outserve=[['点我观看最新电影','点我免费看电影','https://img1.doubanio.com/view/photo/l/public/p2511355619.webp','https://w.url.cn/s/AZxSsY0']]
+            outserve.append(adtuple)
+    # 公众号非法调用程序
     else:
         return '！！\n未经授权的公众号，请联系微信 ndfour001 购买看电影服务使用权\n\n微信公众号搜索【一起来电影】，关注后发送电影名即可免费观看高清电影！'
 
@@ -412,11 +437,14 @@ def updatename_dic():
     cursor=conn.cursor()
     # 更新 name_dic
     sql_select="SELECT target_id,target_name FROM users;"
+    # 更新 serv_state
+    sql_serv_state="SELECT target_id,state FROM users;"
     # 更新小说数据全局变量
     ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
 
-    msg=1
 
+    # 更新 name_dic
+    msg=1
     try:
         cursor.execute(sql_select)
         users_tuple=cursor.fetchall()
@@ -439,6 +467,19 @@ def updatename_dic():
     except:
         msg = 0
 
+    # 更新 serv_state 
+    # 更新serv_state 字典，公众号服务是否到期验证
+    global serv_state
+    serv_state={}
+    try:
+        cursor.execute(sql_serv_state)
+        stateTuple=cursor.fetchall()
+        for i in stateTuple:
+            serv_state[i[0]]=i[1]
+    except:
+        pass
+
+
     # 插入小说数据
     global adtuple
     adtuple=[]
@@ -460,6 +501,29 @@ def updatename_dic():
         conn.close()
 
     return msg
+
+
+# 更新 serv_state,根据数据库记录更新字典，记录该公众号查电影服务是否到期
+def updateserv_state(target,state):
+    # target表示target_id, state表示到期或未到期(0 or 1)
+    conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
+    cursor=conn.cursor()
+
+    msg=''
+
+    sql_updateserv_state="UPDATE users set state=%s where target_id='%s';" %(state,target)
+    try:
+        cursor.execute(sql_updateserv_state)
+        conn.commit()
+        msg='更新 serv_state 成功！'
+    except:
+        conn.rollback()
+        msg='更新 serv_state 失败！'
+    finally:
+        cursor.close()
+        conn.close()
+    return msg
+
    
 #main()
 
