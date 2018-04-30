@@ -259,7 +259,10 @@ def reply_info(v_name):
 #   如果搜索不到数据，则将电影关键词长度一再缩小
     while ((cnt == 0) and len_v_name):
         len_v_name-=1
-        out_list=reply_info(v_name[0:len_v_name])
+        # 调用递归之前关闭本层数据库链接
+        cursor.close()
+        conn.close()
+        return reply_info(v_name[0:len_v_name])
 
 #   图文消息加上一条之前的广告推文链接
     global adtuple
