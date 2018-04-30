@@ -40,6 +40,9 @@ serv_state={}
 #global adtuple[] 用来存放小说数据，不用每次收到消息都访问数据库
 adtuple=[]
 
+# global reply_info_state 用来标识回复用户信息所需要调用的方法函数
+reply_info_state=1
+
 @robot.subscribe
 def subscribe(message):
     #msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
@@ -109,6 +112,8 @@ def hello(message):
         elif re.match(r'renewal .*',message.content):
             renewalTarget=message.content[8:]
             return updateserv_state(renewalTarget,1)
+        elif re.match(r'switch [0-9]',message):
+            reply_info_state=message.content[7]
 
 
 
@@ -145,7 +150,6 @@ def hello(message):
     if start_datetime=='':
         start_datetime=datetime.now()
 
-
     v_name=message.content
     
     if(len(v_name) > 30):
@@ -156,7 +160,13 @@ def hello(message):
     if len(bdpan):
         return bdpan
 
-    articles=reply_info(v_name)
+    # 调用 reply_info()
+    global reply_info_state
+    if reply_info_state==1:
+        articles=reply_info(v_name)
+    elif reply_info_state==2:
+        articles=reply_info_bygenurl(v_name)
+
 #    global last_movie
 #    last_movie=v_name
     return articles
@@ -275,6 +285,34 @@ def reply_info(v_name):
 
     if int(cnt)<7:
         out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+
+    return out_list
+
+
+# 构造查询 url 返回给用户
+def reply_info_bygenurl(v_name):
+    out_list=[]
+
+    baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
+    url=baseUrl+v_name
+    name=v_name+'免费观看'
+    picurl='http://kks.me/a5cc5'
+
+    # 插入搜索词条链接图文消息
+    in_list=[]
+    in_list.append(name)
+    in_list.append(name)
+    in_list.append(picurl)
+    in_list.append(url)
+
+    out_list.append(in_list)
+    
+    #   图文消息加上一条之前的广告推文链接
+    global adtuple
+    out_list.insert(1,adtuple)
+
+    # 插入查电影服务推广图文
+    out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
 
     return out_list
 
