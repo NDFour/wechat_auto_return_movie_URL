@@ -1,5 +1,10 @@
 ### UpdateLog
 
+####  V 4.9.4 (2018年5.1日)
+- 添加新功能 `switch [0-9]`切换`reply_info()`模式，从数据库检索数据或者**genurl**
+> 1. 1--reply_info()从数据库检索数据
+> 2. 2--reply_info_bygenurl()根据关键词构造搜索页url
+
 ####  V 4.9.3 (2018年4.29日)
 - 添加新功能 `outserve target_id` ,公众号到期后将会回复引流文章和 `adArticles`
 - 添加新功能 `renewal target_id` ,公众号**续费**成功

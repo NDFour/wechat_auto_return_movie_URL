@@ -77,6 +77,9 @@ def hello(message):
     if message.content=='showtarget':
         return message.target
 
+    # reply_info() 函数调用标识
+    global reply_info_state
+
     if message.source==master_root:
 #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
@@ -112,9 +115,8 @@ def hello(message):
         elif re.match(r'renewal .*',message.content):
             renewalTarget=message.content[8:]
             return updateserv_state(renewalTarget,1)
-        elif re.match(r'switch [0-9]',message):
-            reply_info_state=message.content[7]
-
+        elif re.match(r'switch [0-9]',message.content):
+            reply_info_state=int(message.content[7])
 
 
 #   判断转发消息的公众号是否在已授权列表中
@@ -161,7 +163,6 @@ def hello(message):
         return bdpan
 
     # 调用 reply_info()
-    global reply_info_state
     if reply_info_state==1:
         articles=reply_info(v_name)
     elif reply_info_state==2:
@@ -295,7 +296,7 @@ def reply_info_bygenurl(v_name):
 
     baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
     url=baseUrl+v_name
-    name=v_name+'免费观看'
+    name='《'+v_name+'》'+'免费观看'
     picurl='http://kks.me/a5cc5'
 
     # 插入搜索词条链接图文消息
@@ -575,7 +576,7 @@ def updateserv_state(target,state):
 
 # 让服务器监听在　0.0.0.0:4444
 robot.config['HOST']='0.0.0.0'
-robot.config['PORT']=80
+robot.config['PORT']=8000
 robot.run()
 
 
