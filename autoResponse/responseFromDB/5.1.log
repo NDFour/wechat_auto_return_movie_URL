@@ -1,0 +1,8 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.144 - - [01/May/2018 13:50:14] "POST /?signature=7dffcb34165bcce2426997ef677f7a8d818c1b3b&timestamp=1525153814&nonce=331628908&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 467
+182.254.86.144 - - [01/May/2018 13:50:15] "POST /?signature=f2c742b02d894f84bce1949795e9b3382b3b19a8&timestamp=1525153815&nonce=243941858&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 326
+182.254.86.149 - - [01/May/2018 13:50:16] "POST /?signature=1f56796bbcb3797da53f136257ecf81ee18695c6&timestamp=1525153816&nonce=2012067408&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 2023
+[W 180501 13:50:19 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a4154c>
