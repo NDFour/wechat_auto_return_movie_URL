@@ -39,6 +39,7 @@ serv_state={}
 
 #global adtuple[] 用来存放小说数据，不用每次收到消息都访问数据库
 adtuple=[]
+adtuple2=[]
 
 # global reply_info_state 用来标识回复用户信息所需要调用的方法函数
 reply_info_state=1
@@ -47,8 +48,12 @@ reply_info_state=1
 def subscribe(message):
     #msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
     global adtuple
+    global adtuple2
     outlist=[]
-    outlist.append(adtuple)
+    if adtuple:
+        outlist.append(adtuple)
+    if adtuple2:
+        outlist.append(adtuple2)
     return outlist
 
 '''
@@ -252,7 +257,7 @@ def reply_info(v_name):
         out_list=[]
         cnt=0
 
-        for i in cursor.fetchmany(7):
+        for i in cursor.fetchmany(6):
             in_list=[]
             in_list.append(i[0])
             in_list.append(i[0])
@@ -276,15 +281,19 @@ def reply_info(v_name):
         conn.close()
         return reply_info(v_name[0:len_v_name])
 
-#   图文消息加上一条之前的广告推文链接
+#   图文消息加上之前的广告推文链接
     global adtuple
-    out_list.insert(1,adtuple)
+    global adtuple2
+    if adtuple:
+        out_list.insert(1,adtuple)
+    if adtuple2:
+        out_list.insert(2,adtuple2)
 
     # 关闭数据库链接
     cursor.close()
     conn.close()
 
-    if int(cnt)<7:
+    if int(cnt)<6:
         out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
 
     return out_list
@@ -310,7 +319,11 @@ def reply_info_bygenurl(v_name):
     
     #   图文消息加上一条之前的广告推文链接
     global adtuple
-    out_list.insert(1,adtuple)
+    global adtuple2
+    if adtuple:
+        out_list.insert(1,adtuple)
+    if adtuple2:
+        out_list.insert(2,adtuple2)
 
     # 插入查电影服务推广图文
     out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
@@ -366,7 +379,8 @@ def insertadarticles(message_content):
     # 插入小说数据
     sql_insert=message_content.replace('insertadarticles ','')
     # 更新小说数据全局变量
-    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
+    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 AND tab=1 ORDER BY id DESC"
+    ad_select2="SELECT title,picurl,url FROM adarticles Where canbeuse=1 AND tab=2 ORDER BY id DESC"
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
@@ -381,15 +395,26 @@ def insertadarticles(message_content):
 
     # 更新adarticles全局变量
     global adtuple
+    global adtuple2
     adtuple=[]
+    adtuple2=[]
     try:
         cursor.execute(ad_select)
         adarticles_list=cursor.fetchone()
+        if adarticles_list:
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[1])
+            adtuple.append(adarticles_list[2])
+        # 添加第二条数据
+        cursor.execute(ad_select2)
+        adarticles_list=cursor.fetchone()
+        if adarticles_list:
+            adtuple2.append(adarticles_list[0])
+            adtuple2.append(adarticles_list[0])
+            adtuple2.append(adarticles_list[1])
+            adtuple2.append(adarticles_list[2])
 
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[1])
-        adtuple.append(adarticles_list[2])
         msg+='\n更新 adarticles 全局变量成功！'
     except:
         msg+='\n更新 adarticles 全局变量失败！'
@@ -484,7 +509,8 @@ def updatename_dic():
     # 更新 serv_state
     sql_serv_state="SELECT target_id,state FROM users;"
     # 更新小说数据全局变量
-    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 ORDER BY id DESC"
+    ad_select="SELECT title,picurl,url FROM adarticles Where canbeuse=1 AND tab=1 ORDER BY id DESC"
+    ad_select2="SELECT title,picurl,url FROM adarticles Where canbeuse=1 AND tab=2 ORDER BY id DESC"
 
 
     # 更新 name_dic
@@ -526,15 +552,26 @@ def updatename_dic():
 
     # 插入小说数据
     global adtuple
+    global adtuple2
     adtuple=[]
+    adtuple2=[]
     try:
         cursor.execute(ad_select)
         adarticles_list=cursor.fetchone()
+        if adarticles_list:
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[0])
+            adtuple.append(adarticles_list[1])
+            adtuple.append(adarticles_list[2])
 
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[0])
-        adtuple.append(adarticles_list[1])
-        adtuple.append(adarticles_list[2])
+        # 添加第二条小说数据
+        cursor.execute(ad_select2)
+        adarticles_list=cursor.fetchone()
+        if adarticles_list:
+            adtuple2.append(adarticles_list[0])
+            adtuple2.append(adarticles_list[0])
+            adtuple2.append(adarticles_list[1])
+            adtuple2.append(adarticles_list[2])
 
         msg+=1
     except:
@@ -576,7 +613,7 @@ def updateserv_state(target,state):
 
 # 让服务器监听在　0.0.0.0:4444
 robot.config['HOST']='0.0.0.0'
-robot.config['PORT']=80
+robot.config['PORT']=8000
 robot.run()
 
 

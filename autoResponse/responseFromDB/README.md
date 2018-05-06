@@ -1,5 +1,8 @@
 ### UpdateLog
 
+####  V 4.9.5 (2018年5.6日)
+- 增加**adarticles**选项，在插入数据到**adarticles**表中时设置**tab**的值为1时表示为第一条**adarticles**，为2时表示为第二条**adarticles**
+
 ####  V 4.9.4 (2018年5.1日)
 - 添加新功能 `switch [0-9]`切换`reply_info()`模式，从数据库检索数据或者**genurl**
 > 1. 1--reply_info()从数据库检索数据
