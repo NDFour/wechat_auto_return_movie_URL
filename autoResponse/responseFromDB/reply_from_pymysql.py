@@ -41,6 +41,10 @@ serv_state={}
 adtuple=[]
 adtuple2=[]
 
+# adarticles_state 用来标识是否在该位置插入adarticles
+ad1_state=1
+ad2_state=1
+
 # global reply_info_state 用来标识回复用户信息所需要调用的方法函数
 reply_info_state=1
 
@@ -122,6 +126,14 @@ def hello(message):
             return updateserv_state(renewalTarget,1)
         elif re.match(r'switch [0-9]',message.content):
             reply_info_state=int(message.content[7])
+        #   决定adarticles的开启状态
+        elif re.match(r'ad1change [0-9]',message.content):
+            global ad1_state
+            ad1_state=message.content[10]
+        elif re.match(r'ad2change [0-9]',message.content):
+            global ad2_state
+            ad2_state=message.content[10]
+
 
 
 #   判断转发消息的公众号是否在已授权列表中
@@ -284,10 +296,14 @@ def reply_info(v_name):
 #   图文消息加上之前的广告推文链接
     global adtuple
     global adtuple2
-    if adtuple:
-        out_list.insert(1,adtuple)
-    if adtuple2:
-        out_list.insert(2,adtuple2)
+    global ad1_state 
+    global ad2_state 
+    if ad1_state:
+        if adtuple:
+            out_list.insert(1,adtuple)
+    if ad2_state:
+        if adtuple2:
+            out_list.insert(2,adtuple2)
 
     # 关闭数据库链接
     cursor.close()
@@ -320,10 +336,15 @@ def reply_info_bygenurl(v_name):
     #   图文消息加上一条之前的广告推文链接
     global adtuple
     global adtuple2
-    if adtuple:
-        out_list.insert(1,adtuple)
-    if adtuple2:
-        out_list.insert(2,adtuple2)
+    global ad1_state 
+    global ad2_state 
+
+    if ad1_state:
+        if adtuple:
+            out_list.insert(1,adtuple)
+    if ad2_state:
+        if adtuple2:
+            out_list.insert(2,adtuple2)
 
     # 插入查电影服务推广图文
     out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
