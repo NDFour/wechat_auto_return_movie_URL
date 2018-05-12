@@ -129,16 +129,18 @@ def hello(message):
         #   决定adarticles的开启状态
         elif re.match(r'ad1change [0-9]',message.content):
             global ad1_state
-            ad1_state=message.content[10]
+            ad1_state=int(message.content[10])
+            return 'Now the ad1_state is : %s' % str(ad1_state)
         elif re.match(r'ad2change [0-9]',message.content):
             global ad2_state
-            ad2_state=message.content[10]
+            ad2_state=int(message.content[10])
+            return 'Now the ad2_state is : %s' % str(ad2_state)
 
 
 
 #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
-        print('《%s》'%message.content)
+        # print('《%s》'%message.content)
         # 判断公众号服务是否到期，如果到期回复引流图文
         if(serv_state[message.target]):
             print()

@@ -1,0 +1,92 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.139 - - [10/May/2018 00:20:18] "POST /?signature=e1d9abddbbf82ebd07ac752ac1e239a49aa66512&timestamp=1525882818&nonce=1250049171&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 467
+182.254.86.154 - - [10/May/2018 00:20:19] "POST /?signature=853ff6a7d6bbb2695cc60c190912d56d44b129e3&timestamp=1525882819&nonce=1422165155&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 326
+[E 180510 00:20:20 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+[W 180510 00:20:20 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a1f9ac>
+182.254.86.154 - - [10/May/2018 00:20:20] "POST /?signature=b6f48d2edc32573f6c23c08df9bdb74fc2e426ce&timestamp=1525882820&nonce=1536616890&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[E 180510 00:20:23 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-9: ordinal not in range(128)
+[W 180510 00:20:23 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a1fbcc>
+182.254.86.140 - - [10/May/2018 00:20:23] "POST /?signature=e516dce8621214efdeeb794f2856b755f556b97f&timestamp=1525882823&nonce=127089794&openid=o2NddxP_ZEuu7USCMwkMRgFE8iOo HTTP/1.1" 200 0
+[E 180510 00:20:27 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+[W 180510 00:20:27 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a1fdec>
+182.254.86.139 - - [10/May/2018 00:20:27] "POST /?signature=c603ea5771b279df46f7f6dc57fd6af8cfb3a53e&timestamp=1525882827&nonce=16008705&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[E 180510 00:20:31 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode character '\u300a' in position 0: ordinal not in range(128)
+[W 180510 00:20:31 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a1ff8c>
+182.254.86.149 - - [10/May/2018 00:20:31] "POST /?signature=c6f125a024145cb6d9c0b554a336603fd16f8518&timestamp=1525882831&nonce=1762533453&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[E 180510 00:20:33 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+[W 180510 00:20:33 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a4b3cc>
+182.254.86.149 - - [10/May/2018 00:20:33] "POST /?signature=d87ab6344c6cc2e7c29c8b00e3841603dffe55ce&timestamp=1525882832&nonce=1422183070&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[W 180510 00:20:50 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a4b64c>
+182.254.86.140 - - [10/May/2018 00:20:50] "POST /?signature=0027f74614bc91240b4a11e08121cb89f5f97001&timestamp=1525882850&nonce=619781386&openid=o2NddxP_ZEuu7USCMwkMRgFE8iOo HTTP/1.1" 200 0
+[E 180510 00:20:55 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-9: ordinal not in range(128)
+[W 180510 00:20:55 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a4ba0c>
+182.254.86.155 - - [10/May/2018 00:20:55] "POST /?signature=0c5a1cce5918931cc032778b78f5f6bc44bce9c7&timestamp=1525882855&nonce=1712300493&openid=o2NddxP_ZEuu7USCMwkMRgFE8iOo HTTP/1.1" 200 0
+[E 180510 00:21:01 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+[W 180510 00:21:01 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a4bd2c>
+182.254.86.145 - - [10/May/2018 00:21:01] "POST /?signature=f4b59b8a28e8400125fdfcdb291443b8b1ff803e&timestamp=1525882861&nonce=318105003&openid=o2NddxONy68J0ZoRY1lP91Z0J7gE HTTP/1.1" 200 0
+[E 180510 00:21:11 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+[W 180510 00:21:11 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a4becc>
+182.254.86.139 - - [10/May/2018 00:21:11] "POST /?signature=53ef5a80f741b4eb992c17c45872c30ed34f7cb3&timestamp=1525882871&nonce=1353832498&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+182.254.86.154 - - [10/May/2018 00:21:13] "POST /?signature=2a04d757a7a5ec345a6b544000936d0064f6ad3d&timestamp=1525882873&nonce=1507834436&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 676
+[E 180510 00:21:19 robot:405] Catch an exception
+    Traceback (most recent call last):
+      File "/usr/local/lib/python3.4/dist-packages/werobot/robot.py", line 399, in get_reply
+        reply = handler(*args)
+      File "reply_from_pymysql.py", line 129, in hello
+        print('\u300a%s\u300b'%message.content)
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+[W 180510 00:21:19 robot:419] No handler responded message <werobot.messages.messages.TextMessage object at 0xb6a4c7ac>
+182.254.86.149 - - [10/May/2018 00:21:19] "POST /?signature=c9f3cc688ca901a1f66d887e09be674ab25daaa4&timestamp=1525882878&nonce=2073664929&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+182.254.86.149 - - [10/May/2018 00:21:21] "POST /?signature=de06685ad41de680004df248f3dcf5cb8bf08913&timestamp=1525882881&nonce=1516492976&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 676
+182.254.86.139 - - [10/May/2018 00:21:23] "POST /?signature=61f41f3c7b80c2d7ca01aab41a7f2317646c34b2&timestamp=1525882883&nonce=1254487105&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 288

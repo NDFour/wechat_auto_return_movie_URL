@@ -1,0 +1,22 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.154 - - [12/May/2018 17:49:26] "POST /?signature=11a0b6510cc19534e2dd3bbc4b33919987e8147f&timestamp=1526118566&nonce=73658495&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 467
+182.254.86.139 - - [12/May/2018 17:49:27] "POST /?signature=7e0d76c02269d74357144c6be9d193161e096ada&timestamp=1526118567&nonce=615267198&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 326
+[W 180512 17:49:31 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6ae7e8c>
+182.254.86.155 - - [12/May/2018 17:49:31] "POST /?signature=1505c4daadb4f4ef449c8aa76711a7eb390fd2c5&timestamp=1526118571&nonce=184889085&openid=o2NddxK2D3j3Fo5De-TF2FQoGXXM HTTP/1.1" 200 0
+182.254.86.155 - - [12/May/2018 17:49:32] "POST /?signature=43495d840b90bd5ab6a0b415ff04f5b3e7c3e698&timestamp=1526118572&nonce=1253781485&openid=o2NddxFmFa3dMLtG8LuVrpG0kCyc HTTP/1.1" 200 3085
+182.254.86.153 - - [12/May/2018 17:49:33] "POST /?signature=0f80a261d9e827176f64127207c79204127f0504&timestamp=1526118573&nonce=116874250&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1939
+182.254.86.158 - - [12/May/2018 17:49:34] "POST /?signature=34381976ac78eeda49d58e7c7f193caf0982359d&timestamp=1526118574&nonce=140280411&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1942
+182.254.86.140 - - [12/May/2018 17:49:36] "POST /?signature=20dae91bacaaa9b7c7caf257cdbf36e12d6c953b&timestamp=1526118575&nonce=536485562&openid=o2NddxLSTu_yx_GbVE8B2azswY18 HTTP/1.1" 200 1933
+182.254.86.145 - - [12/May/2018 17:49:46] "POST /?signature=de16710f4f56cf344c9820f8b4ac047b18cf8ca2&timestamp=1526118586&nonce=1937831654&openid=o2NddxCYH2G8z3-YS119jZc5gKN4 HTTP/1.1" 200 1969
+182.254.86.155 - - [12/May/2018 17:49:47] "POST /?signature=b1cb78ee868b5f8c7cff50e0f53001e41e94ebe4&timestamp=1526118587&nonce=88885025&openid=o2NddxK2D3j3Fo5De-TF2FQoGXXM HTTP/1.1" 200 1951
+201.110.59.2 - - [12/May/2018 17:49:47] "GET / HTTP/1.1" 403 1688
+182.254.86.154 - - [12/May/2018 17:49:47] "POST /?signature=54b85855c5bed97afa0d648dbc86d9881f82022e&timestamp=1526118587&nonce=904835534&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 297
+182.254.86.154 - - [12/May/2018 17:49:58] "POST /?signature=4bf280701a4dc00aadd6be3efe2362c3b41d6fb5&timestamp=1526118598&nonce=1936321479&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1410
+182.254.86.140 - - [12/May/2018 17:50:00] "POST /?signature=f95540e397ad627795f44364bdf232b294991e03&timestamp=1526118600&nonce=814151298&openid=o2NddxL6hv5BD95vuIlWjDi8ChFs HTTP/1.1" 200 1431
+182.254.86.140 - - [12/May/2018 17:50:06] "POST /?signature=e4b52057ccb147f3e74cda7e64086b10ff82d2b0&timestamp=1526118606&nonce=1219999111&openid=o2NddxCMeyhlePFXMv29vh3AmZwE HTTP/1.1" 200 1419
+[W 180512 17:50:12 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a8f8cc>
+182.254.86.154 - - [12/May/2018 17:50:12] "POST /?signature=eb1a04eb40480813d2891e73cb3739e847ad3690&timestamp=1526118612&nonce=1760052916&openid=o2NddxHhRKnWDh5YxjmaVUluMNSQ HTTP/1.1" 200 0
+[W 180512 17:50:29 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a8fbcc>
