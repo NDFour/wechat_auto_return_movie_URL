@@ -321,7 +321,8 @@ def reply_info(v_name):
 def reply_info_bygenurl(v_name):
     out_list=[]
 
-    baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
+    #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
+    baseUrl='http://w.qzwf168.cn/index.php/home/index/search.html?k='
     url=baseUrl+v_name
     name='《'+v_name+'》'+'免费观看'
     picurl='http://kks.me/a5cc5'
@@ -349,7 +350,7 @@ def reply_info_bygenurl(v_name):
             out_list.insert(2,adtuple2)
 
     # 插入查电影服务推广图文
-    out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
+    # out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
 
     return out_list
 
