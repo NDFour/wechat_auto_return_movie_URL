@@ -61,28 +61,30 @@ def subscribe(message):
     return outlist
 
 '''
+# 用户取关
 @robot.unsubscribe
 def unsubscribe(message):
     #global last_movie
     print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
 '''
 
+# 测试用函数，上线后无用
 def main():
     v_name=input('请输入要检索的电影名字')
     print(reply_info(v_name))
 
 @robot.text
 def hello(message):
-#    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
+    #    return '        【系统升级】\n\n  公众号系统进行服务升级，预计24小时内完成。\n  请耐心等待升级完成！'
 
-#   the account of 'Lynn'
+    #   the account of 'Lynn'
     master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
     if isdebug==1:
         master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
     elif isdebug==2:
         master_root='onD430y7UUrFB8sDV6W8PU4Skwy8'
 
-#   预留 查看公众号 message.target 接口
+    #   预留 查看公众号 message.target 接口
     if message.content=='showtarget':
         return message.target
 
@@ -90,7 +92,7 @@ def hello(message):
     global reply_info_state
 
     if message.source==master_root:
-#   预留 接口，发送后 run 后程序开始工作
+        #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
             rel=updatename_dic()
             if(rel==-1):
@@ -136,9 +138,7 @@ def hello(message):
             ad2_state=int(message.content[10])
             return 'Now the ad2_state is : %s' % str(ad2_state)
 
-
-
-#   判断转发消息的公众号是否在已授权列表中
+    #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         # print('《%s》'%message.content)
         # 判断公众号服务是否到期，如果到期回复引流图文
@@ -154,14 +154,14 @@ def hello(message):
     else:
         return '！！\n未经授权的公众号，请联系微信 ndfour001 购买看电影服务使用权\n\n微信公众号搜索【一起来电影】，关注后发送电影名即可免费观看高清电影！'
 
-#   记录每个公众号的调用程序次数
+    #   记录每个公众号的调用程序次数
     global last_use_cnt
     global use_cnt
     global total_use_cnt
     use_cnt[message.target]+=1
     total_use_cnt+=1
 
-#   如果当天调用次数超过 5000 次发送邮件通知
+    #   如果当天调用次数超过 5000 次发送邮件通知
     if (total_use_cnt-last_use_cnt) == 5000:
         send_mail()
         last_use_cnt=total_use_cnt
@@ -172,14 +172,11 @@ def hello(message):
         start_datetime=datetime.now()
 
     v_name=message.content
-    
+
     if(len(v_name) > 30):
         return '电影名长度过长，请精简关键字后重新发送。'
 
     v_name=modefy_name(v_name)
-    bdpan=pre_process(v_name)
-    if len(bdpan):
-        return bdpan
 
     # 调用 reply_info()
     if reply_info_state==1:
@@ -187,15 +184,14 @@ def hello(message):
     elif reply_info_state==2:
         articles=reply_info_bygenurl(v_name)
 
-#    global last_movie
-#    last_movie=v_name
+    #    global last_movie
+    #    last_movie=v_name
     return articles
-
 
 # 替换用户发来的电影名字中的错别字
 def modefy_name(v_name):
 
-# 先把电影名字中的特殊符号去除
+    # 先把电影名字中的特殊符号去除
     v_name=v_name.replace('《','')
     v_name=v_name.replace('》','')
     v_name=v_name.replace('。','')
@@ -234,37 +230,17 @@ def modefy_name(v_name):
 
     return v_name
 
-#   对于搜索不到的影视资源用百度网盘链接代替
-def pre_process(v_name):
-    url=''
-    author_info='\n\n-----------------\n>> 如果网盘链接失效不能用请加我微信 ndfour001 进行反馈'
-
-#   电影名字
-    lyj="老友记"
-    ywar="欲望爱人"
-
-    if(lyj in v_name):
-        url='《老友记》\n磁力链接：magnet:?xt=urn:btih:D563EF792A247A5547D8D1191B41F2CBE0B2382E  \n<a href="http://mp.weixin.qq.com/s/PSOi3kK_aRzCHLba2u9qjQ">点我查看如何使用磁力链接</a>'
-    elif(ywar in v_name):
-        url='《欲望爱人》\n在线观看链接：http://video.tudou.com/v/XMTc4NTg3MTUwOA==.html'
-
-    if url:
-        url=url+author_info
-        return url
-    return ''
-
-
 # 通过查询数据库将结果返回给用户
 def reply_info(v_name):
-#   递归调用时，如电影名为空，直接返回
+    #   递归调用时，如电影名为空，直接返回
     if v_name == '':
-        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。' 
+        return '数据库中暂无该影片，请先观看其他影片。\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。'
 
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM daidai WHERE name LIKE '%v_name%';" 
+        sql_select="SELECT name,videourl,picurl FROM daidai WHERE name LIKE '%v_name%';"
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -278,7 +254,7 @@ def reply_info(v_name):
             in_list.append(i[2])
             in_list.append(i[1])
             # in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','wx.wx18.lcdoor'))
-      
+
             out_list.append(in_list)
             cnt+=1
     except:
@@ -287,7 +263,7 @@ def reply_info(v_name):
         return '查询数据失败，错误代码 0x_reply_info_().SELECT ERROR\n\n-想让你的公众号也具有发送名字即可在线观看电影功能？\n-欢迎加我微信 ndfour001 洽谈合作。 '
 
     len_v_name=len(v_name)
-#   如果搜索不到数据，则将电影关键词长度一再缩小
+    #   如果搜索不到数据，则将电影关键词长度一再缩小
     while ((cnt == 0) and len_v_name):
         len_v_name-=1
         # 调用递归之前关闭本层数据库链接
@@ -295,11 +271,11 @@ def reply_info(v_name):
         conn.close()
         return reply_info(v_name[0:len_v_name])
 
-#   图文消息加上之前的广告推文链接
+    #   图文消息加上之前的广告推文链接
     global adtuple
     global adtuple2
-    global ad1_state 
-    global ad2_state 
+    global ad1_state
+    global ad2_state
     if ad1_state:
         if adtuple:
             out_list.insert(1,adtuple)
@@ -316,48 +292,42 @@ def reply_info(v_name):
 
     return out_list
 
-
 # 构造查询 url 返回给用户
 def reply_info_bygenurl(v_name):
     out_list=[]
-
     #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
     baseUrl='http://w.qzwf168.cn/index.php/home/index/search.html?k='
     url=baseUrl+v_name
     name='《'+v_name+'》'+'免费观看'
     picurl='http://kks.me/a5cc5'
-
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
     in_list.append(name)
     in_list.append(picurl)
     in_list.append(url)
-
     out_list.append(in_list)
-    
     #   图文消息加上一条之前的广告推文链接
     global adtuple
     global adtuple2
-    global ad1_state 
-    global ad2_state 
-
+    global ad1_state
+    global ad2_state
     if ad1_state:
         if adtuple:
             out_list.insert(1,adtuple)
     if ad2_state:
         if adtuple2:
             out_list.insert(2,adtuple2)
-
     # 插入查电影服务推广图文
     # out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
-
+    # 插入“视频无法播放”
+    out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
     return out_list
 
 #   showanalyze 查询各公众号调用次数
 def showanalyze():
     # DEMO: showanalyze
-    global name_dic 
+    global name_dic
     global total_use_cnt
     global use_cnt
 
@@ -456,14 +426,14 @@ def updatevideoinfo(message_content):
     bak_sql_dir=os.path.abspath('..')+'/mysql_python/%s'%source_name
     sql_source=('mysql -uroot -pcqmygpython2 wechatmovie < %s'%bak_sql_dir)
 
-#   judge if the file is exist
+    #   judge if the file is exist
     if os.path.exists(bak_sql_dir):
         try:
             os.system(sql_source)
             return '更新电影信息 videoinfo 数据表备份 %s 成功！'%source_name
         except:
             return '更新电影信息 videoinfo 数据表备份 %s 失败！'%source_name
- 
+
         return 'File:\n---------\n%s\n---------\nnot exists!'%source_name
 
 def manageuser(message_content,func):
@@ -517,11 +487,11 @@ def manageuser(message_content,func):
     return msg
 
 
-# 更新 公众号列表 name_dic 
+# 更新 公众号列表 name_dic
 def updatename_dic():
-# 被 manageuser 调用以更新 name_dic 
+    # 被 manageuser 调用以更新 name_dic
     global name_dic
-    global use_cnt 
+    global use_cnt
     name_dic={}
     use_cnt_bak=use_cnt
     use_cnt={}
@@ -547,9 +517,9 @@ def updatename_dic():
         for i in users_tuple:
             tuple_list.append(i[0])
             name_dic[i[0]]=i[1]
-            # 更新 use_cnt 
+            # 更新 use_cnt
             if i[0] in use_cnt:
-                pass 
+                pass
             else:
                 use_cnt[i[0]]=0
         # Judge if the use_cnt[*] has been deleted
@@ -561,7 +531,7 @@ def updatename_dic():
     except:
         msg = 0
 
-    # 更新 serv_state 
+    # 更新 serv_state
     # 更新serv_state 字典，公众号服务是否到期验证
     global serv_state
     serv_state={}
@@ -607,7 +577,6 @@ def updatename_dic():
 
     return msg
 
-
 # 更新 serv_state,根据数据库记录更新字典，记录该公众号查电影服务是否到期
 def updateserv_state(target,state):
     # target表示target_id, state表示到期或未到期(0 or 1)
@@ -632,12 +601,9 @@ def updateserv_state(target,state):
 
     return msg
 
-   
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
 robot.config['HOST']='0.0.0.0'
 robot.config['PORT']=80
 robot.run()
-
-
