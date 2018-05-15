@@ -550,7 +550,6 @@ def updatename_dic():
     except:
         pass
 
-
     # 插入小说数据
     global adtuple
     global adtuple2
@@ -573,7 +572,6 @@ def updatename_dic():
             adtuple2.append(adarticles_list[0])
             adtuple2.append(adarticles_list[1])
             adtuple2.append(adarticles_list[2])
-
         msg+=1
     except:
         conn.rollback()
@@ -581,7 +579,6 @@ def updatename_dic():
     finally:
         cursor.close()
         conn.close()
-
     return msg
 
 # 更新 serv_state,根据数据库记录更新字典，记录该公众号查电影服务是否到期
@@ -605,7 +602,6 @@ def updateserv_state(target,state):
         conn.close()
     # update serv_dic
     updatename_dic()
-
     return msg
 
 #main()
