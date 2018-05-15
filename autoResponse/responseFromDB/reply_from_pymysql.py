@@ -48,6 +48,9 @@ ad2_state=1
 # global reply_info_state 用来标识回复用户信息所需要调用的方法函数
 reply_info_state=1
 
+# baseUrl 构造search页链接
+baseUrl='http://m.bjwxzs.com.cn/index.php/home/index/search.html?k='
+
 @robot.subscribe
 def subscribe(message):
     #msg="注意：\n1  发送电影名字的时候请不要带其他特殊符号，只要电影名字即可；\n2  电影名字中请不要出现错别字"
@@ -137,6 +140,10 @@ def hello(message):
             global ad2_state
             ad2_state=int(message.content[10])
             return 'Now the ad2_state is : %s' % str(ad2_state)
+        # 更改 reply_info_bygenurl 中的 baseUrl
+        elif re.match(r'changebaseurl .*',message.content):
+            global baseUrl
+            baseUrl=message.content[14:]
 
     #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
@@ -296,7 +303,7 @@ def reply_info(v_name):
 def reply_info_bygenurl(v_name):
     out_list=[]
     #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
-    baseUrl='http://w.qzwf168.cn/index.php/home/index/search.html?k='
+    global baseUrl
     url=baseUrl+v_name
     name='《'+v_name+'》'+'免费观看'
     picurl='http://kks.me/a5cc5'
