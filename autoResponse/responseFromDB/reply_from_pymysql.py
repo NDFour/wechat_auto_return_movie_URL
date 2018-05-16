@@ -144,7 +144,7 @@ def hello(message):
         elif re.match(r'changebaseurl .*',message.content):
             global baseUrl
             baseUrl=message.content[14:]
-
+            return '更改 baseUrl 成功!'
     #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         # print('《%s》'%message.content)
