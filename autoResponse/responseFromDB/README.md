@@ -32,6 +32,8 @@ VALUES ( , , , 1, 1); #tab对应插入到图文中的位置
 
 10. `changebaseurl .*`更改`reply_info_bygenurl`函数中的`baseUrl`以构造新的搜索页url
 
+11. `showConfig` 显示程序配置文件`config.ini`中的相关配置
+
 **教程到此结束，以下是更新日志**
 
 ---

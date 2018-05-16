@@ -7,6 +7,7 @@ import smtplib
 import pymysql
 import re
 import os
+import configparser
 
 robot=WeRoBot(token='wx123')
 robot.config['SESSION_STORAGE'] = False
@@ -97,16 +98,18 @@ def hello(message):
     if message.source==master_root:
         #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
+            # 从'config.ini'文件中读取配置项
+            loadConfigMsg=loadConfig()
             rel=updatename_dic()
             if(rel==-1):
-                return '更新 name_dic 失败！\n更新 adarticles 失败！'
+                return loadConfigMsg+'\n更新 name_dic 失败！\n更新 adarticles 失败！'
             elif(rel==0):
-                return '更新 name_dic 成功！\n更新 adarticles 失败！'
+                return loadConfigMsg+'\n更新 name_dic 成功！\n更新 adarticles 失败！'
             elif(rel==1):
-                return '更新 name_dic 失败！\n更新 adarticles 成功！'
+                return loadConfigMsg+'\n更新 name_dic 失败！\n更新 adarticles 成功！'
             # rel==2
             else:
-                return '更新 name_dic 成功！\n更新 adarticles 成功！'
+                return loadConfigMsg+'\n更新 name_dic 成功！\n更新 adarticles 成功！'
         #   预留数据查看接口，发送'showanalyze',返回各公众号调用次数统计
         elif message.content=='showanalyze':
             return showanalyze()
@@ -131,20 +134,33 @@ def hello(message):
             return updateserv_state(renewalTarget,1)
         elif re.match(r'switch [0-9]',message.content):
             reply_info_state=int(message.content[7])
+            # 写入到配置文件中，下次启动程序时自动加载
+            msgWriteToConfigFile=writeToConfigFile('reply_info_state',str(reply_info_state))
+            return msgWriteToConfigFile
         #   决定adarticles的开启状态
         elif re.match(r'ad1change [0-9]',message.content):
             global ad1_state
             ad1_state=int(message.content[10])
-            return 'Now the ad1_state is : %s' % str(ad1_state)
+            # 写入到配置文件中，下次启动程序时自动加载
+            msgWriteToConfigFile=writeToConfigFile('ad1_state',str(ad1_state))
+            return msgWriteToConfigFile+'\nNow the ad1_state is : %s'%str(ad1_state)
         elif re.match(r'ad2change [0-9]',message.content):
             global ad2_state
             ad2_state=int(message.content[10])
-            return 'Now the ad2_state is : %s' % str(ad2_state)
+            # 写入到配置文件中，下次启动程序时自动加载
+            msgWriteToConfigFile=writeToConfigFile('ad2_state',str(ad2_state))
+            return msgWriteToConfigFile+'\nNow the ad2_state is : %s'%str(ad2_state)
         # 更改 reply_info_bygenurl 中的 baseUrl
         elif re.match(r'changebaseurl .*',message.content):
             global baseUrl
             baseUrl=message.content[14:]
-            return '更改 baseUrl 成功!'
+            msgWriteToConfigFile=writeToConfigFile('baseUrl',baseUrl)
+            return msgWriteToConfigFile+'\n更改 baseUrl 成功!'
+        # 返回程序配置文件config.ini中相关配置
+        elif message.content=='showConfig':
+            msg=showConfig()
+            return msg
+
     #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
         # print('《%s》'%message.content)
@@ -603,6 +619,55 @@ def updateserv_state(target,state):
     # update serv_dic
     updatename_dic()
     return msg
+
+# 返回程序配置文件中相关配置项
+def showConfig():
+    global ad1_state
+    global ad2_state
+    global reply_info_state
+    global baseUrl
+
+    msg='config.ini:\n'
+    msg+='\nad1_state:'+str(ad1_state)
+    msg+='\nad2_state:'+str(ad2_state)
+    msg+='\nreply_info_state:'+str(reply_info_state)
+    msg+='\nbaseUrl:'+baseUrl
+
+    return msg
+
+# 从'config.ini'文件中读取程序配置参数
+def loadConfig():
+    global ad1_state
+    global ad2_state
+    global reply_info_state
+    global baseUrl
+
+    config=configparser.ConfigParser()
+    config.read("config.ini")
+
+    # 各位置adarticles状态开关
+    try:
+        ad1_state=config.getint('werobot','ad1_state')
+        ad2_state=config.getint('werobot','ad2_state')
+        # global reply_info_state 用来标识回复用户信息所需要调用的方法函数
+        reply_info_state=config.getint('werobot','reply_info_state')
+        # baseUrl 构造search页链接
+        baseUrl=config.get('werobot','baseUrl')
+    except:
+        return 'config.ini配置文件加载失败'
+
+    return 'config.ini配置文件加载完毕'
+
+# 接受两个参数 ： 配置项名称、配置项的值
+def writeToConfigFile(configName,configValue):
+    config=configparser.ConfigParser()
+    config.read('config.ini')
+    try:
+        config.set('werobot',configName,configValue)
+        config.write(open('config.ini','w'))
+    except:
+        return '写入 %s 到配置文件 config.ini 时失败' % configName
+    return '写入 %s 到配置文件 config.ini 成功' % configName
 
 #main()
 
