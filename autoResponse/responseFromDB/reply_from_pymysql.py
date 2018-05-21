@@ -344,7 +344,12 @@ def reply_info_bygenurl(v_name):
     # 插入查电影服务推广图文
     # out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
     # 插入“视频无法播放”
-    out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+    # out_list.append(['如果无法播放点我查看教程','','https://t1.picb.cc/uploads/2018/01/27/Lz2KR.png','http://t.cn/R8hJGC7'])
+
+    # 插入点广告文章
+    # 当ad1或者ad2至少存在一个时才会插入该文章
+    if ad1_state+ad2_state:
+        out_list.append(['亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
     return out_list
 
 #   showanalyze 查询各公众号调用次数
