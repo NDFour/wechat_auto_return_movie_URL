@@ -322,7 +322,7 @@ def reply_info_bygenurl(v_name):
     global baseUrl
     url=baseUrl+v_name
     name='《'+v_name+'》'+'免费观看'
-    picurl='http://kks.me/a5cc5'
+    picurl='http://t.cn/R1bCDH5'
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
@@ -349,7 +349,7 @@ def reply_info_bygenurl(v_name):
     # 插入点广告文章
     # 当ad1或者ad2至少存在一个时才会插入该文章
     if ad1_state+ad2_state:
-        out_list.append(['亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
+        out_list.append(['■ 亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
     return out_list
 
 #   showanalyze 查询各公众号调用次数
