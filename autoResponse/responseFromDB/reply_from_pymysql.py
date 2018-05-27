@@ -59,10 +59,13 @@ def subscribe(message):
     global adtuple2
     outlist=[]
     if adtuple:
-        outlist.append(adtuple)
+        if ad1_state:
+            outlist.append(adtuple)
     if adtuple2:
-        outlist.append(adtuple2)
-    return outlist
+        if ad2_state:
+            outlist.append(adtuple2)
+    if outlist:
+        return outlist
 
 '''
 # 用户取关
@@ -322,7 +325,7 @@ def reply_info_bygenurl(v_name):
     global baseUrl
     url=baseUrl+v_name
     name='《'+v_name+'》'+'免费观看'
-    picurl='http://t.cn/R1bCDH5'
+    picurl='http://c7.gg/aaqCr'
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
