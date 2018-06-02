@@ -1,0 +1,17 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.140 - - [02/Jun/2018 21:22:36] "POST /?signature=0fb490e01f33f414092af91af109402d5d91bf1f&timestamp=1527945756&nonce=206845543&openid=o2NddxCbutJuQNEljqI8GMLymvuw HTTP/1.1" 200 467
+182.254.86.139 - - [02/Jun/2018 21:22:37] "POST /?signature=12ddbea1b772b52a924890b1b6695defe7361e8d&timestamp=1527945757&nonce=424599720&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 467
+[W 180602 21:22:37 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb69d0f0c>
+182.254.86.140 - - [02/Jun/2018 21:22:37] "POST /?signature=7bb675249458fafe2ea1629551bb0fd087d530d3&timestamp=1527945757&nonce=1588402589&openid=onD430wV6V7nh0VNa4QDJ7lYreIQ HTTP/1.1" 200 0
+182.254.86.154 - - [02/Jun/2018 21:22:39] "POST /?signature=27d15d8172072021b1b9b6102e1bace218de7382&timestamp=1527945759&nonce=817695276&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 361
+182.254.86.144 - - [02/Jun/2018 21:22:40] "POST /?signature=a4d9a5d353840b98bb1a9dfa903b60d256cb93fc&timestamp=1527945760&nonce=1990965596&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 2117
+182.254.86.150 - - [02/Jun/2018 21:22:40] "POST /?signature=e63a6d1d4ab3e9039099dcc4bd09a6cd0c2096ad&timestamp=1527945760&nonce=651385978&openid=o2NddxJW-ocRQS4q3_hl8CbmOwa8 HTTP/1.1" 200 2117
+182.254.86.145 - - [02/Jun/2018 21:22:42] "POST /?signature=5aef0ddb5be6567f74f9f63439d2c19f6c134d12&timestamp=1527945762&nonce=1037566988&openid=o2NddxNiSmJnvRqR-5rFMhEoKxdc HTTP/1.1" 200 2126
+[W 180602 21:22:46 robot:419] No handler responded message <werobot.messages.events.UnSubscribeEvent object at 0xb69e51cc>
+182.254.86.144 - - [02/Jun/2018 21:22:46] "POST /?signature=babde87702d9efd5e68209f982e166a9c52bc01f&timestamp=1527945766&nonce=623368470&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 0
+[W 180602 21:22:46 robot:419] No handler responded message <werobot.messages.events.UnSubscribeEvent object at 0xb69f144c>
+182.254.86.144 - - [02/Jun/2018 21:22:46] "POST /?signature=0f7b80f6376deb8de09004392b4a0606dc87e007&timestamp=1527945766&nonce=2049676622&openid=o2NddxKEEVAb8HUXnTl3Hsoq5-e8 HTTP/1.1" 200 0
+[W 180602 21:22:49 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb69f174c>

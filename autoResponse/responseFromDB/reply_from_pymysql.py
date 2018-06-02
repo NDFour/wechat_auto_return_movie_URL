@@ -58,7 +58,7 @@ def subscribe(message):
     global adtuple
     global adtuple2
     outlist=[]
-    outlist.append(['公众号免费看电影教程','','https://0x9.me/foARy','https://w.url.cn/s/AeZ016x'])
+    outlist.append(['公众号免费看电影教程','','https://s1.ax1x.com/2018/06/02/CogADx.png','https://w.url.cn/s/AeZ016x'])
     if adtuple:
         if ad1_state:
             outlist.append(adtuple)
