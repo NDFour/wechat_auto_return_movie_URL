@@ -75,7 +75,7 @@ def unsubscribe(message):
     # print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
 
 # ViewEvent
-@robot.viewevent
+@robot.view
 def responsd_viewevent(message):
     print('[ViewEvent]key:%s'%message.key)
 
@@ -287,8 +287,8 @@ def reply_info(v_name):
             in_list=[]
             in_list.append(i[0])
             in_list.append(i[0])
-            in_list.append(i[2])
             in_list.append(i[1])
+            in_list.append(i[2])
             # in_list.append(i[1].replace('fiml','player').replace('.html','-1-1.html').replace('18.19.ivdmh','wx.wx18.lcdoor'))
 
             out_list.append(in_list)
