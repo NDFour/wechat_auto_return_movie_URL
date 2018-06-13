@@ -13306,3 +13306,5 @@ ConnectionResetError: [Errno 104] Connection reset by peer
 182.254.86.139 - - [19/Apr/2018 09:39:48] "POST /?signature=8eda2249381898ed34d781fa473753537c39c43c&timestamp=1524101988&nonce=722585587&openid=o2NddxEilNYZMlAQDr5LkWD1Auxg HTTP/1.1" 200 1792
 [W 180419 09:40:43 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb69d8f4c>
 python3: can't open file '6.12.log': [Errno 2] No such file or directory
+python: can't open file '6.14.00.50.log': [Errno 2] No such file or directory
+python3: can't open file '6.14.00.50.log': [Errno 2] No such file or directory

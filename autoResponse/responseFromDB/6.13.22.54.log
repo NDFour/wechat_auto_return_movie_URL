@@ -1,0 +1,13 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.154 - - [13/Jun/2018 22:54:42] "POST /?signature=aebabbe7405bc29cd15f5d3de6d3ba886f14caa2&timestamp=1528901682&nonce=1565400035&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 361
+182.254.86.144 - - [13/Jun/2018 22:54:43] "POST /?signature=e84c5d96baa814aafded215d18f08dd576a0f323&timestamp=1528901682&nonce=179368123&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1940
+182.254.86.149 - - [13/Jun/2018 22:54:44] "POST /?signature=218f03811c2f2f418a70229cc4570d1706643fdf&timestamp=1528901684&nonce=533900354&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1940
+182.254.86.155 - - [13/Jun/2018 22:54:53] "POST /?signature=a2435fb920bafce04334e74b9248cd543f6319bb&timestamp=1528901693&nonce=1850446285&openid=o2NddxEkwP9BaPUOTz4v8dtYwM7g HTTP/1.1" 200 1949
+182.254.86.145 - - [13/Jun/2018 22:55:04] "POST /?signature=e1b02f8e8648576f1fb04f8e4e1a407ccabc38fb&timestamp=1528901704&nonce=532403638&openid=o2NddxEkwP9BaPUOTz4v8dtYwM7g HTTP/1.1" 200 1958
+182.254.86.144 - - [13/Jun/2018 22:55:15] "POST /?signature=69e50d1cc7a6b903c771827b8a14ea989c0e2582&timestamp=1528901715&nonce=201918723&openid=o2NddxJYiiuPRFYpRct031MFWkEI HTTP/1.1" 200 1943
+182.254.86.140 - - [13/Jun/2018 22:55:17] "POST /?signature=d07e7a5c4a8abc65111067b2ceffd3286c611eb5&timestamp=1528901717&nonce=1177847355&openid=o2NddxEkwP9BaPUOTz4v8dtYwM7g HTTP/1.1" 200 1934
+182.254.86.140 - - [13/Jun/2018 22:55:33] "POST /?signature=30692863547239636ed0bba7e95316b2fde19f67&timestamp=1528901733&nonce=194469936&openid=o2NddxEkwP9BaPUOTz4v8dtYwM7g HTTP/1.1" 200 1958
+[W 180613 22:55:33 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a036cc>

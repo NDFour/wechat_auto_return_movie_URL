@@ -1,0 +1,20 @@
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:80/
+Hit Ctrl-C to quit.
+
+182.254.86.154 - - [13/Jun/2018 22:53:00] "POST /?signature=0e0030afa25fcdc02aa0b2e9d69c20c3525f674e&timestamp=1528901580&nonce=1026337648&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 361
+182.254.86.154 - - [13/Jun/2018 22:53:02] "POST /?signature=657bc82c2ecb6db2b76c587bc2f94598e34bc74b&timestamp=1528901582&nonce=871898673&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1940
+[W 180613 22:53:09 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a3226c>
+182.254.86.145 - - [13/Jun/2018 22:53:09] "POST /?signature=144106677f303584a5b33fd6193b237ae98c1f3b&timestamp=1528901589&nonce=1104892578&openid=o2NddxBWNBwiA23HPwzQWO0BkM3c HTTP/1.1" 200 0
+182.254.86.154 - - [13/Jun/2018 22:53:17] "POST /?signature=86e4f6575a1f482e8fdecab4380ebdf79c33f494&timestamp=1528901597&nonce=1954816007&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 696
+182.254.86.142 - - [13/Jun/2018 22:53:18] "POST /?signature=0e30df619d1b821aeb652fb240ac9cac2efe6146&timestamp=1528901598&nonce=1070231312&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1940
+[W 180613 22:53:51 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a47e2c>
+182.254.86.140 - - [13/Jun/2018 22:53:51] "POST /?signature=119e298d954923b4b1eba72aecf000535dea5d6f&timestamp=1528901631&nonce=1135863856&openid=o2NddxOLKDTrh4bsMNvMRWZ3n8h8 HTTP/1.1" 200 0
+182.254.86.140 - - [13/Jun/2018 22:54:00] "POST /?signature=f800f2549d7d8aaeb6da711352810e592918b376&timestamp=1528901640&nonce=1543930896&openid=o2NddxOLKDTrh4bsMNvMRWZ3n8h8 HTTP/1.1" 200 1961
+[W 180613 22:54:03 robot:419] No handler responded message <werobot.messages.events.ViewEvent object at 0xb6a5b3ec>
+182.254.86.144 - - [13/Jun/2018 22:54:03] "POST /?signature=61349f9efa39da842a511a59e91c0cc4a423bd77&timestamp=1528901643&nonce=184357553&openid=o2NddxM8i-Vs2Hp8tqAAxjjzgb8Q HTTP/1.1" 200 0
+182.254.86.149 - - [13/Jun/2018 22:54:16] "POST /?signature=ca57caf5b98e3e19a28401319919f600c5a9e1af&timestamp=1528901656&nonce=432020996&openid=o2NddxHhZloQV55azmx8zVXv9mAQ HTTP/1.1" 200 1940
+
+
+
+
