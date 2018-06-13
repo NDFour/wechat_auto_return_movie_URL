@@ -1,14 +1,15 @@
+# -*- coding:utf-8 -*-
 #
 #   Description: ---
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-03-13 17:14:51
-# Last Modified: 2018-04-06 13:05:48
+# Last Modified: 2018-06-14 00:52:18
 #
 
 import requests
 import os
-import re 
+import re
 import pymysql
 
 def getHtml(url):
@@ -16,9 +17,8 @@ def getHtml(url):
     html_text=''
     try:
         r=requests.get(url)
-        r.status_code 
+        r.status_code
         html_text=r.text
-        print('getHtml %s success'%url)
     except:
         print('getHtml %s failed'%url)
         html_text=''
@@ -34,28 +34,25 @@ def parseHtml(html_text):
     # 得到 <li><a href="/fiml/36981.html" title="巴霍巴利王(下)：终结" target="_self"><div class="picsize"><img class="loading lazy" data-src="http://images.odoukei.com/upload/vod/2017-05-16/201705161494936558.jpg" alt
     rawInfo=re.compile(r'<li>.*alt')
 
-    # 得到 /fiml/36981.html 
-    rawHref=re.compile(r'/fiml/.*.html')
+    # 得到 /fiml/36981.html
+    rawHref=re.compile(r'/videos/.*.html')
     # 得到 title="巴霍巴利王(下)：终结"
     rawTitle=re.compile(r'title=".*?"')
-    # 得到 http://images.odoukei.com/upload/vod/2017-05-16/201705161494936558.jpg"
-    rawPic=re.compile(r'http.*."')
+    # 得到 data-original="http://img.xzpifu.com/uploads/allimg/170618/a06ad9f89c6a1e24.jpg"
+    rawPic=re.compile(r'data-original=".*?"')
 
     outList=[]
-    rawInfos=rawInfo.findall(html_text)
-    print('%s' %len(rawInfos))
-    for i in rawInfos:
-        rawHrefs=rawHref.search(i)
-        rawTitles=rawTitle.search(i)
-        rawPics=rawPic.search(i)
-       
-        inList=[]
-        inList.append(rawTitles.group(0).replace('title=','').replace('"',''))
-        inList.append(rawPics.group(0).replace('"',''))
-        href='http://18.19.ivdmh.com'+rawHrefs.group(0)
-        inList.append(href)
+    rawHrefs=rawHref.findall(html_text)
+    rawTitles=rawTitle.findall(html_text)
+    rawPics=rawPic.findall(html_text)
 
+    for i in range(len(rawHrefs)):
+        inList=[]
+        inList.append(rawTitles[i].replace('title=','').replace('"',''))
+        inList.append("http://wx.261shiping.com/"+rawHrefs[i].replace('videos','plays').replace('.html','-0-0.html'))
+        inList.append(rawPics[i].replace('data-original=','').replace('"',''))
         outList.append(inList)
+
 
     # 将解析到的视频信息添加到数据库
     conn=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='cqmygpython2',db='wechatmovie',charset='utf8')
@@ -63,59 +60,69 @@ def parseHtml(html_text):
 
     for i in outList:
         try:
-            sql_insert="INSERT INTO xiaoheju(name,videourl,picurl) VALUES ('%s','%s','%s');"%(i[0],i[2],i[1])
+            sql_insert="INSERT INTO weixunmi(name,videourl,picurl) VALUES ('%s','%s','%s');"%(i[0],i[2],i[1])
             cursor.execute(sql_insert)
             conn.commit()
-            print('Save to mysql success')
+            print('SUCCESS [%s]' %i[0])
         except:
             conn.rollback()
-            print('Save to mysql failed')
+            print('FAILED [%s]' %i[0])
 
     cursor.close()
     conn.close()
 
 def main():
     tabList=[
-            'http://18.19.ivdmh.com/lists/5-',
-            'http://18.19.ivdmh.com/lists/6-',
-            'http://18.19.ivdmh.com/lists/7-',
-            'http://18.19.ivdmh.com/lists/8-',
-            'http://18.19.ivdmh.com/lists/9-',
-            'http://18.19.ivdmh.com/lists/10-',
-            'http://18.19.ivdmh.com/lists/19-',
-            'http://18.19.ivdmh.com/lists/11-',
+            'http://wx.261shiping.com/lists/5-',
+            'http://wx.261shiping.com/lists/6-',
+            'http://wx.261shiping.com/lists/7-',
+            'http://wx.261shiping.com/lists/8-',
+            'http://wx.261shiping.com/lists/9-',
+            'http://wx.261shiping.com/lists/10-',
+            'http://wx.261shiping.com/lists/11-',
+            'http://wx.261shiping.com/lists/12-',
+            'http://wx.261shiping.com/lists/29-',
+            'http://wx.261shiping.com/lists/30-',
+            'http://wx.261shiping.com/lists/28-',
 
-            'http://18.19.ivdmh.com/lists/12-',
-            'http://18.19.ivdmh.com/lists/13-',
-            'http://18.19.ivdmh.com/lists/14-',
-            'http://18.19.ivdmh.com/lists/15-',
-            'http://18.19.ivdmh.com/lists/18-',
+            'http://wx.261shiping.com/lists/13-',
+            'http://wx.261shiping.com/lists/14-',
+            'http://wx.261shiping.com/lists/15-',
+            'http://wx.261shiping.com/lists/16-',
 
-            'http://18.19.ivdmh.com/lists/3-',
+            'http://wx.261shiping.com/lists/3-',
 
-            'http://18.19.ivdmh.com/lists/4-',
-            ]
+            'http://wx.261shiping.com/lists/4-',
+
+            'http://wx.261shiping.com/lists/32-',
+            'http://wx.261shiping.com/lists/34-'
+           ]
 
     pageList=[
-            114,
-            88,
-            41,
-            28,
-            59,
-            177,
-            27,
-            10,
-            
-            106,
-            13,
-            17,
-            23,
-            2,
-            
+            102,
+            64,
+            42,
+            57,
+            189,
+            90,
+            30,
+            39,
+            67,
+            1,
+            43,
+
+            55,
+            15,
+            15,
+            40,
+
+            52,
+
+            127,
+
             7,
-            
-            59
-            ]
+            1
+           ]
     # test pageList
 #    pageList=[2,3,4,2,3,4,2,4]
 
@@ -131,27 +138,3 @@ def main():
 
 main()
 
-'''
-电影
-5-1 动作片
-6-1 喜剧片
-7-1 爱情片
-8-1 科幻片
-9-1 恐怖片
-10-1剧情片
-19-1伦理片
-11-1战争片
-
-电视剧
-12-1国产剧
-13-1港台剧
-14-1日韩剧
-15-1欧美剧
-18-1海外剧
-
-综艺
-3-1 综艺
-
-动漫
-4-1 动漫
-'''

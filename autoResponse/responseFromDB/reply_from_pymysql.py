@@ -67,13 +67,17 @@ def subscribe(message):
             outlist.append(adtuple2)
     return outlist
 
-'''
 # 用户取关
 @robot.unsubscribe
 def unsubscribe(message):
     #global last_movie
-    print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
-'''
+    pass
+    # print('有用户取关啦！！！上一条消息是：[%s]'%last_movie)
+
+# ViewEvent
+@robot.viewevent
+def responsd_viewevent(message):
+    print('[ViewEvent]key:%s'%message.key)
 
 # 测试用函数，上线后无用
 def main():
@@ -97,6 +101,12 @@ def hello(message):
 
     # reply_info() 函数调用标识
     global reply_info_state
+
+    # 无需管理员发送 'run' 指令程序即可开始工作
+    # 从'config.ini'文件中读取配置项
+    loadConfigMsg=loadConfig()
+    # 更新 name_dic
+    rel=updatename_dic()
 
     if message.source==master_root:
         #   预留 接口，发送后 run 后程序开始工作
@@ -266,7 +276,7 @@ def reply_info(v_name):
     cursor=conn.cursor()
 
     try:
-        sql_select="SELECT name,videourl,picurl FROM daidai WHERE name LIKE '%v_name%';"
+        sql_select="SELECT name,videourl,picurl FROM weixunmi WHERE name LIKE '%v_name%';"
         sql_select=sql_select.replace('v_name',v_name)
         cursor.execute(sql_select)
 
@@ -307,7 +317,10 @@ def reply_info(v_name):
             out_list.insert(1,adtuple)
     if ad2_state:
         if adtuple2:
-            out_list.insert(2,adtuple2)
+            if cnt>2:
+                out_list.insert(4,adtuple2)
+            else:
+                out_list.append(adtuple2)
 
     # 关闭数据库链接
     cursor.close()
