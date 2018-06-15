@@ -77,7 +77,7 @@ def unsubscribe(message):
 # ViewEvent
 @robot.view
 def responsd_viewevent(message):
-    print('[ViewEvent]key:%s'%message.key)
+    return ''
 
 # 测试用函数，上线后无用
 def main():
@@ -312,15 +312,15 @@ def reply_info(v_name):
     global adtuple2
     global ad1_state
     global ad2_state
-    if ad1_state:
-        if adtuple:
-            out_list.insert(1,adtuple)
     if ad2_state:
         if adtuple2:
+            out_list.insert(1,adtuple2)
+    if ad1_state:
+        if adtuple:
             if cnt>2:
-                out_list.insert(4,adtuple2)
+                out_list.insert(4,adtuple)
             else:
-                out_list.append(adtuple2)
+                out_list.append(adtuple)
 
     # 关闭数据库链接
     cursor.close()
@@ -694,5 +694,5 @@ def writeToConfigFile(configName,configValue):
 
 # 让服务器监听在　0.0.0.0:4444
 robot.config['HOST']='0.0.0.0'
-robot.config['PORT']=80
+robot.config['PORT']=8000
 robot.run()
