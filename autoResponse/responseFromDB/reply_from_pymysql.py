@@ -174,9 +174,9 @@ def hello(message):
             msg=showConfig()
             return msg
 
+    print('《%s》'%message.content)
     #   判断转发消息的公众号是否在已授权列表中
     if message.target in name_dic:
-        # print('《%s》'%message.content)
         # 判断公众号服务是否到期，如果到期回复引流图文
         if(serv_state[message.target]):
             print()
