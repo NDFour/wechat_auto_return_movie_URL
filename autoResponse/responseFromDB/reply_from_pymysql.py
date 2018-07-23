@@ -314,6 +314,16 @@ def reply_info_bygenurl(v_name):
     in_list.append(picurl)
     in_list.append(url)
     out_list.append(in_list)
+    #   网盘电影网站 搜索结果
+    in_list=[]
+    name_pan='《' + v_name + '》网盘搜索结果'
+    pic_pan='http://c7.gg/aqP7C'
+    url_pan='http://tnt1024.com/movie/search/' + v_name
+    in_list.append(name_pan)
+    in_list.append(name_pan)
+    in_list.append(pic_pan)
+    in_list.append(url_pan)
+    out_list.append(in_list)
     #   图文消息加上一条之前的广告推文链接
     global adtuple
     global adtuple2
@@ -321,10 +331,10 @@ def reply_info_bygenurl(v_name):
     global ad2_state
     if ad1_state:
         if adtuple:
-            out_list.insert(1,adtuple)
+            out_list.append(adtuple)
     if ad2_state:
         if adtuple2:
-            out_list.insert(2,adtuple2)
+            out_list.append(adtuple2)
     # 插入查电影服务推广图文
     # out_list.append(['想让你的公众号也可以查电影？点我','想让你的公众号也可以查电影？点我','https://t1.picb.cc/uploads/2018/03/14/22PY0u.png','http://kks.me/a4Y9N'])
     # 插入“视频无法播放”
