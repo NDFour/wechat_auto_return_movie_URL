@@ -232,38 +232,6 @@ def modefy_name(v_name):
     v_name=v_name.replace('》','')
     v_name=v_name.replace('。','')
 
-    bbdw='卑鄙的我'
-    myz='猫妖传'
-    qgw="七个我"
-    qr3="前任三"
-    wwxd2="无问东西"
-    yll="妖玲玲"
-    yyzx='有言在先'
-    zl2='战狼二'
-    zndsjasn='在你的世界爱上你'
-    zsxd='自杀小队'
-
-    if(wwxd2 in v_name):
-        return "无问西东"
-    elif(bbdw in v_name):
-        return "神偷奶爸"
-    elif(qr3 in v_name):
-        return "前任3"
-    elif(yll in v_name):
-        return "妖铃铃"
-    elif(qgw in v_name):
-        return '柒个我'
-    elif(yyzx in v_name):
-        return '有言在仙'
-    elif(zndsjasn in v_name):
-        return '在你的世界爱你'
-    elif(myz in v_name):
-        return '妖猫传'
-    elif(zl2 in v_name):
-        return '战狼2'
-    elif(zsxd in v_name):
-        return 'x特遣队'
-
     return v_name
 
 # 通过查询数据库将结果返回给用户
