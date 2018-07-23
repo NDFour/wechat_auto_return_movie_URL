@@ -316,7 +316,7 @@ def reply_info_bygenurl(v_name):
     out_list.append(in_list)
     #   网盘电影网站 搜索结果
     in_list=[]
-    name_pan='《' + v_name + '》网盘搜索结果'
+    name_pan='【网盘】《' + v_name + '》网盘搜索结果'
     pic_pan='http://c7.gg/aqP7C'
     url_pan='http://tnt1024.com/movie/search/' + v_name
     in_list.append(name_pan)
