@@ -305,7 +305,7 @@ def reply_info_bygenurl(v_name):
     #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
     global baseUrl
     url=baseUrl+v_name
-    name='《'+v_name+'》'+'免费观看'
+    name='【在线观看】《'+v_name+'》'
     picurl='http://c7.gg/aaqCr'
     # 插入搜索词条链接图文消息
     in_list=[]
