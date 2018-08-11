@@ -306,7 +306,7 @@ def reply_info_bygenurl(v_name):
     global baseUrl
     url=baseUrl+v_name
     name='【在线观看】《'+v_name+'》'
-    picurl='https://s1.ax1x.com/2018/08/11/P6LNM8.png'
+    picurl='https://s1.ax1x.com/2018/08/11/P6L2sU.jpg'
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
