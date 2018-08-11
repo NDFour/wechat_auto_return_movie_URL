@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "reply_from_pymysql.py", line 78, in <module>
-    @robot.viewevent
-AttributeError: 'WeRoBot' object has no attribute 'viewevent'

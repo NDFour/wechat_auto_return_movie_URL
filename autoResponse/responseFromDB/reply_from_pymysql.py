@@ -306,7 +306,7 @@ def reply_info_bygenurl(v_name):
     global baseUrl
     url=baseUrl+v_name
     name='【在线观看】《'+v_name+'》'
-    picurl='http://wx4.sinaimg.cn/mw690/0060lm7Tly1ftm0sy2dkcj30p00cit9k.jpg'
+    picurl='https://s1.ax1x.com/2018/08/11/P6LNM8.png'
     # 插入搜索词条链接图文消息
     in_list=[]
     in_list.append(name)
@@ -316,7 +316,7 @@ def reply_info_bygenurl(v_name):
     out_list.append(in_list)
     #   网盘电影网站 搜索结果
     in_list=[]
-    name_pan='【网盘】《' + v_name + '》网盘搜索结果'
+    name_pan='【网盘资源】《' + v_name + '》'
     pic_pan='https://upload-images.jianshu.io/upload_images/5649568-867870961e0b81c5.jpg'
     url_pan='http://tnt1024.com/movie/search/' + v_name
     in_list.append(name_pan)
