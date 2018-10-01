@@ -687,6 +687,6 @@ def writeToConfigFile(configName,configValue):
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
-robot.config['HOST']='0.0.0.0'
-robot.config['PORT']=80
-robot.run()
+# robot.config['HOST']='0.0.0.0'
+# robot.config['PORT']=8000
+# robot.run()
