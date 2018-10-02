@@ -3,12 +3,13 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-09-27 16:58:49
-# Last Modified: 2018-10-01 22:04:30
+# Last Modified: 2018-10-02 11:54:03
 #
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, url_for
 import pymysql
 import sys
+import codecs
 import re
 from reply_from_pymysql import robot
 from werobot.contrib.flask import make_view
@@ -93,6 +94,88 @@ def getmovieDetail(movie_id):
         rel_json = {}
         rel_json['movies'] = movies
         return jsonify(rel_json)
+
+@app.route('/spiderlog')
+def spiderlog():
+    # log_list
+    log_list = []
+    rel =  '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
+    # rel = '/home/lynn/github_project/daily/pandy/spider/autoSpider_log.txt'
+    try:
+        f = codecs.open(rel, 'r', 'utf-8')
+        for line in f:
+            log_list.append(line)
+        f.close()
+    except:
+        log_list.append('The log file doesn^t exsist')
+
+    # log_list_err
+    log_list_err = []
+    rel =  '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
+    try:
+        f = codecs.open(rel, 'r', 'utf-8')
+        for line in f:
+            log_list_err.append(line)
+        f.close()
+    except:
+        log_list_err.append('The log_err file doesn^t exsist')
+
+    # log_list_update 本次完成更新资源列表
+    log_list_update = []
+    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
+    try:
+        f = codecs.open(rel, 'r', 'utf-8')
+        for line in f:
+            log_list_update.append(line)
+        f.close()
+    except:
+        log_list_update.append('The log_list_update doesn^t exsist')
+
+    context = {}
+    context['log_list'] = log_list
+    if len(log_list):
+        context['start'] = log_list[0]
+        context['end'] = log_list[-1]
+    else:
+        context['start'] = ''
+        context['end'] = ''
+    context['log_list_err'] = log_list_err
+    context['log_list_update'] = log_list_update
+
+    context['clean_spiderlog'] = url_for('clean_spiderlog')
+    return render_template('spiderlog.html', context = context)
+
+@app.route('/clean_spiderlog')
+def clean_spiderlog():
+    msg = ''
+    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
+    try:
+        with open(rel, 'w') as f:
+            f.write('')
+            msg += '清空 spiderlog 成功'
+    except Exception as e:
+        msg += '清空 spiderlog 失败'
+    msg += '<br />'
+
+    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
+    try:
+        with open(rel, 'w') as f:
+            f.write('')
+            msg += '  清空 spiderlog_err 成功'
+    except Exception as e:
+        msg += '  清空 spiderlog_err 失败'
+    msg += '<br />'
+
+    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
+    try:
+        with open(rel, 'w') as f:
+            f.write('')
+            msg += '  清空 spiderlog_update_log 成功'
+    except Exception as e:
+        msg += '  清空 spiderlog_update_log 失败'
+    msg += '<br />'
+    return msg
+
 
 # 用于将 v_playurl 长字符串转化为数组返回
 def getList(str_url):
