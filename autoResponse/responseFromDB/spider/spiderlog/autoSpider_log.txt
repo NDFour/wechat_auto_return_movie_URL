@@ -1,4 +1,4 @@
-0 2018-10-02 13:15:20
+0 2018-10-02 13:54:15
 1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 2 	 autoSpider
 		the god of the spider
@@ -43,414 +43,368 @@
  沙胆英   [xujiating]
 26 >> [get_info] skip already exsist
  缘分[印度电影]   [xujiating]
-27 >> [get_info] skip already exsist
- 暮色大电影   [xujiating]
+27 >> [get_info] 获取 json 数据失败 start: 12
 28 >> [get_info] skip already exsist
- 乱反射   [xujiating]
-29 >> [get_info] skip already exsist
- 恶警蛋碎   [xujiating]
-30 >> [get_info] skip already exsist
- 果戈里：恶灵   [xujiating]
-31 >> [get_info] skip already exsist
- 美妙频道   [xujiating]
-32 >> [get_info] skip already exsist
- 倾城宠妃   [xujiating]
-33 >> [get_info] skip already exsist
- 恶童日记   [xujiating]
-34 >> [get_info] skip already exsist
- 边境风云   [xujiating]
-35 >> [get_info] skip already exsist
- 热血街头   [xujiating]
-36 >> [get_info] skip already exsist
- 终点的婚礼   [xujiating]
-37 >> [get_info] skip already exsist
- 冬眠2018   [xujiating]
-38 >> [get_info] skip already exsist
- 小混混   [xujiating]
-39 >> [get_info] skip already exsist
  纵情一曲   [xujiating]
-40 >> [get_info] skip already exsist
+29 >> [get_info] skip already exsist
  重启新生   [xujiating]
-41 >> [get_info] skip already exsist
+30 >> [get_info] skip already exsist
  心之界限   [xujiating]
-42 >> [get_info] skip already exsist
+31 >> [get_info] skip already exsist
  一场春梦   [xujiating]
-43 >> [get_info] skip already exsist
+32 >> [get_info] skip already exsist
  鸳鸯侠侣   [xujiating]
-44 >> [get_info] skip already exsist
+33 >> [get_info] skip already exsist
  野性侵袭   [xujiating]
-45 >> [get_info] skip already exsist
+34 >> [get_info] skip already exsist
  搜狗小分队   [xujiating]
-46 >> [get_info] skip already exsist
+35 >> [get_info] skip already exsist
  世上只有爸爸好   [xujiating]
-47 >> [get_info] skip already exsist
+36 >> [get_info] skip already exsist
  世界上最伟大的父亲   [xujiating]
-48 >> [get_info] skip already exsist
+37 >> [get_info] skip already exsist
  圣诞童话   [xujiating]
-49 >> [get_info] skip already exsist
+38 >> [get_info] skip already exsist
  杀死信使   [xujiating]
-50 >> [get_info] skip already exsist
+39 >> [get_info] skip already exsist
  情定三清山   [xujiating]
-51 >> [get_info] skip already exsist
+40 >> [get_info] skip already exsist
  痞子熊兵之杀狼祭天   [xujiating]
-52 >> [get_info] skip already exsist
+41 >> [get_info] skip already exsist
  蜻蜓之眼   [xujiating]
-53 >> [get_info] skip already exsist
+42 >> [get_info] skip already exsist
  跑过罗湖桥   [xujiating]
-54 >> [get_info] skip already exsist
+43 >> [get_info] skip already exsist
  你行你结婚   [xujiating]
-55 >> [get_info] skip already exsist
+44 >> [get_info] skip already exsist
  西部的一百万种死法   [xujiating]
-56 >> [get_info] skip already exsist
+45 >> [get_info] skip already exsist
  佐州自救兄弟   [xujiating]
-57 >> [get_info] skip already exsist
+46 >> [get_info] skip already exsist
  我老婆未結婚   [xujiating]
-58 >> [get_info] skip already exsist
+47 >> [get_info] skip already exsist
  无所畏惧的女孩   [xujiating]
-59 >> [get_info] skip already exsist
+48 >> [get_info] skip already exsist
  我和妈妈   [xujiating]
-60 >> [get_info] skip already exsist
+49 >> [get_info] skip already exsist
  天赐宝贝   [xujiating]
-61 >> [get_info] skip already exsist
+50 >> [get_info] skip already exsist
  我们的那时·此刻   [xujiating]
-62 >> [get_info] skip already exsist
+51 >> [get_info] skip already exsist
  墨与钢   [xujiating]
-63 >> [get_info] skip already exsist
- 墨乡情   [xujiating]
-64 >> [get_info] skip already exsist
- 留下罗茜   [xujiating]
-65 >> [get_info] skip already exsist
- 另一个美丽妻子   [xujiating]
-66 >> [get_info] skip already exsist
- 垃圾男孩   [xujiating]
-67 >> [get_info] skip already exsist
- 假面骑士KABUTO剧场版   [xujiating]
-68 >> [get_info] skip already exsist
- 彗星的轨迹   [xujiating]
-69 >> [get_info] skip already exsist
- 欢乐八仙   [xujiating]
-70 >> [get_info] skip already exsist
- 虎神   [xujiating]
-71 >> [get_info] skip already exsist
- 哈顿花园工作   [xujiating]
-72 >> [get_info] skip already exsist
- 基伯龙三日   [xujiating]
-73 >> [get_info] skip already exsist
- 闹在碗中   [xujiating]
-74 >> [get_info] skip already exsist
- 狗狗国际大赛   [xujiating]
-75 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-76 	movieSpider for www.135zy.net
-77 
+52 >> [get_info] 获取 json 数据失败 start: 48
+53 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+54 	movieSpider for www.135zy.net
+55 
 >> movieSpider init...
-78 
+56 
 
 
-79 >> [get_html] success
+57 >> [get_html] success
+58 >> [get_html] success
+59 >> [get_url] total 100 movies
+60 ---------- www_605zy 共有 100 条数据需要插入 --------
+61 >> [get_info] http://www.135zy.net/vod-detail-id-11159.html
+62 >> [get_html] success
+63 >> [save_2_db] insert succes
+64 >> [get_info] http://www.135zy.net/vod-detail-id-11158.html
+65 >> [get_html] success
+66 >> [save_2_db] insert succes
+67 >> [get_info] http://www.135zy.net/vod-detail-id-11157.html
+68 >> [get_html] success
+69 >> [save_2_db] insert succes
+70 >> [get_info] http://www.135zy.net/vod-detail-id-11156.html
+71 >> [get_html] success
+72 >> [save_2_db] insert succes
+73 >> [get_info] http://www.135zy.net/vod-detail-id-11155.html
+74 >> [get_html] success
+75 >> [save_2_db] insert succes
+76 >> [get_info] http://www.135zy.net/vod-detail-id-11153.html
+77 >> [get_html] success
+78 >> [save_2_db] insert succes
+79 >> [get_info] http://www.135zy.net/vod-detail-id-11154.html
 80 >> [get_html] success
-81 >> [get_url] total 100 movies
-82 ---------- www_605zy 共有 100 条数据需要插入 --------
-83 >> [get_info] http://www.135zy.net/vod-detail-id-6573.html
-84 >> [get_html] success
-85 >> [save_2_db] insert succes
-86 >> [get_info] http://www.135zy.net/vod-detail-id-11126.html
-87 >> [get_html] success
-88 >> [save_2_db] insert succes
-89 >> [get_info] http://www.135zy.net/vod-detail-id-11125.html
-90 >> [get_html] success
-91 >> [save_2_db] insert succes
-92 >> [get_info] http://www.135zy.net/vod-detail-id-11124.html
-93 >> [get_html] success
-94 >> [save_2_db] insert succes
-95 >> [get_info] http://www.135zy.net/vod-detail-id-11123.html
-96 >> [get_html] success
-97 >> [save_2_db] insert succes
-98 >> [get_info] http://www.135zy.net/vod-detail-id-11121.html
-99 >> [get_html] success
-100 >> [save_2_db] insert succes
-101 >> [get_info] http://www.135zy.net/vod-detail-id-11120.html
-102 >> [get_html] success
-103 >> [save_2_db] insert succes
-104 >> [get_info] http://www.135zy.net/vod-detail-id-11119.html
-105 >> [get_html] success
-106 >> [save_2_db] insert succes
-107 >> [get_info] http://www.135zy.net/vod-detail-id-11118.html
-108 >> [get_html] success
-109 >> [save_2_db] insert succes
-110 >> [get_info] http://www.135zy.net/vod-detail-id-11117.html
-111 >> [get_html] success
-112 >> [save_2_db] insert succes
-113 >> [get_info] http://www.135zy.net/vod-detail-id-11116.html
-114 >> [get_html] success
-115 >> [save_2_db] insert succes
-116 >> [get_info] http://www.135zy.net/vod-detail-id-11115.html
-117 >> [get_html] success
-118 >> [save_2_db] insert succes
-119 >> [get_info] http://www.135zy.net/vod-detail-id-11114.html
-120 >> [get_html] success
-121 >> [save_2_db] insert succes
-122 >> [get_info] http://www.135zy.net/vod-detail-id-11113.html
-123 >> [get_html] success
-124 >> [save_2_db] insert succes
-125 >> [get_info] http://www.135zy.net/vod-detail-id-11112.html
-126 >> [get_html] success
-127 >> [save_2_db] insert succes
-128 >> [get_info] http://www.135zy.net/vod-detail-id-11111.html
-129 >> [get_html] success
-130 >> [save_2_db] insert succes
-131 >> [get_info] http://www.135zy.net/vod-detail-id-8817.html
-132 >> [get_html] success
-133 >> [save_2_db] insert succes
-134 >> [get_info] http://www.135zy.net/vod-detail-id-11109.html
-135 >> [get_html] success
-136 >> [save_2_db] insert succes
-137 >> [get_info] http://www.135zy.net/vod-detail-id-11108.html
-138 >> [get_html] success
-139 >> [save_2_db] insert succes
-140 >> [get_info] http://www.135zy.net/vod-detail-id-11107.html
-141 >> [get_html] success
-142 >> [save_2_db] insert succes
-143 >> [get_info] http://www.135zy.net/vod-detail-id-11105.html
-144 >> [get_html] success
-145 >> [save_2_db] insert succes
-146 >> [get_info] http://www.135zy.net/vod-detail-id-11104.html
-147 >> [get_html] success
-148 >> [save_2_db] insert succes
-149 >> [get_info] http://www.135zy.net/vod-detail-id-11103.html
-150 >> [get_html] success
-151 >> [save_2_db] insert succes
-152 >> [get_info] http://www.135zy.net/vod-detail-id-11102.html
-153 >> [get_html] success
-154 >> [save_2_db] insert succes
-155 >> [get_info] http://www.135zy.net/vod-detail-id-11099.html
-156 >> [get_html] success
-157 >> [save_2_db] insert succes
-158 >> [get_info] http://www.135zy.net/vod-detail-id-11098.html
-159 >> [get_html] success
-160 >> [save_2_db] insert succes
-161 >> [get_info] http://www.135zy.net/vod-detail-id-11096.html
-162 >> [get_html] success
-163 >> [save_2_db] insert succes
-164 >> [get_info] http://www.135zy.net/vod-detail-id-11093.html
-165 >> [get_html] success
-166 >> [save_2_db] insert succes
-167 >> [get_info] http://www.135zy.net/vod-detail-id-11094.html
-168 >> [get_html] success
-169 >> [save_2_db] insert succes
-170 >> [get_info] http://www.135zy.net/vod-detail-id-11095.html
-171 >> [get_html] success
-172 >> [save_2_db] insert succes
-173 >> [get_info] http://www.135zy.net/vod-detail-id-11092.html
-174 >> [get_html] success
-175 >> [save_2_db] insert succes
-176 >> [get_info] http://www.135zy.net/vod-detail-id-11091.html
-177 >> [get_html] success
-178 >> [save_2_db] insert succes
-179 >> [get_info] http://www.135zy.net/vod-detail-id-10520.html
-180 >> [get_html] success
-181 >> [save_2_db] insert succes
-182 >> [get_info] http://www.135zy.net/vod-detail-id-11085.html
-183 >> [get_html] success
-184 >> [save_2_db] insert succes
-185 >> [get_info] http://www.135zy.net/vod-detail-id-11084.html
-186 >> [get_html] success
-187 >> [save_2_db] insert succes
-188 >> [get_info] http://www.135zy.net/vod-detail-id-11083.html
-189 >> [get_html] success
-190 >> [save_2_db] insert succes
-191 >> [get_info] http://www.135zy.net/vod-detail-id-11082.html
-192 >> [get_html] success
-193 >> [save_2_db] insert succes
-194 >> [get_info] http://www.135zy.net/vod-detail-id-11081.html
-195 >> [get_html] success
-196 >> [save_2_db] insert succes
-197 >> [get_info] http://www.135zy.net/vod-detail-id-11080.html
-198 >> [get_html] success
-199 >> [save_2_db] insert succes
-200 >> [get_info] http://www.135zy.net/vod-detail-id-11079.html
-201 >> [get_html] success
-202 >> [save_2_db] insert succes
-203 >> [get_info] http://www.135zy.net/vod-detail-id-11077.html
-204 >> [get_html] success
-205 >> [save_2_db] insert succes
-206 >> [get_info] http://www.135zy.net/vod-detail-id-6438.html
-207 >> [get_html] success
-208 >> [save_2_db] insert succes
-209 >> [get_info] http://www.135zy.net/vod-detail-id-11076.html
-210 >> [get_html] success
-211 >> [save_2_db] insert succes
-212 >> [get_info] http://www.135zy.net/vod-detail-id-11075.html
-213 >> [get_html] success
-214 >> [save_2_db] insert succes
-215 >> [get_info] http://www.135zy.net/vod-detail-id-11074.html
-216 >> [get_html] success
-217 >> [save_2_db] insert succes
-218 >> [get_info] http://www.135zy.net/vod-detail-id-11073.html
-219 >> [get_html] success
-220 >> [save_2_db] insert succes
-221 >> [get_info] http://www.135zy.net/vod-detail-id-11072.html
-222 >> [get_html] success
-223 >> [save_2_db] insert succes
-224 >> [get_info] http://www.135zy.net/vod-detail-id-11071.html
-225 >> [get_html] success
-226 >> [save_2_db] insert succes
-227 >> [get_info] http://www.135zy.net/vod-detail-id-11070.html
-228 >> [get_html] success
-229 >> [save_2_db] insert succes
-230 >> [get_info] http://www.135zy.net/vod-detail-id-11069.html
-231 >> [get_html] success
-232 >> [save_2_db] insert succes
-233 >> [get_info] http://www.135zy.net/vod-detail-id-11068.html
-234 >> [get_html] success
-235 >> [save_2_db] insert succes
-236 >> [get_info] http://www.135zy.net/vod-detail-id-11067.html
-237 >> [get_html] success
-238 >> [save_2_db] insert succes
-239 >> [get_info] http://www.135zy.net/vod-detail-id-11066.html
-240 >> [get_html] success
-241 >> [save_2_db] insert succes
-242 >> [get_info] http://www.135zy.net/vod-detail-id-11065.html
-243 >> [get_html] success
-244 >> [save_2_db] insert succes
-245 >> [get_info] http://www.135zy.net/vod-detail-id-11064.html
-246 >> [get_html] success
-247 >> [save_2_db] insert succes
-248 >> [get_info] http://www.135zy.net/vod-detail-id-11063.html
-249 >> [get_html] success
-250 >> [save_2_db] insert succes
-251 >> [get_info] http://www.135zy.net/vod-detail-id-11061.html
-252 >> [get_html] success
-253 >> [save_2_db] insert succes
-254 >> [get_info] http://www.135zy.net/vod-detail-id-11027.html
-255 >> [get_html] success
-256 >> [save_2_db] insert succes
-257 >> [get_info] http://www.135zy.net/vod-detail-id-11059.html
-258 >> [get_html] success
-259 >> [save_2_db] insert succes
-260 >> [get_info] http://www.135zy.net/vod-detail-id-11054.html
-261 >> [get_html] success
-262 >> [save_2_db] insert succes
-263 >> [get_info] http://www.135zy.net/vod-detail-id-11055.html
-264 >> [get_html] success
-265 >> [save_2_db] insert succes
-266 >> [get_info] http://www.135zy.net/vod-detail-id-11053.html
-267 >> [get_html] success
-268 >> [save_2_db] insert succes
-269 >> [get_info] http://www.135zy.net/vod-detail-id-11052.html
-270 >> [get_html] success
-271 >> [save_2_db] insert succes
-272 >> [get_info] http://www.135zy.net/vod-detail-id-11051.html
-273 >> [get_html] success
-274 >> [save_2_db] insert succes
-275 >> [get_info] http://www.135zy.net/vod-detail-id-11050.html
-276 >> [get_html] success
-277 >> [save_2_db] insert succes
-278 >> [get_info] http://www.135zy.net/vod-detail-id-11049.html
-279 >> [get_html] success
-280 >> [save_2_db] insert succes
-281 >> [get_info] http://www.135zy.net/vod-detail-id-11048.html
-282 >> [get_html] success
-283 >> [save_2_db] insert succes
-284 >> [get_info] http://www.135zy.net/vod-detail-id-11047.html
-285 >> [get_html] success
-286 >> [save_2_db] insert succes
-287 >> [get_info] http://www.135zy.net/vod-detail-id-11046.html
-288 >> [get_html] success
-289 >> [save_2_db] insert succes
-290 >> [get_info] http://www.135zy.net/vod-detail-id-11045.html
-291 >> [get_html] success
-292 >> [save_2_db] insert succes
-293 >> [get_info] http://www.135zy.net/vod-detail-id-11044.html
-294 >> [get_html] success
-295 >> [save_2_db] insert succes
-296 >> [get_info] http://www.135zy.net/vod-detail-id-11040.html
-297 >> [get_html] success
-298 >> [save_2_db] insert succes
-299 >> [get_info] http://www.135zy.net/vod-detail-id-11039.html
-300 >> [get_html] success
-301 >> [save_2_db] insert succes
-302 >> [get_info] http://www.135zy.net/vod-detail-id-11038.html
-303 >> [get_html] success
-304 >> [save_2_db] insert succes
-305 >> [get_info] http://www.135zy.net/vod-detail-id-11037.html
-306 >> [get_html] success
-307 >> [save_2_db] insert succes
-308 >> [get_info] http://www.135zy.net/vod-detail-id-11036.html
-309 >> [get_html] success
-310 >> [save_2_db] insert succes
-311 >> [get_info] http://www.135zy.net/vod-detail-id-11035.html
-312 >> [get_html] success
-313 >> [save_2_db] insert succes
-314 >> [get_info] http://www.135zy.net/vod-detail-id-11034.html
-315 >> [get_html] success
-316 >> [save_2_db] insert succes
-317 >> [get_info] http://www.135zy.net/vod-detail-id-11033.html
-318 >> [get_html] success
-319 >> [save_2_db] insert succes
-320 >> [get_info] http://www.135zy.net/vod-detail-id-11032.html
-321 >> [get_html] success
-322 >> [save_2_db] insert succes
-323 >> [get_info] http://www.135zy.net/vod-detail-id-11031.html
-324 >> [get_html] success
-325 >> [save_2_db] insert succes
-326 >> [get_info] http://www.135zy.net/vod-detail-id-11029.html
-327 >> [get_html] success
-328 >> [save_2_db] insert succes
-329 >> [get_info] http://www.135zy.net/vod-detail-id-11028.html
-330 >> [get_html] success
-331 >> [save_2_db] insert succes
-332 >> [get_info] http://www.135zy.net/vod-detail-id-11026.html
-333 >> [get_html] success
-334 >> [save_2_db] insert succes
-335 >> [get_info] http://www.135zy.net/vod-detail-id-11025.html
-336 >> [get_html] success
-337 >> [save_2_db] insert succes
-338 >> [get_info] http://www.135zy.net/vod-detail-id-6535.html
-339 >> [get_html] success
-340 >> [save_2_db] insert succes
-341 >> [get_info] http://www.135zy.net/vod-detail-id-6016.html
-342 >> [get_html] success
-343 >> [save_2_db] insert succes
-344 >> [get_info] http://www.135zy.net/vod-detail-id-11024.html
-345 >> [get_html] success
-346 >> [save_2_db] insert succes
-347 >> [get_info] http://www.135zy.net/vod-detail-id-8772.html
-348 >> [get_html] success
-349 >> [save_2_db] insert succes
-350 >> [get_info] http://www.135zy.net/vod-detail-id-11020.html
-351 >> [get_html] success
-352 >> [save_2_db] insert succes
-353 >> [get_info] http://www.135zy.net/vod-detail-id-11013.html
-354 >> [get_html] success
-355 >> [save_2_db] insert succes
-356 >> [get_info] http://www.135zy.net/vod-detail-id-11010.html
-357 >> [get_html] success
-358 >> [save_2_db] insert succes
-359 >> [get_info] http://www.135zy.net/vod-detail-id-11011.html
-360 >> [get_html] success
-361 >> [save_2_db] insert succes
-362 >> [get_info] http://www.135zy.net/vod-detail-id-11009.html
-363 >> [get_html] success
-364 >> [save_2_db] insert succes
-365 >> [get_info] http://www.135zy.net/vod-detail-id-11008.html
-366 >> [get_html] success
-367 >> [save_2_db] insert succes
-368 >> [get_info] http://www.135zy.net/vod-detail-id-11007.html
-369 >> [get_html] success
-370 >> [save_2_db] insert succes
-371 >> [get_info] http://www.135zy.net/vod-detail-id-11006.html
-372 >> [get_html] success
-373 >> [save_2_db] insert succes
-374 >> [get_info] http://www.135zy.net/vod-detail-id-11005.html
-375 >> [get_html] success
-376 >> [save_2_db] insert succes
-377 >> [get_info] http://www.135zy.net/vod-detail-id-11002.html
-378 >> [get_html] success
-379 >> [save_2_db] insert succes
-380 >> [get_info] http://www.135zy.net/vod-detail-id-11001.html
-381 >> [get_html] success
-382 >> [save_2_db] insert succes
-383 
+81 >> [save_2_db] insert succes
+82 >> [get_info] http://www.135zy.net/vod-detail-id-11152.html
+83 >> [get_html] success
+84 >> [save_2_db] insert succes
+85 >> [get_info] http://www.135zy.net/vod-detail-id-11151.html
+86 >> [get_html] success
+87 >> [save_2_db] insert succes
+88 >> [get_info] http://www.135zy.net/vod-detail-id-11149.html
+89 >> [get_html] success
+90 >> [save_2_db] insert succes
+91 >> [get_info] http://www.135zy.net/vod-detail-id-11148.html
+92 >> [get_html] success
+93 >> [save_2_db] insert succes
+94 >> [get_info] http://www.135zy.net/vod-detail-id-11145.html
+95 >> [get_html] success
+96 >> [save_2_db] insert succes
+97 >> [get_info] http://www.135zy.net/vod-detail-id-11146.html
+98 >> [get_html] success
+99 >> [save_2_db] insert succes
+100 >> [get_info] http://www.135zy.net/vod-detail-id-6573.html
+101 >> [get_html] success
+102 >> [save_2_db] insert succes
+103 >> [get_info] http://www.135zy.net/vod-detail-id-11126.html
+104 >> [get_html] success
+105 >> [save_2_db] insert succes
+106 >> [get_info] http://www.135zy.net/vod-detail-id-11125.html
+107 >> [get_html] success
+108 >> [save_2_db] insert succes
+109 >> [get_info] http://www.135zy.net/vod-detail-id-11124.html
+110 >> [get_html] success
+111 >> [save_2_db] insert succes
+112 >> [get_info] http://www.135zy.net/vod-detail-id-11123.html
+113 >> [get_html] success
+114 >> [save_2_db] insert succes
+115 >> [get_info] http://www.135zy.net/vod-detail-id-11121.html
+116 >> [get_html] success
+117 >> [save_2_db] insert succes
+118 >> [get_info] http://www.135zy.net/vod-detail-id-11120.html
+119 >> [get_html] success
+120 >> [save_2_db] insert succes
+121 >> [get_info] http://www.135zy.net/vod-detail-id-11119.html
+122 >> [get_html] success
+123 >> [save_2_db] insert succes
+124 >> [get_info] http://www.135zy.net/vod-detail-id-11118.html
+125 >> [get_html] success
+126 >> [save_2_db] insert succes
+127 >> [get_info] http://www.135zy.net/vod-detail-id-11117.html
+128 >> [get_html] success
+129 >> [save_2_db] insert succes
+130 >> [get_info] http://www.135zy.net/vod-detail-id-11116.html
+131 >> [get_html] success
+132 >> [save_2_db] insert succes
+133 >> [get_info] http://www.135zy.net/vod-detail-id-11115.html
+134 >> [get_html] success
+135 >> [save_2_db] insert succes
+136 >> [get_info] http://www.135zy.net/vod-detail-id-11114.html
+137 >> [get_html] success
+138 >> [save_2_db] insert succes
+139 >> [get_info] http://www.135zy.net/vod-detail-id-11113.html
+140 >> [get_html] success
+141 >> [save_2_db] insert succes
+142 >> [get_info] http://www.135zy.net/vod-detail-id-11112.html
+143 >> [get_html] success
+144 >> [save_2_db] insert succes
+145 >> [get_info] http://www.135zy.net/vod-detail-id-11111.html
+146 >> [get_html] success
+147 >> [save_2_db] insert succes
+148 >> [get_info] http://www.135zy.net/vod-detail-id-8817.html
+149 >> [get_html] success
+150 >> [save_2_db] insert succes
+151 >> [get_info] http://www.135zy.net/vod-detail-id-11109.html
+152 >> [get_html] success
+153 >> [save_2_db] insert succes
+154 >> [get_info] http://www.135zy.net/vod-detail-id-11108.html
+155 >> [get_html] success
+156 >> [save_2_db] insert succes
+157 >> [get_info] http://www.135zy.net/vod-detail-id-11107.html
+158 >> [get_html] success
+159 >> [save_2_db] insert succes
+160 >> [get_info] http://www.135zy.net/vod-detail-id-11105.html
+161 >> [get_html] success
+162 >> [save_2_db] insert succes
+163 >> [get_info] http://www.135zy.net/vod-detail-id-11104.html
+164 >> [get_html] success
+165 >> [save_2_db] insert succes
+166 >> [get_info] http://www.135zy.net/vod-detail-id-11103.html
+167 >> [get_html] success
+168 >> [save_2_db] insert succes
+169 >> [get_info] http://www.135zy.net/vod-detail-id-11102.html
+170 >> [get_html] success
+171 >> [save_2_db] insert succes
+172 >> [get_info] http://www.135zy.net/vod-detail-id-11099.html
+173 >> [get_html] success
+174 >> [save_2_db] insert succes
+175 >> [get_info] http://www.135zy.net/vod-detail-id-11098.html
+176 >> [get_html] success
+177 >> [save_2_db] insert succes
+178 >> [get_info] http://www.135zy.net/vod-detail-id-11096.html
+179 >> [get_html] success
+180 >> [save_2_db] insert succes
+181 >> [get_info] http://www.135zy.net/vod-detail-id-11093.html
+182 >> [get_html] success
+183 >> [save_2_db] insert succes
+184 >> [get_info] http://www.135zy.net/vod-detail-id-11094.html
+185 >> [get_html] success
+186 >> [save_2_db] insert succes
+187 >> [get_info] http://www.135zy.net/vod-detail-id-11095.html
+188 >> [get_html] success
+189 >> [save_2_db] insert succes
+190 >> [get_info] http://www.135zy.net/vod-detail-id-11092.html
+191 >> [get_html] success
+192 >> [save_2_db] insert succes
+193 >> [get_info] http://www.135zy.net/vod-detail-id-11091.html
+194 >> [get_html] success
+195 >> [save_2_db] insert succes
+196 >> [get_info] http://www.135zy.net/vod-detail-id-10520.html
+197 >> [get_html] success
+198 >> [save_2_db] insert succes
+199 >> [get_info] http://www.135zy.net/vod-detail-id-11085.html
+200 >> [get_html] success
+201 >> [save_2_db] insert succes
+202 >> [get_info] http://www.135zy.net/vod-detail-id-11084.html
+203 >> [get_html] success
+204 >> [save_2_db] insert succes
+205 >> [get_info] http://www.135zy.net/vod-detail-id-11083.html
+206 >> [get_html] success
+207 >> [save_2_db] insert succes
+208 >> [get_info] http://www.135zy.net/vod-detail-id-11082.html
+209 >> [get_html] success
+210 >> [save_2_db] insert succes
+211 >> [get_info] http://www.135zy.net/vod-detail-id-11081.html
+212 >> [get_html] success
+213 >> [save_2_db] insert succes
+214 >> [get_info] http://www.135zy.net/vod-detail-id-11080.html
+215 >> [get_html] success
+216 >> [save_2_db] insert succes
+217 >> [get_info] http://www.135zy.net/vod-detail-id-11079.html
+218 >> [get_html] success
+219 >> [save_2_db] insert succes
+220 >> [get_info] http://www.135zy.net/vod-detail-id-11077.html
+221 >> [get_html] success
+222 >> [save_2_db] insert succes
+223 >> [get_info] http://www.135zy.net/vod-detail-id-6438.html
+224 >> [get_html] success
+225 >> [save_2_db] insert succes
+226 >> [get_info] http://www.135zy.net/vod-detail-id-11076.html
+227 >> [get_html] success
+228 >> [save_2_db] insert succes
+229 >> [get_info] http://www.135zy.net/vod-detail-id-11075.html
+230 >> [get_html] success
+231 >> [save_2_db] insert succes
+232 >> [get_info] http://www.135zy.net/vod-detail-id-11074.html
+233 >> [get_html] success
+234 >> [save_2_db] insert succes
+235 >> [get_info] http://www.135zy.net/vod-detail-id-11073.html
+236 >> [get_html] success
+237 >> [save_2_db] insert succes
+238 >> [get_info] http://www.135zy.net/vod-detail-id-11072.html
+239 >> [get_html] success
+240 >> [save_2_db] insert succes
+241 >> [get_info] http://www.135zy.net/vod-detail-id-11071.html
+242 >> [get_html] success
+243 >> [save_2_db] insert succes
+244 >> [get_info] http://www.135zy.net/vod-detail-id-11070.html
+245 >> [get_html] success
+246 >> [save_2_db] insert succes
+247 >> [get_info] http://www.135zy.net/vod-detail-id-11069.html
+248 >> [get_html] success
+249 >> [save_2_db] insert succes
+250 >> [get_info] http://www.135zy.net/vod-detail-id-11068.html
+251 >> [get_html] success
+252 >> [save_2_db] insert succes
+253 >> [get_info] http://www.135zy.net/vod-detail-id-11067.html
+254 >> [get_html] success
+255 >> [save_2_db] insert succes
+256 >> [get_info] http://www.135zy.net/vod-detail-id-11066.html
+257 >> [get_html] success
+258 >> [save_2_db] insert succes
+259 >> [get_info] http://www.135zy.net/vod-detail-id-11065.html
+260 >> [get_html] success
+261 >> [save_2_db] insert succes
+262 >> [get_info] http://www.135zy.net/vod-detail-id-11064.html
+263 >> [get_html] success
+264 >> [save_2_db] insert succes
+265 >> [get_info] http://www.135zy.net/vod-detail-id-11063.html
+266 >> [get_html] success
+267 >> [save_2_db] insert succes
+268 >> [get_info] http://www.135zy.net/vod-detail-id-11061.html
+269 >> [get_html] success
+270 >> [save_2_db] insert succes
+271 >> [get_info] http://www.135zy.net/vod-detail-id-11027.html
+272 >> [get_html] success
+273 >> [save_2_db] insert succes
+274 >> [get_info] http://www.135zy.net/vod-detail-id-11059.html
+275 >> [get_html] success
+276 >> [save_2_db] insert succes
+277 >> [get_info] http://www.135zy.net/vod-detail-id-11054.html
+278 >> [get_html] success
+279 >> [save_2_db] insert succes
+280 >> [get_info] http://www.135zy.net/vod-detail-id-11055.html
+281 >> [get_html] success
+282 >> [save_2_db] insert succes
+283 >> [get_info] http://www.135zy.net/vod-detail-id-11053.html
+284 >> [get_html] success
+285 >> [save_2_db] insert succes
+286 >> [get_info] http://www.135zy.net/vod-detail-id-11052.html
+287 >> [get_html] success
+288 >> [save_2_db] insert succes
+289 >> [get_info] http://www.135zy.net/vod-detail-id-11051.html
+290 >> [get_html] success
+291 >> [save_2_db] insert succes
+292 >> [get_info] http://www.135zy.net/vod-detail-id-11050.html
+293 >> [get_html] success
+294 >> [save_2_db] insert succes
+295 >> [get_info] http://www.135zy.net/vod-detail-id-11049.html
+296 >> [get_html] success
+297 >> [save_2_db] insert succes
+298 >> [get_info] http://www.135zy.net/vod-detail-id-11048.html
+299 >> [get_html] success
+300 >> [save_2_db] insert succes
+301 >> [get_info] http://www.135zy.net/vod-detail-id-11047.html
+302 >> [get_html] success
+303 >> [save_2_db] insert succes
+304 >> [get_info] http://www.135zy.net/vod-detail-id-11046.html
+305 >> [get_html] success
+306 >> [save_2_db] insert succes
+307 >> [get_info] http://www.135zy.net/vod-detail-id-11045.html
+308 >> [get_html] success
+309 >> [save_2_db] insert succes
+310 >> [get_info] http://www.135zy.net/vod-detail-id-11044.html
+311 >> [get_html] success
+312 >> [save_2_db] insert succes
+313 >> [get_info] http://www.135zy.net/vod-detail-id-11040.html
+314 >> [get_html] success
+315 >> [save_2_db] insert succes
+316 >> [get_info] http://www.135zy.net/vod-detail-id-11039.html
+317 >> [get_html] success
+318 >> [save_2_db] insert succes
+319 >> [get_info] http://www.135zy.net/vod-detail-id-11038.html
+320 >> [get_html] success
+321 >> [save_2_db] insert succes
+322 >> [get_info] http://www.135zy.net/vod-detail-id-11037.html
+323 >> [get_html] success
+324 >> [save_2_db] insert succes
+325 >> [get_info] http://www.135zy.net/vod-detail-id-11036.html
+326 >> [get_html] success
+327 >> [save_2_db] insert succes
+328 >> [get_info] http://www.135zy.net/vod-detail-id-11035.html
+329 >> [get_html] success
+330 >> [save_2_db] insert succes
+331 >> [get_info] http://www.135zy.net/vod-detail-id-11034.html
+332 >> [get_html] success
+333 >> [save_2_db] insert succes
+334 >> [get_info] http://www.135zy.net/vod-detail-id-11033.html
+335 >> [get_html] success
+336 >> [save_2_db] insert succes
+337 >> [get_info] http://www.135zy.net/vod-detail-id-11032.html
+338 >> [get_html] success
+339 >> [save_2_db] insert succes
+340 >> [get_info] http://www.135zy.net/vod-detail-id-11031.html
+341 >> [get_html] success
+342 >> [save_2_db] insert succes
+343 >> [get_info] http://www.135zy.net/vod-detail-id-11029.html
+344 >> [get_html] success
+345 >> [save_2_db] insert succes
+346 >> [get_info] http://www.135zy.net/vod-detail-id-11028.html
+347 >> [get_html] success
+348 >> [save_2_db] insert succes
+349 >> [get_info] http://www.135zy.net/vod-detail-id-11026.html
+350 >> [get_html] success
+351 >> [save_2_db] insert succes
+352 >> [get_info] http://www.135zy.net/vod-detail-id-11025.html
+353 >> [get_html] success
+354 >> [save_2_db] insert succes
+355 >> [get_info] http://www.135zy.net/vod-detail-id-6535.html
+356 >> [get_html] success
+357 >> [save_2_db] insert succes
+358 >> [get_info] http://www.135zy.net/vod-detail-id-6016.html
+359 >> [get_html] success
+360 >> [save_2_db] insert succes
+361 
 --------------------------------
-384 autoSpider done !
-385 2018-10-02 13:17:44
+362 autoSpider done !
+363 2018-10-02 14:00:27
