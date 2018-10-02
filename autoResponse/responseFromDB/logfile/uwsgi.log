@@ -1,0 +1,19 @@
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Oct  2 01:01:40 2018] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+bind(): No such file or directory [core/socket.c line 230]
