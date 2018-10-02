@@ -99,7 +99,7 @@ def getmovieDetail(movie_id):
 def spiderlog():
     # log_list
     log_list = []
-    rel =  '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
+    rel =  '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
     # rel = '/home/lynn/github_project/daily/pandy/spider/autoSpider_log.txt'
     try:
         f = codecs.open(rel, 'r', 'utf-8')
@@ -111,7 +111,7 @@ def spiderlog():
 
     # log_list_err
     log_list_err = []
-    rel =  '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
+    rel =  '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
     try:
         f = codecs.open(rel, 'r', 'utf-8')
         for line in f:
@@ -122,7 +122,7 @@ def spiderlog():
 
     # log_list_update 本次完成更新资源列表
     log_list_update = []
-    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
     try:
         f = codecs.open(rel, 'r', 'utf-8')
         for line in f:
@@ -148,7 +148,7 @@ def spiderlog():
 @app.route('/clean_spiderlog')
 def clean_spiderlog():
     msg = ''
-    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
     try:
         with open(rel, 'w') as f:
             f.write('')
@@ -157,7 +157,7 @@ def clean_spiderlog():
         msg += '清空 spiderlog 失败'
     msg += '<br />'
 
-    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
     try:
         with open(rel, 'w') as f:
             f.write('')
@@ -166,7 +166,7 @@ def clean_spiderlog():
         msg += '  清空 spiderlog_err 失败'
     msg += '<br />'
 
-    rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
     try:
         with open(rel, 'w') as f:
             f.write('')

@@ -941,15 +941,17 @@ def is_saved( href, title, table):
 
 def write_2_updatelog(updatelog_list):
     try:
-        f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt', 'a', 'utf-8')
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt', 'a', 'utf-8')
         for log in updatelog_list:
             f.write(log + '\n')
         f.close()
     except:
+        '''
         print(sys.exc_info())
         print('--------------')
         print(updatelog_list)
-        f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt', 'a', 'utf-8')
+        '''
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt', 'a', 'utf-8')
         f.write('---------------\n' + 'autoSpider_update_log 写入失败!')
         f.close()
 
@@ -957,7 +959,7 @@ def write_2_updatelog(updatelog_list):
 def write_2_logfile(log_list):
     global line_cnt
     try:
-        f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt', 'a', 'utf-8')
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt', 'a', 'utf-8')
         # f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt', 'a', 'utf-8')
         for log in log_list:
             f.write(str(line_cnt) + ' ' + log + '\n')
@@ -971,7 +973,7 @@ def write_2_logfile(log_list):
         print(log_list)
         print('-------------------------')
         '''
-        f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt', 'a', 'utf-8')
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt', 'a', 'utf-8')
         f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime() ) )
         f.write('[write_2_logfile] write_2_logfile failed')
         f.write('\n\n\n')
