@@ -1007,6 +1007,12 @@ def main():
     global str_2_logfile
     global updatelog
 
+    # 清空之前的日志文件
+    try:
+        r = requests.get('http://120.79.170.122/clean_spiderlog', timeout=30)
+    except:
+        pass
+
     str_2_logfile.append(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
     str_2_logfile.append('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
