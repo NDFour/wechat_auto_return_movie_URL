@@ -28,6 +28,18 @@ def index():
 
 @app.route('/getmovie')
 def hello():
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    # rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    movies = []
+    try:
+        f = codecs.open(rel, 'r', 'utf-8')
+        for line in f:
+            movies.append(line)
+        f.close()
+    except:
+        pass
+
+    '''
     conn = pymysql.connect('127.0.0.1', port=3306, user='root', password='cqmygpython2', db='bdpan', charset='utf8')
     cursor = conn.cursor()
 
@@ -59,6 +71,7 @@ def hello():
     finally:
         cursor.close()
         conn.close()
+    '''
 
     rel_json = {}
     rel_json['movies'] = movies
@@ -131,6 +144,18 @@ def spiderlog():
     except:
         log_list_update.append('The log_list_update doesn^t exsist')
 
+    # log_list_sql 本次完成更新资源 sql语句 列表
+    log_list_sql = []
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    # rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    try:
+        f = codecs.open(rel, 'r', 'utf-8')
+        for line in f:
+            log_list_sql.append(line)
+        f.close()
+    except:
+        log_list_sql.append('The log_list_sql doesn^t exsist')
+
     context = {}
     context['log_list'] = log_list
     if len(log_list):
@@ -141,6 +166,7 @@ def spiderlog():
         context['end'] = ''
     context['log_list_err'] = log_list_err
     context['log_list_update'] = log_list_update
+    context['log_list_sql'] = log_list_sql
 
     context['clean_spiderlog'] = url_for('clean_spiderlog')
     return render_template('spiderlog.html', context = context)
@@ -148,6 +174,7 @@ def spiderlog():
 @app.route('/clean_spiderlog')
 def clean_spiderlog():
     msg = ''
+    # 爬虫运行日志
     rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log.txt'
     try:
         with open(rel, 'w') as f:
@@ -157,6 +184,7 @@ def clean_spiderlog():
         msg += '清空 spiderlog 失败'
     msg += '<br />'
 
+    # 爬虫运行错误日志
     rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt'
     try:
         with open(rel, 'w') as f:
@@ -166,6 +194,7 @@ def clean_spiderlog():
         msg += '  清空 spiderlog_err 失败'
     msg += '<br />'
 
+    # 爬虫更新资源名日志
     rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt'
     try:
         with open(rel, 'w') as f:
@@ -174,6 +203,18 @@ def clean_spiderlog():
     except Exception as e:
         msg += '  清空 spiderlog_update_log 失败'
     msg += '<br />'
+
+    # 爬虫更新资源 sql 日志
+    rel = '/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    # rel = '/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt'
+    try:
+        with open(rel, 'w') as f:
+            f.write('')
+            msg += '  清空 spiderlog_update_sql 成功'
+    except Exception as e:
+        msg += '  清空 spiderlog_update_sql 失败'
+    msg += '<br />'
+
     return msg
 
 

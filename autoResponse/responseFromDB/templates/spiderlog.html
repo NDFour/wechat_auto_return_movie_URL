@@ -47,11 +47,20 @@
  {% for log_err in context.log_list_err %} {{ log_err }} {% endfor %}
                             </pre>
                             {% endif %}
+
                         	<!-- Updatelog -->
                         	{% if context.log_list_update %}
                         	<butto class="btn">Update log</butto>
                         	<pre>
  {% for log_update in context.log_list_update %} {{ log_update }} {% endfor %}
+                           </pre>
+                           {% endif %}
+
+                        	<!-- sql log -->
+                        	{% if context.log_list_sql %}
+                        	<butto class="btn">Update log sql</butto>
+                        	<pre>
+ {% for log_sql in context.log_list_sql %} {{ log_sql }} {% endfor %}
                            </pre>
                            {% endif %}
                         </div>

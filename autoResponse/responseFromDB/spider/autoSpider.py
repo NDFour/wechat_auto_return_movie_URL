@@ -160,6 +160,7 @@ class yeyoufang_Spider:
             cursor.execute(sql_insert)
             conn.commit()
             # print('>> [save_2_db] insert succes')
+            sql_2_file(sql_insert)
             str_2_logfile.append('>> [save_2_db] insert succes')
             updatelog.append(sql_param[0])
 
@@ -335,6 +336,7 @@ class menggouwp_Spider:
             conn.commit()
             # print('>> [save_2_db] insert succes')
             str_2_logfile.append('>> [save_2_db] insert succes')
+            sql_2_file(sql_insert)
             updatelog.append(sql_param[0])
 
             # 检测数据库中是否有和该电影采集页url一致 但是 电影名 不一样（旧版）的，有的话删除
@@ -535,6 +537,7 @@ class kuyunzy_Spider:
             cursor.execute(sql_insert)
             conn.commit()
             # print('>> [save_2_db] insert succes')
+            sql_2_file(sql_insert)
             str_2_logfile.append('>> [save_2_db] insert succes')
             updatelog.append(sql_param[0])
 
@@ -674,6 +677,7 @@ class xujiating_Spider:
             cursor.execute(sql_insert)
             conn.commit()
             # print('>> [save_2_db] insert succes')
+            sql_2_file(sql_insert)
             str_2_logfile.append('>> [save_2_db] insert succes')
             updatelog.append(sql_param[0])
 
@@ -835,6 +839,7 @@ class www_605zy_Spider:
             cursor.execute(sql_insert)
             conn.commit()
             # print('>> [save_2_db] insert succes')
+            sql_2_file(sql_insert)
             str_2_logfile.append('>> [save_2_db] insert succes')
             updatelog.append(sql_param[0])
 
@@ -938,6 +943,25 @@ def is_saved( href, title, table):
     cursor.close()
     conn.close()
     return 1
+
+
+# 在 save_2_db 函数中调用，实现将本次执行的 sql 语句保存到 文本文件
+def sql_2_file(sql_save):
+    try:
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt', 'a', 'utf-8')
+        # f = codecs.open('/home/lynn/github_project/Python/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_sql.txt', 'a', 'utf-8')
+        f.write(sql_save + '\n')
+        f.close()
+    except:
+        '''
+        print(sys.exc_info())
+        print('--------------')
+        print(updatelog_list)
+        '''
+        f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_log_error.txt', 'a', 'utf-8')
+        f.write('---------------\n' + 'autoSpider_update_sql 写入失败!')
+        f.close()
+
 
 def write_2_updatelog(updatelog_list):
     try:
