@@ -84,3 +84,184 @@ No handler responded message <werobot.messages.events.ViewEvent object at 0x7f63
 [pid: 3682|app: 0|req: 8/15] 223.166.222.108 () {38 vars in 709 bytes} [Fri Oct  5 17:55:27 2018] POST /robot/?signature=2d4937dc1c0428144257af3380ccf1eb1cf1c1b8&timestamp=1538733327&nonce=1472853612&openid=o2NddxA5kfXlkIoxR-GUiXQYav8Q => generated 1172 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 112 bytes (1 switches on core 0)
 No handler responded message <werobot.messages.events.ViewEvent object at 0x7f636a7f9780>
 [pid: 3681|app: 0|req: 8/16] 140.207.54.76 () {38 vars in 708 bytes} [Fri Oct  5 17:56:29 2018] POST /robot/?signature=660d3b806cce2f56f55028807feb52c85d4f1b01&timestamp=1538733389&nonce=1102444544&openid=o2NddxEUCDyJ5Cpp-3pebD5e3u9c => generated 0 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Sat Oct 13 10:34:20 2018] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x9fcab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Bottle v0.12.13 server starting up (using AutoServer())...
+Listening on http://0.0.0.0:8000/
+Hit Ctrl-C to quit.
+
+*** Starting uWSGI 2.0.17 (64bit) on [Sat Oct 13 10:36:26 2018] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb91ab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xb91ab0 pid: 6342 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6342)
+spawned uWSGI worker 1 (pid: 6344, cores: 1)
+spawned uWSGI worker 2 (pid: 6345, cores: 1)
+《官方》
+
+[pid: 6345|app: 0|req: 1/1] 140.207.54.76 () {38 vars in 706 bytes} [Sat Oct 13 10:36:34 2018] POST /robot/?signature=28de761b20fa1a65a1bdff4e90c6cbd6d36c52ff&timestamp=1539398194&nonce=616935103&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 403 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《金刚狼》
+
+[pid: 6344|app: 0|req: 1/2] 140.207.54.76 () {38 vars in 705 bytes} [Sat Oct 13 10:36:49 2018] POST /robot/?signature=70fa24e01f32f0a5facfe37bfee6aeb4723d98e7&timestamp=1539398209&nonce=224186562&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 409 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 6345|app: 0|req: 2/3] 140.207.54.75 () {38 vars in 706 bytes} [Sat Oct 13 10:36:57 2018] POST /robot/?signature=2aa12c7883af967b84a0c6b622b298df2e7cd90c&timestamp=1539398217&nonce=552768962&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 348 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《金刚狼》
+
+[pid: 6344|app: 0|req: 2/4] 140.207.54.76 () {38 vars in 708 bytes} [Sat Oct 13 10:36:59 2018] POST /robot/?signature=65d3e1dfcb8af0244ed081b47ffa88ce345f7575&timestamp=1539398219&nonce=1613437894&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 684 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Sat Oct 13 10:37:37 2018] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x197cab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x197cab0 pid: 6363 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6363)
+spawned uWSGI worker 1 (pid: 6365, cores: 1)
+spawned uWSGI worker 2 (pid: 6366, cores: 1)
+《峰会》
+
+[pid: 6366|app: 0|req: 1/1] 140.207.54.75 () {38 vars in 706 bytes} [Sat Oct 13 10:37:42 2018] POST /robot/?signature=7b7780052f1e384e02fdc7db0be9e05e2d9b4674&timestamp=1539398262&nonce=335762202&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 680 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《番号家》
+
+[pid: 6365|app: 0|req: 1/2] 140.207.54.75 () {38 vars in 708 bytes} [Sat Oct 13 10:37:45 2018] POST /robot/?signature=691bfbe76af383242e9ccc2bc19d0d6206985592&timestamp=1539398264&nonce=1376106594&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 686 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《巨人》
+
+[pid: 6366|app: 0|req: 2/3] 140.207.54.76 () {38 vars in 708 bytes} [Sat Oct 13 10:37:49 2018] POST /robot/?signature=004673306376746f9b2c858a5bee81c4421019bd&timestamp=1539398268&nonce=1995152970&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 680 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《好的》
+
+[pid: 6365|app: 0|req: 2/4] 140.207.54.76 () {38 vars in 707 bytes} [Sat Oct 13 10:37:53 2018] POST /robot/?signature=f357b827d1088bf2886e1be6f9168d95edcdb871&timestamp=1539398273&nonce=1523034145&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 680 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《巨人》
+
+[pid: 6366|app: 0|req: 3/5] 140.207.54.76 () {38 vars in 708 bytes} [Sat Oct 13 10:37:55 2018] POST /robot/?signature=f23c2585e5f646413641361f5c090e800639e19b&timestamp=1539398275&nonce=1631900501&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 680 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Sat Oct 13 10:38:48 2018] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x173bab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x173bab0 pid: 6386 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6386)
+spawned uWSGI worker 1 (pid: 6388, cores: 1)
+spawned uWSGI worker 2 (pid: 6389, cores: 1)
+《金刚狼》
+
+[pid: 6389|app: 0|req: 1/1] 140.207.54.76 () {38 vars in 708 bytes} [Sat Oct 13 10:38:53 2018] POST /robot/?signature=42c77bb960ad819c217258fbb8a40675c1d2ce99&timestamp=1539398333&nonce=1172549569&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 692 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)

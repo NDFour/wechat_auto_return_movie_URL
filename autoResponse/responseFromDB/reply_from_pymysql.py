@@ -244,7 +244,7 @@ def genHtml(articles):
     ar_str_cnt=0
     for ar in articles:
         ar_str_cnt += 1
-        rel_str+='['+str(ar_str_cnt)+']  '+'<a href="'+ar[-1]+'">'+ar[0]+'</a>'+'\n\n'
+        rel_str+='['+str(ar_str_cnt)+']  '+'<a href="'+ar[-1]+'">'+ar[0]+'</a>'+'\n\n\n'
 
     return rel_str.strip()
 
@@ -329,7 +329,7 @@ def reply_info_bygenurl(v_name):
     #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
     global baseUrl1
     url = baseUrl1 + v_name + '&onlineplay_search=onlineplay_search'
-    name='《'+v_name+'》在线观看'
+    name='《'+v_name+'》点我在线观看'
     picurl='https://s1.ax1x.com/2018/08/11/P6L2sU.jpg'
     # 插入搜索词条链接图文消息
     in_list=[]
@@ -702,6 +702,6 @@ def writeToConfigFile(configName,configValue):
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
-robot.config['HOST']='0.0.0.0'
-robot.config['PORT']=8000
-robot.run()
+# robot.config['HOST']='0.0.0.0'
+# robot.config['PORT']=8000
+# robot.run()

@@ -20490,3 +20490,7 @@ worker 1 buried after 1 seconds
 worker 2 buried after 1 seconds
 goodbye to uWSGI.
 [uWSGI] getting INI configuration from myproject.ini
+[uWSGI] getting INI configuration from myproject.ini
+[uWSGI] getting INI configuration from myproject.ini
+[uWSGI] getting INI configuration from myproject.ini
+[uWSGI] getting INI configuration from myproject.ini
