@@ -94,7 +94,7 @@ def hello(message):
     #   the account of 'Lynn'
     master_root='o2NddxHhZloQV55azmx8zVXv9mAQ'
     if isdebug==1:
-        master_root='ozDqGwZ__sjgDwZ2yRfusI84XeAc'
+        master_root='oBo_Y1akWzT_4_i38mzpiRo7z-uo'
     elif isdebug==2:
         master_root='onD430y7UUrFB8sDV6W8PU4Skwy8'
 
@@ -233,7 +233,20 @@ def hello(message):
 
     #    global last_movie
     #    last_movie=v_name
-    return articles
+    # For we chat updating
+    rel_str=genHtml(articles)
+    return rel_str
+
+    # return articles
+
+def genHtml(articles):
+    rel_str=''
+    ar_str_cnt=0
+    for ar in articles:
+        ar_str_cnt += 1
+        rel_str+='['+str(ar_str_cnt)+']  '+'<a href="'+ar[-1]+'">'+ar[0]+'</a>'+'\n\n'
+
+    return rel_str.strip()
 
 # 替换用户发来的电影名字中的错别字
 def modefy_name(v_name):
@@ -316,7 +329,7 @@ def reply_info_bygenurl(v_name):
     #baseUrl='http://m.nemfh.cn/index.php/home/index/search.html?k='
     global baseUrl1
     url = baseUrl1 + v_name + '&onlineplay_search=onlineplay_search'
-    name='【在线观看】《'+v_name+'》'
+    name='《'+v_name+'》在线观看'
     picurl='https://s1.ax1x.com/2018/08/11/P6L2sU.jpg'
     # 插入搜索词条链接图文消息
     in_list=[]
@@ -325,6 +338,7 @@ def reply_info_bygenurl(v_name):
     in_list.append(picurl)
     in_list.append(url)
     out_list.append(in_list)
+    '''
     #   网盘电影网站 搜索结果
     in_list=[]
     global baseUrl2
@@ -336,6 +350,7 @@ def reply_info_bygenurl(v_name):
     in_list.append(pic_pan)
     in_list.append(url_pan)
     out_list.append(in_list)
+    '''
     #   图文消息加上一条之前的广告推文链接
     global adtuple
     global adtuple2
@@ -355,7 +370,7 @@ def reply_info_bygenurl(v_name):
     # 插入点广告文章
     # 当ad1或者ad2至少存在一个时才会插入该文章
     if ad1_state+ad2_state:
-        out_list.append(['■ 亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
+        out_list.append(['■ 亲爱的，每天看电影时帮我点一下这个广告呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
     return out_list
 
 #   showanalyze 查询各公众号调用次数
@@ -687,6 +702,6 @@ def writeToConfigFile(configName,configValue):
 #main()
 
 # 让服务器监听在　0.0.0.0:4444
-# robot.config['HOST']='0.0.0.0'
-# robot.config['PORT']=8000
-# robot.run()
+robot.config['HOST']='0.0.0.0'
+robot.config['PORT']=8000
+robot.run()
