@@ -62,12 +62,14 @@ def subscribe(message):
     global adtuple2
     outlist=[]
     outlist.append(['公众号免费看电影教程','','https://s1.ax1x.com/2018/06/02/CogADx.png','https://w.url.cn/s/AGW9n4L'])
+    '''
     if adtuple:
         if ad1_state:
             outlist.append(adtuple)
     if adtuple2:
         if ad2_state:
             outlist.append(adtuple2)
+    '''
     return outlist
 
 # 用户取关
@@ -369,8 +371,10 @@ def reply_info_bygenurl(v_name):
 
     # 插入点广告文章
     # 当ad1或者ad2至少存在一个时才会插入该文章
+    '''
     if ad1_state+ad2_state:
         out_list.append(['■ 亲爱的，每天看电影时帮我点一下这个广告呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
+    '''
     return out_list
 
 #   showanalyze 查询各公众号调用次数
