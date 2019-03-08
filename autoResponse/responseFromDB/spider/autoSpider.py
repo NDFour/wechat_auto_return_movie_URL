@@ -3,7 +3,7 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-09-02 13:57:43
-# Last Modified: 2019-03-08 21:16:01
+# Last Modified: 2019-03-08 21:36:49
 #
 
 import requests
@@ -711,7 +711,7 @@ class www_605zy_Spider:
             'http://www.135zy.net/vod-type-id-1-pg-', # 电影
             ]
     # 每次需要更新的页数+1
-    pages_num = 3
+    pages_num = 6
 
     def __init__(self):
         global str_2_logfile
@@ -782,7 +782,7 @@ class www_605zy_Spider:
         soup = BeautifulSoup(detail_html, 'lxml')
 
         try: # 封面图
-            movie_pic = soup.find(class_="lazy")['src']
+            movie_pic = 'http://www.135zy.net/' + soup.find(class_="lazy")['src']
         except:
             movie_pic = ''
 
