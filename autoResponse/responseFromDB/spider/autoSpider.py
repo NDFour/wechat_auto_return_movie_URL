@@ -3,7 +3,7 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-09-02 13:57:43
-# Last Modified: 2019-03-08 21:36:49
+# Last Modified: 2019-03-08 22:04:33
 #
 
 import requests
@@ -401,7 +401,7 @@ class kuyunzy_Spider:
         # print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         str_2_logfile.append('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
         # print('\tmovieSpider for yeyoufang.com')
-        str_2_logfile.append('\tmovieSpider for kuyunzy.cc')
+        str_2_logfile.append('\tmovieSpider for kuyunzy.vip')
         # print()
         # print('>> movieSpider init...')
         str_2_logfile.append('\n>> movieSpider init...')
@@ -436,7 +436,7 @@ class kuyunzy_Spider:
                 movies_num += len(a_list)
 
                 for i in a_list:
-                    href = 'http://www.kuyunzy.cc' + i['href']
+                    href = 'http://www.kuyunzy.vip' + i['href']
                     title = i.string
                     # 判断是否已经存在于数据库，是的话跳过，不是则存储
                     # str_2_logfile.append('http://www.menggouwp.com' + href)
@@ -630,7 +630,7 @@ class xujiating_Spider:
             try:
                 # r = requests.post(self.url, data=data, headers = headers)
                 r = requests.post(self.url, data=data)
-                parsed_json = json.loads(r.text[307:])
+                parsed_json = json.loads(r.text[1:])
                 # parsed_json = json.loads(r.text)
             except:
                 '''
