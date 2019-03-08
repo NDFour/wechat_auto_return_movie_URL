@@ -3,7 +3,7 @@
 #        Author: Lynn
 #         Email: lgang219@gmail.com
 #        Create: 2018-09-02 13:57:43
-# Last Modified: 2018-09-02 19:29:48
+# Last Modified: 2019-03-08 21:16:01
 #
 
 import requests
@@ -391,7 +391,7 @@ class menggouwp_Spider:
 class kuyunzy_Spider:
     # 采集网站的目录url
     category_urls = [
-            'http://www.kuyunzy.cc/list/?0-', # 电影
+            'http://www.kuyunzy.vip/list/?0-', # 电影
             ]
     # 每次需要更新的页数+1
     pages_num = 5
@@ -600,8 +600,8 @@ class xujiating_Spider:
     # 电视剧： 12-国产剧 13-港台剧 14-日韩剧 15-欧美剧
     # 动漫： 4-动漫
     # 综艺 3-综艺
-    url = 'http://w.xujiating.cn/index.php/home/index/addpian.html'
-    pages_num = 5
+    url = 'http://lldy.cutepanda.top/index.php/home/index/addpian.html'
+    pages_num = 8
     current_page = 0
 
     def get_info(self):
