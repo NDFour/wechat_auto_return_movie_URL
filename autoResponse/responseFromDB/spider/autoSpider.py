@@ -431,7 +431,7 @@ class kuyunzy_Spider:
                 # 只解析 align="left"的<td> 标签，其中包含电影名和详情页url
                 # <td height="20" align="left"><a href="/detail/?15422.html" target="_blank">小生梦惊魂&nbsp;</a></td>
                 only_title_href = SoupStrainer(align="left")
-                soup = BeautifulSoup(category_html, 'lxml', parse_only=only_title_href)
+                soup = BeautifulSoup(category_html, 'html.parser', parse_only=only_title_href)
                 a_list = soup.find_all('a')
                 movies_num += len(a_list)
 
