@@ -113,6 +113,13 @@ def hello(message):
     # 更新 name_dic
     rel=updatename_dic()
 
+    # 用户只发送数字 由 掌上大学接管自动回复
+    try:
+        int(message.content)
+        return ''
+    except:
+        pass
+
     if message.source==master_root:
         #   预留 接口，发送后 run 后程序开始工作
         if message.content=='run':
