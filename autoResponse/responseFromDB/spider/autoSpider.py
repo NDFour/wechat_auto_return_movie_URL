@@ -75,7 +75,12 @@ class yeyoufang_Spider:
                     # 判断是否已经存在于数据库，是的话跳过，不是则存储
                     if is_saved(href, title, 1) == 1:
                         # print('>> [get_url] skip already exsist\n  %s' % title)
-                        str_2_logfile.append('>> [get_url] skip already exsist\n  %s' % title + '   [yeyoufang]')
+                        str_2_logfile.append('>> [get_url] already exsist\n  %s' % title + '   [yeyoufang]')
+                        # 删除之前爬取的数据，重新爬取
+                        delMultiItem(href)
+                        url_list.append(href)
+                        title_list.append(title)
+                        str_2_logfile.append('>> [get_url] 删除原数据重新采集\n  %s' % title + '   [yeyoufang]')
                         #print('>> [get_url] already exsist')
                     else:
                         title_list.append(title)
@@ -259,6 +264,11 @@ class menggouwp_Spider:
                     if is_saved( href, title, 1) == 1:
                         # print('>> [get_url] skip already exsist\n  %s' % title)
                         str_2_logfile.append('>> [get_url] skip already exsist\n  %s' % title + '   [menggouwp]')
+                        # 删除之前爬取的数据，重新爬取
+                        delMultiItem(href)
+                        url_list.append(href)
+                        title_list.append(title)
+                        str_2_logfile.append('>> [get_url] 删除原数据重新采集\n  %s' % title + '   [menggouwp]')
                         # print('>> [get_url] already exsist')
                         url_cnt += 1
                     else:
@@ -438,11 +448,16 @@ class kuyunzy_Spider:
                 for i in a_list:
                     href = 'http://www.kuyunzy.vip' + i['href']
                     title = i.string
-                    # 判断是否已经存在于数据库，是的话跳过，不是则存储
+                    # 判断是否已经存在于数据库，是的话先删除原数据再采集，否则采集
                     # str_2_logfile.append('http://www.menggouwp.com' + href)
                     if is_saved( href, title, 2) == 1:
                         # print('>> [get_url] skip already exsist\n  %s' % title)
-                        str_2_logfile.append('>> [get_url] skip already exsist\n  %s' % title + '   [kuyunzy]')
+                        str_2_logfile.append('>> [get_url] already exsist\n  %s' % title + '   [kuyunzy]')
+                        # 删除之前爬取的数据，重新爬取
+                        delMultiItem(href)
+                        url_list.append(href)
+                        title_list.append(title)
+                        str_2_logfile.append('>> [get_url] 删除原数据重新采集\n  %s' % title + '   [kuyunzy]')
                         # print('>> [get_url] already exsist')
                     else:
                         url_list.append(href)
@@ -649,7 +664,17 @@ class xujiating_Spider:
                 if parsed_json['conter']:
                     for movie in parsed_json['conter']:
                         if is_saved(movie['d_id'], movie['d_name'], 2):
-                            str_2_logfile.append('>> [get_info] skip already exsist\n %s' % movie['d_name'] + '   [xujiating]')
+                            str_2_logfile.append('>> [get_info] already exsist\n %s' % movie['d_name'] + '   [xujiating]')
+                            # 删除之前爬取的数据，重新爬取
+                            delMultiItem(href)
+                            movie_info_list = []
+                            movie_info_list.append(movie['d_name'])
+                            movie_info_list.append(movie['d_pic'])
+                            movie_info_list.append(movie['d_content'].replace('"','').replace("'",''))
+                            movie_info_list.append(movie['d_playurl'].replace('#','$$').replace('$$$','$$')+'$$')
+                            movie_info_list.append(movie['d_id']) # detail_url
+                            self.save_2_db(movie_info_list)
+                            str_2_logfile.append('>> [get_url] 删除原数据重新采集\n  %s' % title + '   [xujiating]')
                         else:
                             movie_info_list = []
                             movie_info_list.append(movie['d_name'])
@@ -759,7 +784,13 @@ class www_605zy_Spider:
                     # str_2_logfile.append('http://www.menggouwp.com' + href)
                     if is_saved( href, title, 2) == 1:
                         # print('>> [get_url] skip already exsist\n  %s' % title)
-                        str_2_logfile.append('>> [get_url] skip already exsist\n  %s' % title + '   [www_605zy]')
+                        str_2_logfile.append('>> [get_url] already exsist\n  %s' % title + '   [www_605zy]')
+                        # 删除之前爬取的数据，重新爬取
+                        delMultiItem(href)
+                        url_list.append(href)
+                        title_list.append(title)
+                        str_2_logfile.append('>> [get_url] 删除原数据重新采集\n  %s' % title + '   [605zy]')
+
                         # print('>> [get_url] already exsist')
                     else:
                         url_list.append(href)
@@ -1002,6 +1033,23 @@ def write_2_logfile(log_list):
         f.write('[write_2_logfile] write_2_logfile failed')
         f.write('\n\n\n')
         f.close()
+
+
+# 用于删除数据库中重复数据
+# v_href: 采集页链接
+def delMultiItem(v_href):
+    conn = pymysql.connect('127.0.0.1', port=3306, user='root', password='cqmygpython2', db='bdpan', charset='utf8')
+    cursor = conn.cursor()
+
+    sqlDel = 'delete from onlineplay_onlineplay where v_href="' + v_href + '";'
+
+    try:
+        cursor.execute(sqlDel)
+        conn.commit()
+     except:
+        conn.rollback()
+    cursor.close()
+    conn.close()
 
 def main():
     global str_2_logfile
