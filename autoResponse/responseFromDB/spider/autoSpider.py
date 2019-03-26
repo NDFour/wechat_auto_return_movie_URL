@@ -993,7 +993,7 @@ def sql_2_file(sql_save):
         f.write('---------------\n' + 'autoSpider_update_sql 写入失败!')
         f.close()
 
-
+# 电影名
 def write_2_updatelog(updatelog_list):
     try:
         f = codecs.open('/root/wechat_auto_return_movie_URL/autoResponse/responseFromDB/spider/spiderlog/autoSpider_update_log.txt', 'a', 'utf-8')
@@ -1011,6 +1011,7 @@ def write_2_updatelog(updatelog_list):
         f.close()
 
 
+# 爬虫运行日志
 def write_2_logfile(log_list):
     global line_cnt
     try:
@@ -1046,6 +1047,8 @@ def delMultiItem(v_href):
     try:
         cursor.execute(sqlDel)
         conn.commit()
+        # 将执行的删除 sql 保存到本地，以便客户端服务器读取删除客户端数据库数据
+        sql_2_file(sqlDel)
      except:
         conn.rollback()
     cursor.close()
