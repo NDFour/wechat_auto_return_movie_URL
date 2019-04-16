@@ -30,8 +30,8 @@ def subscribe(message):
 @robot.text
 def hello(message, session):
     # lynn 微信号的 source ID
-    # master_root = 'o2NddxHhZloQV55azmx8zVXv9mAQ'
-    master_root = 'oBo_Y1akWzT_4_i38mzpiRo7z-uo'
+    master_root = 'o2NddxHhZloQV55azmx8zVXv9mAQ'
+    # master_root = 'oBo_Y1akWzT_4_i38mzpiRo7z-uo'
 
     # 返回公众号 target ID
     if message.content=='showtarget':
