@@ -11,7 +11,7 @@ import pymysql
 import sys
 import codecs
 import re
-from reply_from_pymysql import robot
+from wxRobot import robot
 from werobot.contrib.flask import make_view
 
 app = Flask(__name__)

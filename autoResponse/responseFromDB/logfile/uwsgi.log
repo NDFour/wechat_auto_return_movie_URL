@@ -265,3 +265,252 @@ spawned uWSGI worker 2 (pid: 6389, cores: 1)
 《金刚狼》
 
 [pid: 6389|app: 0|req: 1/1] 140.207.54.76 () {38 vars in 708 bytes} [Sat Oct 13 10:38:53 2018] POST /robot/?signature=42c77bb960ad819c217258fbb8a40675c1d2ce99&timestamp=1539398333&nonce=1172549569&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 692 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Apr 16 14:03:58 2019] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1196ab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./weapi.py", line 14, in <module>
+    from reply_from_pymysql import robot
+ImportError: No module named 'reply_from_pymysql'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 30682)
+spawned uWSGI worker 1 (pid: 30684, cores: 1)
+spawned uWSGI worker 2 (pid: 30685, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/1] 140.207.54.80 () {38 vars in 706 bytes} [Tue Apr 16 14:04:01 2019] POST /robot/?signature=50b05ad5f9b9b75d1e0ecd89a9f42a1c7469b7f3&timestamp=1555394641&nonce=459430807&openid=o2NddxAp3zwiBCp3V4Pu-eEAN2y0 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/2] 140.207.54.80 () {38 vars in 708 bytes} [Tue Apr 16 14:04:04 2019] POST /robot/?signature=6f349e9d247c81f5059c1cd4ffdfe6fa890bb096&timestamp=1555394644&nonce=1145874858&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/3] 140.207.54.80 () {38 vars in 706 bytes} [Tue Apr 16 14:04:08 2019] POST /robot/?signature=c7882c34cb561193a833d00bc26302f4d97aa1f8&timestamp=1555394647&nonce=892381972&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/4] 140.207.54.80 () {38 vars in 708 bytes} [Tue Apr 16 14:04:24 2019] POST /robot/?signature=ed6beba3c046fb084ffc90001e6db96b03ea934f&timestamp=1555394664&nonce=1781013779&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/5] 140.207.54.79 () {38 vars in 706 bytes} [Tue Apr 16 14:04:27 2019] POST /robot/?signature=b4075bd73d9f4d1e1e29150230c715519b853b4d&timestamp=1555394667&nonce=841396307&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30684|app: -1|req: -1/6] 140.207.54.80 () {38 vars in 704 bytes} [Tue Apr 16 14:04:35 2019] POST /robot/?signature=a8f9e0396ab059e68d7a76904ac0b2c41814ac7c&timestamp=1555394675&nonce=26565280&openid=o2NddxAp3zwiBCp3V4Pu-eEAN2y0 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/7] 218.75.230.9 () {40 vars in 738 bytes} [Tue Apr 16 14:04:36 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30684|app: -1|req: -1/8] 218.75.230.9 () {40 vars in 675 bytes} [Tue Apr 16 14:04:38 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30684|app: -1|req: -1/9] 218.75.230.9 () {40 vars in 730 bytes} [Tue Apr 16 14:04:43 2019] GET /robot => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/10] 218.75.230.9 () {40 vars in 671 bytes} [Tue Apr 16 14:04:43 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30684|app: -1|req: -1/11] 218.75.230.9 () {42 vars in 761 bytes} [Tue Apr 16 14:04:45 2019] GET /robot => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30685|app: -1|req: -1/12] 218.75.230.9 () {44 vars in 724 bytes} [Tue Apr 16 14:04:45 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Apr 16 14:04:54 2019] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d98ab0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./weapi.py", line 14, in <module>
+    from reply_from_pymysql import robot
+ImportError: No module named 'reply_from_pymysql'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 30693)
+spawned uWSGI worker 1 (pid: 30695, cores: 1)
+spawned uWSGI worker 2 (pid: 30696, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/1] 218.75.230.9 () {42 vars in 761 bytes} [Tue Apr 16 14:05:09 2019] GET /robot => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/2] 218.75.230.9 () {44 vars in 724 bytes} [Tue Apr 16 14:05:09 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/3] 218.75.230.9 () {42 vars in 761 bytes} [Tue Apr 16 14:05:19 2019] GET /robot => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/4] 218.75.230.9 () {44 vars in 724 bytes} [Tue Apr 16 14:05:20 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/5] 218.75.230.9 () {40 vars in 675 bytes} [Tue Apr 16 14:05:21 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30695|app: -1|req: -1/6] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:05:23 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/7] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:05:23 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30696|app: -1|req: -1/8] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:05:25 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 30695|app: -1|req: -1/9] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:05:25 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Apr 16 14:11:57 2019] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb3cad0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./weapi.py", line 14, in <module>
+    from reply_from_pymysql import robot
+ImportError: No module named 'reply_from_pymysql'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 31105)
+spawned uWSGI worker 1 (pid: 31107, cores: 1)
+spawned uWSGI worker 2 (pid: 31108, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 31107|app: -1|req: -1/1] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:12:03 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31108|app: -1|req: -1/2] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:12:03 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31107|app: -1|req: -1/3] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:12:05 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31108|app: -1|req: -1/4] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:12:05 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31108|app: -1|req: -1/5] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:12:06 2019] GET /spiderlog => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31107|app: -1|req: -1/6] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:12:06 2019] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31108|app: -1|req: -1/7] 140.207.54.78 () {38 vars in 708 bytes} [Tue Apr 16 14:12:10 2019] POST /robot/?signature=231e718ecc246f36a097636a4acbbee1dc5aee2a&timestamp=1555395130&nonce=1965818225&openid=o2NddxGdQZBTRqMWP-xEuiF2HV8A => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31107|app: -1|req: -1/8] 223.166.222.108 () {38 vars in 708 bytes} [Tue Apr 16 14:12:22 2019] POST /robot/?signature=59459d481b64a00f06554202a948ba854e5d426f&timestamp=1555395142&nonce=434518196&openid=o2NddxDtt0W60Ob1x67iHWF5fTcQ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 31107|app: -1|req: -1/9] 140.207.54.79 () {38 vars in 705 bytes} [Tue Apr 16 14:12:25 2019] POST /robot/?signature=c5450773c96ff19a038546fbe0d9a4e4f3d532fd&timestamp=1555395145&nonce=339031170&openid=o2NddxLBmMll0NCtiMbvJSa1e95s => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.17 (64bit) on [Tue Apr 16 14:12:48 2019] ***
+compiled with version: 5.4.0 20160609 on 03 March 2018 17:01:55
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: localhost
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/wechat_auto_return_movie_URL/autoResponse/responseFromDB
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2058ad0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 218712 bytes (213 KB) for 2 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2058ad0 pid: 31160 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 31160)
+spawned uWSGI worker 1 (pid: 31162, cores: 1)
+spawned uWSGI worker 2 (pid: 31163, cores: 1)
+[pid: 31163|app: 0|req: 1/1] 218.75.230.9 () {42 vars in 769 bytes} [Tue Apr 16 14:13:00 2019] GET /spiderlog => generated 1991 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 31162|app: 0|req: 1/2] 218.75.230.9 () {44 vars in 728 bytes} [Tue Apr 16 14:13:00 2019] GET /favicon.ico => generated 233 bytes in 4 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 31163|app: 0|req: 2/3] 218.75.230.9 () {40 vars in 730 bytes} [Tue Apr 16 14:13:05 2019] GET /robot => generated 263 bytes in 2 msecs (HTTP/1.1 301) 3 headers in 135 bytes (1 switches on core 0)
+[pid: 31162|app: 0|req: 2/4] 218.75.230.9 () {40 vars in 732 bytes} [Tue Apr 16 14:13:05 2019] GET /robot/ => generated 1691 bytes in 3 msecs (HTTP/1.1 403) 2 headers in 88 bytes (1 switches on core 0)
+《蜜桃成熟时》 from [o2NddxDtt0W60Ob1x67iHWF5fTcQ]
+[pid: 31163|app: 0|req: 3/5] 223.166.222.108 () {38 vars in 708 bytes} [Tue Apr 16 14:13:07 2019] POST /robot/?signature=4b011a69db511b5ca7c1b6b606dde91b2b06d50d&timestamp=1555395187&nonce=626479980&openid=o2NddxDtt0W60Ob1x67iHWF5fTcQ => generated 465 bytes in 34 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《fsdaf》 from [o2NddxHhZloQV55azmx8zVXv9mAQ]
+[pid: 31162|app: 0|req: 3/6] 140.207.54.79 () {38 vars in 708 bytes} [Tue Apr 16 14:13:12 2019] POST /robot/?signature=beeda715a30f80ea9aa181a382f8a664160fa146&timestamp=1555395192&nonce=1437407054&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 455 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+《fsafds》 from [o2NddxHhZloQV55azmx8zVXv9mAQ]
+[pid: 31163|app: 0|req: 4/7] 140.207.54.80 () {38 vars in 708 bytes} [Tue Apr 16 14:13:14 2019] POST /robot/?signature=ae72b2c37c0d65a3e84a0e97b8b1f192deb0bded&timestamp=1555395194&nonce=2072293211&openid=o2NddxHhZloQV55azmx8zVXv9mAQ => generated 410 bytes in 32 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
