@@ -1,0 +1,590 @@
+0 2019-07-23 05:01:01
+1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2 	 autoSpider
+		the god of the spider
+3 
+
+4 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+5 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+6 	movieSpider for kuyunzy.vip
+7 
+>> movieSpider init...
+8 
+
+
+9 >> [get_html] failed : http://www.kuyunzy.vip/list/?0-1.html
+10 >> [get_html] failed : http://www.kuyunzy.vip/list/?0-2.html
+11 >> [get_html] failed : http://www.kuyunzy.vip/list/?0-3.html
+12 >> [get_html] failed : http://www.kuyunzy.vip/list/?0-4.html
+13 >> [get_url] total 0 movies
+14 ---------- kuyunzy 共有 0 条数据需要插入 --------
+15 >> [get_info] 获取 json 数据失败 start: 0
+16 >> [get_info] 获取 json 数据失败 start: 12
+17 >> [get_info] 获取 json 数据失败 start: 24
+18 >> [get_info] 获取 json 数据失败 start: 36
+19 >> [get_info] 获取 json 数据失败 start: 48
+20 >> [get_info] 获取 json 数据失败 start: 60
+21 >> [get_info] 获取 json 数据失败 start: 72
+22 >> [get_info] 获取 json 数据失败 start: 84
+23 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+24 	movieSpider for www.135zy.net
+25 
+>> movieSpider init...
+26 
+
+
+27 >> [get_html] success
+28 >> [get_url] already exsist
+  追凶五十年 HD720P中字   [www_605zy]
+29 >> [get_url] already exsist
+  追凶2012/索命童话 HD1080P中字   [www_605zy]
+30 >> [get_url] already exsist
+  远离天堂 HD1080P中字   [www_605zy]
+31 >> [get_url] already exsist
+  诱惑学校 HD1080P中字   [www_605zy]
+32 >> [get_url] already exsist
+  烟雨红颜 HD720P中字   [www_605zy]
+33 >> [get_url] already exsist
+  下一站幸福 HD1080P中字   [www_605zy]
+34 >> [get_url] already exsist
+  铁血警雄 HD1080P中字   [www_605zy]
+35 >> [get_html] success
+36 >> [get_url] already exsist
+  跆拳道 HD720P中字   [www_605zy]
+37 >> [get_url] already exsist
+  损害防阻 HD720P中字   [www_605zy]
+38 >> [get_url] already exsist
+  手足情 HD720P中字   [www_605zy]
+39 >> [get_url] already exsist
+  时间审判 HD1080P中字   [www_605zy]
+40 >> [get_url] already exsist
+  施陶芬贝格 HD1080P中字   [www_605zy]
+41 >> [get_url] already exsist
+  失落的世界 HD720P中字   [www_605zy]
+42 >> [get_url] already exsist
+  审判日 HD1080P中字   [www_605zy]
+43 >> [get_url] already exsist
+  人蛇浴血战之蛇女添丁 HD720P中字   [www_605zy]
+44 >> [get_url] already exsist
+  秦明·生死语者 HD1080P中字   [www_605zy]
+45 >> [get_url] already exsist
+  飘忽男女 HD720P中字   [www_605zy]
+46 >> [get_url] already exsist
+  美国空姐 HD1080P中字   [www_605zy]
+47 >> [get_url] already exsist
+  绿茶 HD720P中字   [www_605zy]
+48 >> [get_url] already exsist
+  罗马黑帮 HD720P中字   [www_605zy]
+49 >> [get_url] already exsist
+  恋爱与求职的舞会 HD1080P中字   [www_605zy]
+50 >> [get_url] already exsist
+  雷霆悍将 HD1080P中字   [www_605zy]
+51 >> [get_url] already exsist
+  金赛性学教授 HD1080P中字   [www_605zy]
+52 >> [get_url] already exsist
+  疾速求生 BD1080P中字   [www_605zy]
+53 >> [get_url] already exsist
+  灰色惊爆 HD720P中字   [www_605zy]
+54 >> [get_url] already exsist
+  丰胸秘CUP HD1080P中字   [www_605zy]
+55 >> [get_url] already exsist
+  法兰基，我的爱 HD1080P中字   [www_605zy]
+56 >> [get_url] already exsist
+  超能狗兰尼 HD1080P中字   [www_605zy]
+57 >> [get_url] already exsist
+  碧海娇娃 HD1080P中字   [www_605zy]
+58 >> [get_url] already exsist
+  1988年的妮可 HD1080P中字   [www_605zy]
+59 >> [get_url] already exsist
+  罪人和圣人 HD1080P中字   [www_605zy]
+60 >> [get_url] already exsist
+  已婚妻子偷窥按摩 HD720P韩字   [www_605zy]
+61 >> [get_url] already exsist
+  一个Y荡的妹妹 HD720P韩字   [www_605zy]
+62 >> [get_url] already exsist
+  野兽2019/缉凶对决 HD1080P中字   [www_605zy]
+63 >> [get_url] already exsist
+  眼镜蛇/浴血擒魔 HD1080P中字   [www_605zy]
+64 >> [get_url] already exsist
+  学园孤岛 真人版 HD720P中字   [www_605zy]
+65 >> [get_url] already exsist
+  兄弟2017 HD720P中字   [www_605zy]
+66 >> [get_url] already exsist
+  亡命驾驶 HD1080P中字   [www_605zy]
+67 >> [get_url] already exsist
+  天杀 HD720P中字   [www_605zy]
+68 >> [get_url] already exsist
+  特工008 HD720P中字   [www_605zy]
+69 >> [get_url] already exsist
+  榫卯 HD1080P中字   [www_605zy]
+70 >> [get_url] already exsist
+  失踪谜案 HD720P中字   [www_605zy]
+71 >> [get_url] already exsist
+  莎乐美2002 HD1080P中字   [www_605zy]
+72 >> [get_url] already exsist
+  杀科 HD720P中字   [www_605zy]
+73 >> [get_url] already exsist
+  塞伦盖蒂 第03集   [www_605zy]
+74 >> [get_url] already exsist
+  亲密如贼 HD1080P中字   [www_605zy]
+75 >> [get_url] already exsist
+  墨斗先生 HD720P中字   [www_605zy]
+76 >> [get_url] already exsist
+  米莱—妻子的妹妹 HD720P韩字   [www_605zy]
+77 >> [get_url] already exsist
+  迈克尔.克莱顿 HD1080P中字   [www_605zy]
+78 >> [get_url] already exsist
+  九宵云外 HD1080P中字   [www_605zy]
+79 >> [get_url] already exsist
+  警界争雄 HD1080P中字   [www_605zy]
+80 >> [get_url] already exsist
+  极速世界之战车 HD1080P中字   [www_605zy]
+81 >> [get_url] already exsist
+  黑暗边缘 HD720P中字   [www_605zy]
+82 >> [get_url] already exsist
+  给他们一个机会 HD1080P中字   [www_605zy]
+83 >> [get_url] already exsist
+  夺命追魂 HD720P中字   [www_605zy]
+84 >> [get_url] already exsist
+  大狗民 HD720P中字   [www_605zy]
+85 >> [get_url] already exsist
+  穿越西伯利亚 HD720P中字   [www_605zy]
+86 >> [get_html] success
+87 >> [get_url] already exsist
+  沉睡者2005 HD720P中字   [www_605zy]
+88 >> [get_url] already exsist
+  沉睡者1996 HD1080P中字   [www_605zy]
+89 >> [get_url] already exsist
+  被绑架的小孩 HD1080P中字   [www_605zy]
+90 >> [get_url] already exsist
+  爆裂危情 HD720P中字   [www_605zy]
+91 >> [get_url] already exsist
+  V8-尼特罗队的复仇计划 HD1080P中字   [www_605zy]
+92 >> [get_url] already exsist
+  终极格斗 HD720P中字   [www_605zy]
+93 >> [get_url] already exsist
+  这个阿爸真爆炸 HD720P中字   [www_605zy]
+94 >> [get_url] already exsist
+  杂技亡命队 HD720P中字   [www_605zy]
+95 >> [get_url] already exsist
+  越野狂飙 HD1080P中字   [www_605zy]
+96 >> [get_url] already exsist
+  一对一 HD720P中字   [www_605zy]
+97 >> [get_url] already exsist
+  新古惑仔之江湖新秩序 HD720P中字   [www_605zy]
+98 >> [get_url] already exsist
+  陷阱2015/暗网杀机 HD720P中字   [www_605zy]
+99 >> [get_url] already exsist
+  舞厅2之龙争舞斗 HD720P中字   [www_605zy]
+100 >> [get_url] already exsist
+  无间行动 HD720P中字   [www_605zy]
+101 >> [get_url] already exsist
+  我的野蛮初恋 HD1080P中字   [www_605zy]
+102 >> [get_url] already exsist
+  万圣夜惊魂 HD1080P中字   [www_605zy]
+103 >> [get_url] already exsist
+  通天卧底 HD720P中字   [www_605zy]
+104 >> [get_url] already exsist
+  水浒笑传之黑店寻宝 HD720P中字   [www_605zy]
+105 >> [get_url] already exsist
+  誓不低头Left for Dead HD720P中字   [www_605zy]
+106 >> [get_url] already exsist
+  誓不低头2004 HD1080P中字   [www_605zy]
+107 >> [get_url] already exsist
+  少年追梦情 HD1080P中字   [www_605zy]
+108 >> [get_url] already exsist
+  三个受伤的警察 HD720P中字   [www_605zy]
+109 >> [get_url] already exsist
+  任长霞 HD720P中字   [www_605zy]
+110 >> [get_url] already exsist
+  任务待续 HD720P中字   [www_605zy]
+111 >> [get_url] already exsist
+  群盗：民乱的时代 HD720P中字   [www_605zy]
+112 >> [get_url] already exsist
+  情义我心知 HD720P中字   [www_605zy]
+113 >> [get_url] already exsist
+  孽海恩怨 HD720P中字   [www_605zy]
+114 >> [get_url] already exsist
+  秘恋 HD1080P中字   [www_605zy]
+115 >> [get_url] already exsist
+  卖命小子 HD720P中字   [www_605zy]
+116 >> [get_url] already exsist
+  两个心脏 HD720P中字   [www_605zy]
+117 >> [get_url] already exsist
+  两个男人 HD720P中字   [www_605zy]
+118 >> [get_url] already exsist
+  烂头何 HD720P中字   [www_605zy]
+119 >> [get_url] already exsist
+  蓝江传之反飞组风云 HD720P国语   [www_605zy]
+120 >> [get_url] already exsist
+  金臂童 HD1080P中字   [www_605zy]
+121 >> [get_url] already exsist
+  煎炸三宝 HD720P中字   [www_605zy]
+122 >> [get_url] already exsist
+  焚兽之都 HD720P中字   [www_605zy]
+123 >> [get_url] already exsist
+  巅峰战士 HD1080P中字   [www_605zy]
+124 >> [get_url] already exsist
+  大天使 HD720P中字   [www_605zy]
+125 >> [get_url] already exsist
+  大麻修女 HD1080P中字   [www_605zy]
+126 >> [get_url] already exsist
+  冲霄楼 HD1080P中字   [www_605zy]
+127 >> [get_url] already exsist
+  超新星浩劫 HD1080P中字   [www_605zy]
+128 >> [get_url] already exsist
+  叉手 HD1080P中字   [www_605zy]
+129 >> [get_url] already exsist
+  八美图/八美千娇 HD1080P中字   [www_605zy]
+130 >> [get_url] already exsist
+  是面包，是空气，是奇迹啊 第04集   [www_605zy]
+131 >> [get_url] already exsist
+  足球老爹 HD1080P中字   [www_605zy]
+132 >> [get_url] already exsist
+  中华丈夫 HD1080P中字   [www_605zy]
+133 >> [get_url] already exsist
+  致命虫灾 HD720P中字   [www_605zy]
+134 >> [get_url] already exsist
+  游侠儿 HD720P中字   [www_605zy]
+135 >> [get_url] already exsist
+  银河补习班 HDTC清晰版   [www_605zy]
+136 >> [get_url] already exsist
+  野兽特警2003 HD720P中字   [www_605zy]
+137 >> [get_html] success
+138 >> [get_url] already exsist
+  无翼蝙蝠 HD1080P中字   [www_605zy]
+139 >> [get_url] already exsist
+  网吧惊魂 HD720P中字   [www_605zy]
+140 >> [get_url] already exsist
+  图书馆员：所罗门王的宝藏 HD1080P中字   [www_605zy]
+141 >> [get_url] already exsist
+  逃亡2012 HD1080P中字   [www_605zy]
+142 >> [get_url] already exsist
+  逃亡1975 HD720P中字   [www_605zy]
+143 >> [get_url] already exsist
+  所罗门王的宝藏 HD1080P中字   [www_605zy]
+144 >> [get_url] already exsist
+  所罗门宝藏 HD1080P中字   [www_605zy]
+145 >> [get_url] already exsist
+  双侠 HD720P中字   [www_605zy]
+146 >> [get_url] already exsist
+  兽性新人类之艳星劫 HD720P中字   [www_605zy]
+147 >> [get_url] already exsist
+  生死对决 HD720P中字   [www_605zy]
+148 >> [get_url] already exsist
+  蛇蝎情人 HD720P中字   [www_605zy]
+149 >> [get_url] already exsist
+  人性的污点 HD1080P中字   [www_605zy]
+150 >> [get_url] already exsist
+  人生一串第二季 第06集   [www_605zy]
+151 >> [get_url] already exsist
+  青红 HD1080P中字   [www_605zy]
+152 >> [get_url] already exsist
+  迷失的公主 HD720P中字   [www_605zy]
+153 >> [get_url] already exsist
+  辣手学子 HD720P中字   [www_605zy]
+154 >> [get_url] already exsist
+  金鸭 HD720P中字   [www_605zy]
+155 >> [get_url] already exsist
+  谎言与偷窃 BD720P中字   [www_605zy]
+156 >> [get_url] already exsist
+  皇家大贼 HD720P中字   [www_605zy]
+157 >> [get_url] already exsist
+  海蜇 HD720P中字   [www_605zy]
+158 >> [get_url] already exsist
+  海军陆战队的故事 HD1080P中字   [www_605zy]
+159 >> [get_url] already exsist
+  甘田一豪宅谋杀案 HD720P中字   [www_605zy]
+160 >> [get_url] already exsist
+  帝国 HD1080P中字   [www_605zy]
+161 >> [get_url] already exsist
+  从太空看地球 第03集   [www_605zy]
+162 >> [get_url] already exsist
+  窗外有情天 HD1080P中字   [www_605zy]
+163 >> [get_url] already exsist
+  不可能的事 BD720P中字   [www_605zy]
+164 >> [get_url] already exsist
+  巴士174事件 DVD中字   [www_605zy]
+165 >> [get_url] already exsist
+  车神/雷霆杀阵 HD720P中字   [www_605zy]
+166 >> [get_url] already exsist
+  战栗空间 HD1080P中字   [www_605zy]
+167 >> [get_url] already exsist
+  造人计划 HD720P中字   [www_605zy]
+168 >> [get_url] already exsist
+  血观音 BD720P中字   [www_605zy]
+169 >> [get_url] already exsist
+  香港厨神 HD1080P中字   [www_605zy]
+170 >> [get_url] already exsist
+  仙魔游踪之百懂仙 HD720P中字   [www_605zy]
+171 >> [get_url] already exsist
+  我从后面爱它 HD720P日语   [www_605zy]
+172 >> [get_url] already exsist
+  双子 HD1080P中字   [www_605zy]
+173 >> [get_url] already exsist
+  时时刻刻 HD1080P中字   [www_605zy]
+174 >> [get_url] already exsist
+  失忆界女王 HD720P中字   [www_605zy]
+175 >> [get_url] already exsist
+  全民追女王 HD1080P中字   [www_605zy]
+176 >> [get_url] already exsist
+  青春期妹妹诱惑 HD720P韩字   [www_605zy]
+177 >> [get_url] already exsist
+  栖霞寺1937 HD1080P中字   [www_605zy]
+178 >> [get_url] already exsist
+  霹雳蓝天使之不老传说 HD720P中字   [www_605zy]
+179 >> [get_url] already exsist
+  女人贞慧 HD720P中字   [www_605zy]
+180 >> [get_url] already exsist
+  女教师在学生面前 HD720P日语   [www_605zy]
+181 >> [get_url] already exsist
+  女孩梦三十 HD1080P中字   [www_605zy]
+182 >> [get_url] already exsist
+  男孩们跪下 BD720P中字   [www_605zy]
+183 >> [get_url] already exsist
+  蓝色的40道阴影 HD1080P中字   [www_605zy]
+184 >> [get_url] already exsist
+  宽频聊斋之夜更管理员 HD720P中字   [www_605zy]
+185 >> [get_url] already exsist
+  空投柏林 HD720P中字   [www_605zy]
+186 >> [get_url] already exsist
+  绝世好宾 HD720P中字   [www_605zy]
+187 >> [get_url] already exsist
+  决不妥协/决不让步 HD720P中字   [www_605zy]
+188 >> [get_html] success
+189 >> [get_url] already exsist
+  惊魂圣诞节 HD720P中字   [www_605zy]
+190 >> [get_url] already exsist
+  鬼屋冤魂 HD720P中字   [www_605zy]
+191 >> [get_url] already exsist
+  孤海寄生 HD720P中字   [www_605zy]
+192 >> [get_url] already exsist
+  复仇者Avengement BD720P中字   [www_605zy]
+193 >> [get_url] already exsist
+  风继续吹 HD720P中字   [www_605zy]
+194 >> [get_url] already exsist
+  飞侠小白龙 HD720P中字   [www_605zy]
+195 >> [get_url] already exsist
+  地铁危机 HD720P中字   [www_605zy]
+196 >> [get_url] already exsist
+  安息2 HD720P中字   [www_605zy]
+197 >> [get_url] already exsist
+  宵夜江湖 第03集   [www_605zy]
+198 >> [get_url] already exsist
+  蜈蚣 HD720P中字   [www_605zy]
+199 >> [get_url] already exsist
+  无间道长 HD720P中字   [www_605zy]
+200 >> [get_url] already exsist
+  我的朋友圈 HD1080P中字   [www_605zy]
+201 >> [get_url] already exsist
+  天地无限 HD1080P中字   [www_605zy]
+202 >> [get_url] already exsist
+  少林僵尸 HD720P中字   [www_605zy]
+203 >> [get_url] already exsist
+  奇逢敌手 HD720P中字   [www_605zy]
+204 >> [get_url] already exsist
+  决战枭雄 HD720P中字   [www_605zy]
+205 >> [get_url] already exsist
+  借兵 HD1080P中字   [www_605zy]
+206 >> [get_url] already exsist
+  幻体：续命游戏 HD1080P中字   [www_605zy]
+207 >> [get_url] already exsist
+  虎兄虎弟 HD720P中字   [www_605zy]
+208 >> [get_url] already exsist
+  赫尔克里士 HD1080P中字   [www_605zy]
+209 >> [get_url] already exsist
+  海啸[原声版] HD1080P中字   [www_605zy]
+210 >> [get_url] already exsist
+  芳心别乡/芳心他属 HD720P中字   [www_605zy]
+211 >> [get_url] already exsist
+  地球湮没之惊涛大历险 HD1080P中字   [www_605zy]
+212 >> [get_url] already exsist
+  纯真十一岁/无知的声音 HD720P中字   [www_605zy]
+213 >> [get_url] already exsist
+  蝙蝠侠：侠影之谜 HD1080P中字   [www_605zy]
+214 >> [get_url] already exsist
+  在灰暗地带 HD720P中字   [www_605zy]
+215 >> [get_url] already exsist
+  欲1988 HD720P中字   [www_605zy]
+216 >> [get_url] already exsist
+  优昙婆罗 HD720P中字   [www_605zy]
+217 >> [get_url] already exsist
+  义胆群英 HD720P国语   [www_605zy]
+218 >> [get_url] already exsist
+  新娘甜蜜蜜 HD720P中字   [www_605zy]
+219 >> [get_url] already exsist
+  我心迷惘 HD720P中字   [www_605zy]
+220 >> [get_url] already exsist
+  偷情画室/低胸诱惑 HD720P中字   [www_605zy]
+221 >> [get_url] already exsist
+  死亡集中营 HD720P中字   [www_605zy]
+222 >> [get_url] already exsist
+  微笑圣夜奇迹 HD720P中字   [www_605zy]
+223 >> [get_url] already exsist
+  圣夜 HD720P中字   [www_605zy]
+224 >> [get_url] already exsist
+  三个蓝月亮/神秘列车 HD720P中字   [www_605zy]
+225 >> [get_url] already exsist
+  霹雳五号 HD720P中字   [www_605zy]
+226 >> [get_url] already exsist
+  霹雳五号2/霹雳五号续集 HD720P中字   [www_605zy]
+227 >> [get_url] already exsist
+  男朋友女朋友 HD720P中字   [www_605zy]
+228 >> [get_url] already exsist
+  目中無人 HD720P中字   [www_605zy]
+229 >> [get_url] already exsist
+  母亲安魂曲 HD720P中字   [www_605zy]
+230 >> [get_url] already exsist
+  龙虎智多星 HD720P中字   [www_605zy]
+231 >> [get_url] already exsist
+  烈血海底城 HD720P中字   [www_605zy]
+232 >> [get_url] already exsist
+  老大人 HD720P中字   [www_605zy]
+233 >> [get_url] already exsist
+  汉娜姐妹 HD720P中字   [www_605zy]
+234 >> [get_url] already exsist
+  滚滚红尘 BD720P中字   [www_605zy]
+235 >> [get_url] already exsist
+  大物 HD720P中字   [www_605zy]
+236 >> [get_url] already exsist
+  创造约翰·德罗宁 HD720P中字   [www_605zy]
+237 >> [get_url] already exsist
+  北之樱守 BD720P中字   [www_605zy]
+238 >> [get_url] already exsist
+  奥林匹斯的陷落 HD1080P中字   [www_605zy]
+239 >> [get_url] total 250 movies
+240 ---------- www_605zy 共有 43 条数据需要插入 --------
+241 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27294.html
+242 >> [get_html] success
+243 >> [save_2_db] insert succes
+244 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27850.html
+245 >> [get_html] success
+246 >> [save_2_db] insert succes
+247 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27848.html
+248 >> [get_html] success
+249 >> [save_2_db] insert succes
+250 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27847.html
+251 >> [get_html] success
+252 >> [save_2_db] insert succes
+253 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27846.html
+254 >> [get_html] success
+255 >> [save_2_db] insert succes
+256 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27845.html
+257 >> [get_html] success
+258 >> [save_2_db] insert succes
+259 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27844.html
+260 >> [get_html] success
+261 >> [save_2_db] insert succes
+262 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27842.html
+263 >> [get_html] success
+264 >> [save_2_db] insert succes
+265 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27843.html
+266 >> [get_html] success
+267 >> [save_2_db] insert succes
+268 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27840.html
+269 >> [get_html] success
+270 >> [save_2_db] insert succes
+271 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27839.html
+272 >> [get_html] success
+273 >> [save_2_db] insert succes
+274 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27838.html
+275 >> [get_html] success
+276 >> [save_2_db] insert succes
+277 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27837.html
+278 >> [get_html] success
+279 >> [save_2_db] insert succes
+280 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27836.html
+281 >> [get_html] success
+282 >> [save_2_db] insert succes
+283 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27835.html
+284 >> [get_html] success
+285 >> [save_2_db] insert succes
+286 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27834.html
+287 >> [get_html] success
+288 >> [save_2_db] insert succes
+289 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27833.html
+290 >> [get_html] success
+291 >> [save_2_db] insert succes
+292 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27832.html
+293 >> [get_html] success
+294 >> [save_2_db] insert succes
+295 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27831.html
+296 >> [get_html] success
+297 >> [save_2_db] insert succes
+298 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27830.html
+299 >> [get_html] success
+300 >> [save_2_db] insert succes
+301 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27829.html
+302 >> [get_html] success
+303 >> [save_2_db] insert succes
+304 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27828.html
+305 >> [get_html] success
+306 >> [save_2_db] insert succes
+307 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27827.html
+308 >> [get_html] success
+309 >> [save_2_db] insert succes
+310 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27826.html
+311 >> [get_html] success
+312 >> [save_2_db] insert succes
+313 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27825.html
+314 >> [get_html] success
+315 >> [save_2_db] insert succes
+316 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27824.html
+317 >> [get_html] success
+318 >> [save_2_db] insert succes
+319 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27823.html
+320 >> [get_html] success
+321 >> [save_2_db] insert succes
+322 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27822.html
+323 >> [get_html] success
+324 >> [save_2_db] insert succes
+325 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27821.html
+326 >> [get_html] success
+327 >> [save_2_db] insert succes
+328 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27820.html
+329 >> [get_html] success
+330 >> [save_2_db] insert succes
+331 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27819.html
+332 >> [get_html] success
+333 >> [save_2_db] insert succes
+334 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27818.html
+335 >> [get_html] success
+336 >> [save_2_db] insert succes
+337 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27817.html
+338 >> [get_html] success
+339 >> [save_2_db] insert succes
+340 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27816.html
+341 >> [get_html] success
+342 >> [save_2_db] insert succes
+343 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27815.html
+344 >> [get_html] success
+345 >> [save_2_db] insert succes
+346 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27814.html
+347 >> [get_html] success
+348 >> [save_2_db] insert succes
+349 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27813.html
+350 >> [get_html] success
+351 >> [save_2_db] insert succes
+352 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27812.html
+353 >> [get_html] success
+354 >> [save_2_db] insert succes
+355 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27811.html
+356 >> [get_html] success
+357 >> [save_2_db] insert succes
+358 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27810.html
+359 >> [get_html] success
+360 >> [save_2_db] insert succes
+361 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27809.html
+362 >> [get_html] success
+363 >> [save_2_db] insert succes
+364 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27808.html
+365 >> [get_html] success
+366 >> [save_2_db] insert succes
+367 >> [get_info] http://www.135zy.net/?m=vod-detail-id-27807.html
+368 >> [get_html] success
+369 >> [save_2_db] insert succes
+370 
+--------------------------------
+371 autoSpider done !
+372 2019-07-23 05:02:24

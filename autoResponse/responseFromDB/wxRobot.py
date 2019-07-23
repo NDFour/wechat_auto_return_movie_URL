@@ -29,9 +29,10 @@ def subscribe(message):
 
 @robot.text
 def hello(message, session):
+    # return '【通知】\n\n    因公众号提供电影服务的服务器压力增加，导致价格上涨。公众号免费提供电影服务，无任何盈利，现需要暂时暂停电影服务。望谅解！\n\n    服务恢复时间请关注本公众号通知！\n\n<a href="https://mp.weixin.qq.com/s/IV9we9FYrPxi5w68fuLb9A">点我留言反馈</a>'
     # lynn 微信号的 source ID
-    # master_root = 'o2NddxHhZloQV55azmx8zVXv9mAQ'
-    master_root = 'oBo_Y1akWzT_4_i38mzpiRo7z-uo'
+    master_root = 'o2NddxHhZloQV55azmx8zVXv9mAQ'
+    # master_root = 'oBo_Y1akWzT_4_i38mzpiRo7z-uo'
 
     # 返回公众号 target ID
     if message.content=='showtarget':
@@ -69,16 +70,16 @@ def hello(message, session):
     	articles = reply_info_bygenurl(v_name)
 
     # 如果当天第一次使用,重定向到小说
-    if 'first' not in session:
-        articles = redirettoNovel(articles)
+    # if 'first' not in session:
+    #     articles = redirettoNovel(articles)
 
     # List to String
     rel_str = genHtml(articles)
 
     # 如果当天第一次使用,重定向到小说
-    if 'first' not in session:
-        rel_str += '\n\n★ 如果点击上方无法跳转到影片搜索页，请尝试重新发送片名'
-        session['first'] = True
+    # if 'first' not in session:
+    #     rel_str += '\n\n★ 如果点击上方无法跳转到影片搜索页，请尝试重新发送片名'
+    #     session['first'] = True
 
     return rel_str
 
@@ -117,7 +118,7 @@ def modefy_name(v_name):
 def reply_info_bygenurl(v_name):
     out_list=[]
     global baseUrl1
-    url = baseUrl1 + v_name + '&onlineplay_search=onlineplay_search'
+    url = baseUrl1 + v_name
     name='《'+v_name+'》点我在线观看'
     picurl='https://s1.ax1x.com/2018/08/11/P6L2sU.jpg'
 
