@@ -100,7 +100,7 @@ def get_by_id(id):
         cursor.execute(sql)
         rel = cursor.fetchall()
 
-        msg = '《' + rel[0][0] + '》'
+        msg = '《' + rel[0][0] + '》 \n\n点击下面蓝字播放~'
         msg += '\n- - - - - - - - - - - - - - - - - - \n'
         chatper_list = rel[0][1].split('##')
 
