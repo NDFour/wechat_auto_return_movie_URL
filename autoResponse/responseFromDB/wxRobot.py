@@ -94,7 +94,8 @@ def get_by_id(id):
         conn = sqlite3.connect('scrapy.sqlite3')
         cursor = conn.cursor()
 
-        sql = "select name,url_m3u8 from movies where id=" + str(id)
+        # sql = "select name,url_m3u8 from movies where id=" + str(id)
+        sql = "select name,url from movies where id=" + str(id)
         # print(sql)
         cursor.execute(sql)
         rel = cursor.fetchall()
