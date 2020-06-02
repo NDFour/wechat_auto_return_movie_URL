@@ -53,7 +53,7 @@ def get_rel(name):
         sql = "select id,name from movies where name" + " like '%" + name + "%' order by length(name) limit 15"
         # print(sql)
         cursor.execute(sql)
-        rel = cursor.fetchall()
+        rel = cursor.fetchall()[:30]
 
         '''
         搜索「城南旧事」的结果,
@@ -102,7 +102,7 @@ def get_by_id(id):
 
         msg = '《' + rel[0][0] + '》 \n\n点击下面蓝字播放~'
         msg += '\n- - - - - - - - - - - - - - - - - - \n'
-        chatper_list = rel[0][1].split('##')
+        chatper_list = rel[0][1].split('##')[:21]
 
         # 从 url_m3u8 中分割每一集
         for url in chatper_list:
